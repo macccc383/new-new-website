@@ -4,7 +4,7 @@
   --accent-color: #ffd700;
   --font-family: 'Montserrat', sans-serif;
   --heading-font: 'Playfair Display', serif;
-  --overlay-color: #ffffff;
+  --overlay-color: #000000;
 }
 
 html {
@@ -80,6 +80,7 @@ nav a:hover::after {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .nav-links {
