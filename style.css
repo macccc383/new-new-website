@@ -201,6 +201,11 @@ main {
   z-index: 100;
 }
 
+.categories .category-btn[data-category="clubs"]:hover + #club-dropdown,
+.categories #club-dropdown:hover {
+  display: flex;
+}
+
 .category-btn,
 .club-btn {
   background: var(--accent-color);

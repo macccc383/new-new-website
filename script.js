@@ -271,15 +271,7 @@ function initNavScroll() {
   });
 }
 
-const productData = [
-  { id: 'irons', category: 'clubs', type: 'irons', image: 'images/irons.svg', nameKey: 'product1_name', descKey: 'product1_desc', priceKey: 'product1_price' },
-  { id: 'driver', category: 'clubs', type: 'woods', image: 'images/driver.svg', nameKey: 'product2_name', descKey: 'product2_desc', priceKey: 'product2_price' },
-  { id: 'putter', category: 'clubs', type: 'putters', image: 'images/putter.svg', nameKey: 'product3_name', descKey: 'product3_desc', priceKey: 'product3_price' },
-  { id: 'bag', category: 'bags', image: 'images/hero.svg', nameKey: 'product_bag_name', descKey: 'product_bag_desc', priceKey: 'product_bag_price' },
-  { id: 'balls', category: 'balls', image: 'images/hero.svg', nameKey: 'product_balls_name', descKey: 'product_balls_desc', priceKey: 'product_balls_price' },
-  { id: 'tees', category: 'tees', image: 'images/hero.svg', nameKey: 'product_tees_name', descKey: 'product_tees_desc', priceKey: 'product_tees_price' },
-  { id: 'marker', category: 'accessories', image: 'images/hero.svg', nameKey: 'product_accessory_name', descKey: 'product_accessory_desc', priceKey: 'product_accessory_price' }
-];
+const productData = [];
 
 function renderProducts(filter = {}) {
   const grid = document.getElementById('product-grid');
@@ -317,24 +309,19 @@ function initProducts() {
   if (!grid) return;
   renderProducts();
 
-  const clubDropdown = document.getElementById('club-dropdown');
   document.querySelectorAll('.category-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const category = btn.dataset.category;
-      if (category === 'clubs') {
-        clubDropdown.classList.toggle('hidden');
-      } else {
-        clubDropdown.classList.add('hidden');
+    const category = btn.dataset.category;
+    if (category !== 'clubs') {
+      btn.addEventListener('click', () => {
         renderProducts({ category });
-      }
-    });
+      });
+    }
   });
 
   document.querySelectorAll('.club-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const type = btn.dataset.type;
       renderProducts({ category: 'clubs', type });
-      clubDropdown.classList.add('hidden');
     });
   });
 
