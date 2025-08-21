@@ -311,18 +311,30 @@ h1, h2 {
   flex: 1 1 33.333%;
   position: relative;
   overflow: hidden;
+  height: 80vh;
 }
 
 .image-item img {
   width: 100%;
-  height: 80vh;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  transition: opacity 1s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+  transition: transform 1s ease;
 }
 
-.image-item img.fade {
-  opacity: 0;
+.image-item img.next {
+  transform: translateX(100%);
+}
+
+.image-item img.slide-out-left {
+  transform: translateX(-100%);
+}
+
+.image-item img.slide-in-right {
+  transform: translateX(0);
 }
 
 .overlay {
@@ -365,14 +377,11 @@ body.device-phone .image-wrapper {
 
 body.device-phone .image-item {
   flex: none;
+  height: 40vh;
 }
 
 body.device-phone .image-item:not(.center-item) {
   display: none;
-}
-
-body.device-phone .image-item img {
-  height: 40vh;
 }
 
 body.device-phone .product-grid.grid-4,
