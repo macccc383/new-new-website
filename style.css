@@ -199,6 +199,10 @@ h1, h2 {
   color: var(--text-color);
 }
 
+.overlay h2 {
+  color: var(--overlay-color);
+}
+
 .btn-primary {
   display: inline-block;
   margin-top: 1rem;
