@@ -145,8 +145,8 @@ function initCarousel() {
   const images = Array.from(document.querySelectorAll('.image-item img'));
   if (!images.length) return;
   const imageSets = [
-    ['NEWIMAGES/76da7245bcbb34e56daa12.jpg', 'NEWIMAGES/46776ce8a2162a48730711.jpg', 'NEWIMAGES/c976cce902178a49d3068.jpg'],
-    ['NEWIMAGES/c9791fe5d11b5945000a9.jpg', 'NEWIMAGES/f03bc0a40e5a8604df4b13.jpg', 'NEWIMAGES/76da7245bcbb34e56daa12.jpg']
+    ['images/carousel1.jpg', 'images/carousel2.jpg', 'images/carousel3.jpg'],
+    ['images/carousel4.jpg', 'images/carousel5.jpg', 'images/carousel1.jpg']
   ];
 
   let index = 0;
