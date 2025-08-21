@@ -182,7 +182,7 @@ main {
 }
 
 .story-content .ken-portrait {
-  width: 100px;
+  width: 150px;
   height: auto;
   flex-shrink: 0;
 }
