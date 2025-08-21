@@ -166,6 +166,12 @@ function setLanguage(lang) {
       el.textContent = translations[lang][key];
     }
   });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-alt');
+    if (translations[lang][key]) {
+      el.setAttribute('alt', translations[lang][key]);
+    }
+  });
 }
 
 function initLanguage() {
@@ -313,7 +319,27 @@ function initCarousel() {
 }
 
 function updateOverlayColor() {
-  document.documentElement.style.setProperty('--overlay-color', '#000000');
+  const img = document.querySelector('.center-item img');
+  if (!img) return;
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = img.naturalWidth;
+  canvas.height = img.naturalHeight;
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+  let r = 0, g = 0, b = 0, count = 0;
+  for (let i = 0; i < data.length; i += 400) {
+    r += data[i];
+    g += data[i + 1];
+    b += data[i + 2];
+    count++;
+  }
+  const avgR = r / count;
+  const avgG = g / count;
+  const avgB = b / count;
+  const brightness = 0.299 * avgR + 0.587 * avgG + 0.114 * avgB;
+  const color = brightness > 128 ? '#000000' : '#ffffff';
+  document.documentElement.style.setProperty('--overlay-color', color);
 }
 
 function initNavScroll() {
@@ -348,7 +374,60 @@ function initDeviceDetection() {
   window.addEventListener('resize', updateDevice);
 }
 
-const productData = [];
+const productData = [
+  {
+    image: 'images/irons.svg',
+    category: 'clubs',
+    type: 'irons',
+    nameKey: 'product1_name',
+    descKey: 'product1_desc',
+    priceKey: 'product1_price'
+  },
+  {
+    image: 'images/driver.svg',
+    category: 'clubs',
+    type: 'woods',
+    nameKey: 'product2_name',
+    descKey: 'product2_desc',
+    priceKey: 'product2_price'
+  },
+  {
+    image: 'images/putter.svg',
+    category: 'clubs',
+    type: 'putters',
+    nameKey: 'product3_name',
+    descKey: 'product3_desc',
+    priceKey: 'product3_price'
+  },
+  {
+    image: 'images/bag.svg',
+    category: 'bags',
+    nameKey: 'product_bag_name',
+    descKey: 'product_bag_desc',
+    priceKey: 'product_bag_price'
+  },
+  {
+    image: 'images/balls.svg',
+    category: 'balls',
+    nameKey: 'product_balls_name',
+    descKey: 'product_balls_desc',
+    priceKey: 'product_balls_price'
+  },
+  {
+    image: 'images/tees.svg',
+    category: 'tees',
+    nameKey: 'product_tees_name',
+    descKey: 'product_tees_desc',
+    priceKey: 'product_tees_price'
+  },
+  {
+    image: 'images/accessory.svg',
+    category: 'accessories',
+    nameKey: 'product_accessory_name',
+    descKey: 'product_accessory_desc',
+    priceKey: 'product_accessory_price'
+  }
+];
 
 function renderProducts(filter = {}) {
   const grid = document.getElementById('product-grid');
@@ -370,9 +449,10 @@ function renderProducts(filter = {}) {
   items.forEach(p => {
     const div = document.createElement('div');
     div.className = 'product animate';
+    const name = translations[lang][p.nameKey];
     div.innerHTML = `
-      <img src="${p.image}" alt="" class="product-image" loading="lazy">
-      <h2 data-i18n="${p.nameKey}">${translations[lang][p.nameKey]}</h2>
+      <img src="${p.image}" alt="${name}" data-i18n-alt="${p.nameKey}" class="product-image" loading="lazy">
+      <h2 data-i18n="${p.nameKey}">${name}</h2>
       <p data-i18n="${p.descKey}">${translations[lang][p.descKey]}</p>
       <p class="price" data-i18n="${p.priceKey}">${translations[lang][p.priceKey]}</p>
     `;
