@@ -169,6 +169,7 @@ function initCarousel() {
     if (!container) return;
     let currentImg = container.querySelector('img');
     if (!currentImg) return;
+    const overlay = container.querySelector('.overlay');
     const mobileImages = [
       'images/carousel1.jpg',
       'images/carousel2.jpg',
@@ -191,7 +192,11 @@ function initCarousel() {
       const nextImg = document.createElement('img');
       nextImg.src = mobileImages[i];
       nextImg.classList.add('next');
-      container.appendChild(nextImg);
+      if (overlay) {
+        container.insertBefore(nextImg, overlay);
+      } else {
+        container.appendChild(nextImg);
+      }
       requestAnimationFrame(() => {
         prevImg.classList.add('slide-out-left');
         nextImg.classList.add('slide-in-right');
