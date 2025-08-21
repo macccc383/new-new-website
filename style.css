@@ -181,8 +181,8 @@ main {
   gap: 1rem;
 }
 
-.story-content img {
-  max-width: 200px;
+.story-content .ken-portrait {
+  width: 100px;
   height: auto;
   flex-shrink: 0;
 }
