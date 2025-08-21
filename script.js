@@ -93,9 +93,18 @@ function setLanguage(lang) {
 function initLanguage() {
   const saved = localStorage.getItem('lang') || 'en';
   const select = document.getElementById('language-select');
+  const toggle = document.getElementById('language-toggle');
   if (select) {
     select.value = saved;
-    select.addEventListener('change', e => setLanguage(e.target.value));
+    select.addEventListener('change', e => {
+      setLanguage(e.target.value);
+      select.classList.add('hidden');
+    });
+  }
+  if (toggle && select) {
+    toggle.addEventListener('click', () => {
+      select.classList.toggle('hidden');
+    });
   }
   setLanguage(saved);
 }
@@ -107,9 +116,14 @@ function initTheme() {
   }
   const toggle = document.getElementById('theme-toggle');
   if (toggle) {
+    const updateIcon = () => {
+      toggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+    };
+    updateIcon();
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-theme');
       localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+      updateIcon();
     });
   }
 }
