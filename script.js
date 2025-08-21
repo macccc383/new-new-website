@@ -222,8 +222,10 @@ function initAnimations() {
 function initCarousel() {
   const body = document.body;
   if (body.classList.contains('device-phone')) {
-    const img = document.querySelector('.center-item img');
-    if (!img) return;
+    const container = document.querySelector('.center-item');
+    if (!container) return;
+    let currentImg = container.querySelector('img');
+    if (!currentImg) return;
     const mobileImages = [
       'images/carousel1.jpg',
       'images/carousel2.jpg',
@@ -232,52 +234,81 @@ function initCarousel() {
       'images/carousel5.jpg'
     ];
     let index = 0;
-    function showImage(i) {
-      img.src = mobileImages[i];
-      if (img.complete) {
-        updateOverlayColor();
-      } else {
-        img.addEventListener('load', updateOverlayColor, { once: true });
+    function showImage(i, instant = false) {
+      if (instant) {
+        currentImg.src = mobileImages[i];
+        if (currentImg.complete) {
+          updateOverlayColor();
+        } else {
+          currentImg.addEventListener('load', updateOverlayColor, { once: true });
+        }
+        return;
       }
+      const nextImg = document.createElement('img');
+      nextImg.src = mobileImages[i];
+      nextImg.classList.add('next');
+      container.appendChild(nextImg);
+      requestAnimationFrame(() => {
+        currentImg.classList.add('slide-out-left');
+        nextImg.classList.add('slide-in-right');
+      });
+      currentImg.addEventListener('transitionend', () => currentImg.remove(), { once: true });
+      nextImg.addEventListener('transitionend', () => {
+        nextImg.classList.remove('next', 'slide-in-right');
+        currentImg = nextImg;
+        updateOverlayColor();
+      }, { once: true });
     }
-    showImage(index);
+    showImage(index, true);
     setInterval(() => {
-      img.classList.add('fade');
-      setTimeout(() => {
-        index = (index + 1) % mobileImages.length;
-        showImage(index);
-        img.classList.remove('fade');
-      }, 1000);
+      index = (index + 1) % mobileImages.length;
+      showImage(index);
     }, 5000);
     return;
   }
-  const images = Array.from(document.querySelectorAll('.image-item img'));
-  if (!images.length) return;
+  const items = Array.from(document.querySelectorAll('.image-item'));
+  if (!items.length) return;
   const imageSets = [
     ['images/carousel1.jpg', 'images/carousel2.jpg', 'images/carousel3.jpg'],
     ['images/carousel4.jpg', 'images/carousel5.jpg', 'images/carousel1.jpg']
   ];
   let index = 0;
-  function showSet(i) {
-    images.forEach((img, idx) => {
-      img.src = imageSets[i][idx];
-    });
-    if (images[1]) {
-      if (images[1].complete) {
-        updateOverlayColor();
-      } else {
-        images[1].addEventListener('load', updateOverlayColor, { once: true });
+  function showSet(i, instant = false) {
+    items.forEach((item, idx) => {
+      const currentImg = item.querySelector('img');
+      if (!currentImg) return;
+      if (instant) {
+        currentImg.src = imageSets[i][idx];
+        if (item === items[1]) {
+          if (currentImg.complete) {
+            updateOverlayColor();
+          } else {
+            currentImg.addEventListener('load', updateOverlayColor, { once: true });
+          }
+        }
+        return;
       }
-    }
+      const nextImg = document.createElement('img');
+      nextImg.src = imageSets[i][idx];
+      nextImg.classList.add('next');
+      item.appendChild(nextImg);
+      requestAnimationFrame(() => {
+        currentImg.classList.add('slide-out-left');
+        nextImg.classList.add('slide-in-right');
+      });
+      currentImg.addEventListener('transitionend', () => currentImg.remove(), { once: true });
+      nextImg.addEventListener('transitionend', () => {
+        nextImg.classList.remove('next', 'slide-in-right');
+        if (item === items[1]) {
+          updateOverlayColor();
+        }
+      }, { once: true });
+    });
   }
-  showSet(index);
+  showSet(index, true);
   setInterval(() => {
-    images.forEach(img => img.classList.add('fade'));
-    setTimeout(() => {
-      index = (index + 1) % imageSets.length;
-      showSet(index);
-      images.forEach(img => img.classList.remove('fade'));
-    }, 1000);
+    index = (index + 1) % imageSets.length;
+    showSet(index);
   }, 5000);
 }
 
