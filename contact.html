@@ -13,19 +13,21 @@
 <body>
   <nav class="animate">
     <div class="logo">Kentack</div>
-    <div>
+    <div class="nav-links">
       <a href="index.html" data-i18n="nav_home">Home</a>
       <a href="products.html" data-i18n="nav_products">Products</a>
       <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="controls">
-      <label for="language-select" data-i18n="language_label">Language</label>
-      <select id="language-select">
-        <option value="en">English</option>
-        <option value="vi">Tiếng Việt</option>
-        <option value="ja">日本語</option>
-      </select>
-      <button id="theme-toggle" data-i18n="theme_toggle">Toggle Theme</button>
+      <div class="language-dropdown">
+        <button id="language-toggle" aria-label="Language">🌐</button>
+        <select id="language-select" class="hidden">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
     </div>
   </nav>
 
