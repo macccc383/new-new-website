@@ -5,8 +5,9 @@ const translations = {
     nav_contact: 'Contact',
     theme_toggle: 'Toggle Theme',
     language_label: 'Language',
-    home_title: 'Luxury Golf Experience',
+    home_title: 'Kentack Luxury Golf Experience',
     home_desc: 'Discover high-end golf gear for champions.',
+    hero_cta: 'Shop Now',
     products_title: 'Our Products',
     product1_name: 'Elite Golf Clubs',
     product1_desc: 'Precision-crafted clubs for superior performance.',
@@ -23,8 +24,9 @@ const translations = {
     nav_contact: 'Liên hệ',
     theme_toggle: 'Đổi chủ đề',
     language_label: 'Ngôn ngữ',
-    home_title: 'Trải nghiệm Golf Sang Trọng',
+    home_title: 'Kentack - Trải nghiệm Golf Sang Trọng',
     home_desc: 'Khám phá thiết bị golf cao cấp dành cho nhà vô địch.',
+    hero_cta: 'Mua Ngay',
     products_title: 'Sản phẩm của chúng tôi',
     product1_name: 'Gậy Golf Đẳng Cấp',
     product1_desc: 'Gậy được chế tác chính xác cho hiệu suất vượt trội.',
@@ -41,8 +43,9 @@ const translations = {
     nav_contact: 'お問い合わせ',
     theme_toggle: 'テーマ切替',
     language_label: '言語',
-    home_title: 'ラグジュアリーなゴルフ体験',
+    home_title: 'Kentack ラグジュアリーなゴルフ体験',
     home_desc: 'チャンピオンのための高級ゴルフ用品を見つけましょう。',
+    hero_cta: '今すぐ購入',
     products_title: '製品一覧',
     product1_name: 'エリートゴルフクラブ',
     product1_desc: '卓越したパフォーマンスのために精密に作られたクラブ。',
@@ -90,7 +93,21 @@ function initTheme() {
   }
 }
 
+function initAnimations() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
+  initAnimations();
 });
