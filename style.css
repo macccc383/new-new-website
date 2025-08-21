@@ -322,7 +322,8 @@ h1, h2 {
   top: 0;
   left: 0;
   transform: translateX(0);
-  transition: transform 1s ease;
+  transition: transform 0.75s ease-in-out;
+  will-change: transform;
 }
 
 .image-item img.next {
@@ -344,6 +345,7 @@ h1, h2 {
   transform: translate(-50%, -50%);
   color: var(--overlay-color);
   text-align: center;
+  z-index: 1;
 }
 
 .overlay-link {

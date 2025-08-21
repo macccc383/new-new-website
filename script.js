@@ -226,6 +226,7 @@ function initCarousel() {
     items.forEach((item, idx) => {
       const currentImg = item.querySelector('img');
       if (!currentImg) return;
+      const overlay = item.querySelector('.overlay');
       if (instant) {
         currentImg.src = imageSets[i][idx];
         if (item === items[1]) {
@@ -240,7 +241,11 @@ function initCarousel() {
       const nextImg = document.createElement('img');
       nextImg.src = imageSets[i][idx];
       nextImg.classList.add('next');
-      item.appendChild(nextImg);
+      if (overlay) {
+        item.insertBefore(nextImg, overlay);
+      } else {
+        item.appendChild(nextImg);
+      }
       requestAnimationFrame(() => {
         currentImg.classList.add('slide-out-left');
         nextImg.classList.add('slide-in-right');
