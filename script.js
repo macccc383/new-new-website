@@ -157,9 +157,26 @@ function initCarousel() {
   }, 5000);
 }
 
+function initNavScroll() {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  const navHeight = nav.offsetHeight;
+  let lastScroll = window.pageYOffset;
+  window.addEventListener('scroll', () => {
+    const current = window.pageYOffset;
+    if (current > lastScroll) {
+      nav.style.top = `-${navHeight}px`;
+    } else {
+      nav.style.top = '0';
+    }
+    lastScroll = current;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
   initAnimations();
   initCarousel();
+  initNavScroll();
 });
