@@ -40,8 +40,13 @@ nav {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--accent-color);
-  transition: top 0.3s;
+  transform: translateY(0);
+  transition: transform 0.3s;
   z-index: 1000;
+}
+
+nav.nav-hidden {
+  transform: translateY(-100%);
 }
 
 .dark-theme nav {
@@ -352,6 +357,18 @@ body.device-phone .nav-links {
 
 body.device-phone .controls {
   margin-top: 0.5rem;
+}
+
+body.device-phone .image-wrapper {
+  display: block;
+}
+
+body.device-phone .image-item {
+  flex: none;
+}
+
+body.device-phone .image-item:not(.center-item) {
+  display: none;
 }
 
 body.device-phone .image-item img {

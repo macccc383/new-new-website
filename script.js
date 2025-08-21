@@ -220,15 +220,44 @@ function initAnimations() {
 }
 
 function initCarousel() {
+  const body = document.body;
+  if (body.classList.contains('device-phone')) {
+    const img = document.querySelector('.center-item img');
+    if (!img) return;
+    const mobileImages = [
+      'images/carousel1.jpg',
+      'images/carousel2.jpg',
+      'images/carousel3.jpg',
+      'images/carousel4.jpg',
+      'images/carousel5.jpg'
+    ];
+    let index = 0;
+    function showImage(i) {
+      img.src = mobileImages[i];
+      if (img.complete) {
+        updateOverlayColor();
+      } else {
+        img.addEventListener('load', updateOverlayColor, { once: true });
+      }
+    }
+    showImage(index);
+    setInterval(() => {
+      img.classList.add('fade');
+      setTimeout(() => {
+        index = (index + 1) % mobileImages.length;
+        showImage(index);
+        img.classList.remove('fade');
+      }, 1000);
+    }, 5000);
+    return;
+  }
   const images = Array.from(document.querySelectorAll('.image-item img'));
   if (!images.length) return;
   const imageSets = [
     ['images/carousel1.jpg', 'images/carousel2.jpg', 'images/carousel3.jpg'],
     ['images/carousel4.jpg', 'images/carousel5.jpg', 'images/carousel1.jpg']
   ];
-
   let index = 0;
-
   function showSet(i) {
     images.forEach((img, idx) => {
       img.src = imageSets[i][idx];
@@ -241,9 +270,7 @@ function initCarousel() {
       }
     }
   }
-
   showSet(index);
-
   setInterval(() => {
     images.forEach(img => img.classList.add('fade'));
     setTimeout(() => {
@@ -261,14 +288,13 @@ function updateOverlayColor() {
 function initNavScroll() {
   const nav = document.querySelector('nav');
   if (!nav) return;
-  const navHeight = nav.offsetHeight;
   let lastScroll = window.pageYOffset;
   window.addEventListener('scroll', () => {
     const current = window.pageYOffset;
     if (current > lastScroll) {
-      nav.style.top = `-${navHeight}px`;
+      nav.classList.add('nav-hidden');
     } else {
-      nav.style.top = '0';
+      nav.classList.remove('nav-hidden');
     }
     lastScroll = current;
   });
@@ -372,8 +398,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
   initAnimations();
+  initDeviceDetection();
   initCarousel();
   initNavScroll();
-  initDeviceDetection();
   initProducts();
 });
