@@ -78,7 +78,7 @@ const translations = {
     category_accessories: 'Phụ kiện',
     club_woods: 'Gậy gỗ',
     club_irons: 'Gậy sắt',
-    club_hybrids: 'Gậy lai',
+    club_hybrids: 'gậy hybrid',
     club_wedges: 'Gậy wedge',
     club_putters: 'Gậy putter',
     view_4x4: '4 x 4',
@@ -309,11 +309,22 @@ function initProducts() {
   if (!grid) return;
   renderProducts();
 
+  const clubDropdown = document.getElementById('club-dropdown');
+  const clubsBtn = document.querySelector('.category-btn[data-category="clubs"]');
+  if (clubDropdown && clubsBtn) {
+    clubsBtn.addEventListener('click', () => {
+      clubDropdown.classList.toggle('hidden');
+    });
+  }
+
   document.querySelectorAll('.category-btn').forEach(btn => {
     const category = btn.dataset.category;
     if (category !== 'clubs') {
       btn.addEventListener('click', () => {
         renderProducts({ category });
+        if (clubDropdown) {
+          clubDropdown.classList.add('hidden');
+        }
       });
     }
   });
@@ -322,6 +333,9 @@ function initProducts() {
     btn.addEventListener('click', () => {
       const type = btn.dataset.type;
       renderProducts({ category: 'clubs', type });
+      if (clubDropdown) {
+        clubDropdown.classList.add('hidden');
+      }
     });
   });
 
