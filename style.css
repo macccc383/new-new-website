@@ -108,7 +108,7 @@ nav a:hover::after {
   margin-bottom: 2rem;
 }
 
- .product {
+.product {
   border: 1px solid var(--accent-color);
   padding: 1rem;
   margin: 0;
