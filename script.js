@@ -20,6 +20,31 @@ const translations = {
     product3_name: 'DragonEyes Putter',
     product3_desc: 'Artisan putter with detailed engraving.',
     product3_price: '$600',
+    category_clubs: 'Clubs',
+    category_bags: 'Bags',
+    category_balls: 'Balls',
+    category_tees: 'Tees',
+    category_accessories: 'Accessories',
+    club_woods: 'Woods',
+    club_irons: 'Irons',
+    club_hybrids: 'Hybrids',
+    club_wedges: 'Wedges',
+    club_putters: 'Putters',
+    view_4x4: '4 x 4',
+    view_5x5: '5 x 5',
+    no_products: 'No products available.',
+    product_bag_name: 'Leather Golf Bag',
+    product_bag_desc: 'Premium leather bag for style and durability.',
+    product_bag_price: '$500',
+    product_balls_name: 'Premium Golf Balls',
+    product_balls_desc: 'Set of 12 high-performance balls.',
+    product_balls_price: '$60',
+    product_tees_name: 'Luxury Tees Pack',
+    product_tees_desc: 'Gold-plated tees for perfect drives.',
+    product_tees_price: '$40',
+    product_accessory_name: 'Gold Ball Marker',
+    product_accessory_desc: 'Elegant marker with Kentack logo.',
+    product_accessory_price: '$25',
     contact_title: 'Contact Us',
     contact_phone: 'Phone: 0899033692',
     contact_location_title: 'Location',
@@ -46,6 +71,31 @@ const translations = {
     product3_name: 'Gậy Putter DragonEyes',
     product3_desc: 'Gậy putter thủ công với chạm khắc tinh xảo.',
     product3_price: '600 USD',
+    category_clubs: 'Gậy',
+    category_bags: 'Túi',
+    category_balls: 'Bóng',
+    category_tees: 'Tee',
+    category_accessories: 'Phụ kiện',
+    club_woods: 'Gậy gỗ',
+    club_irons: 'Gậy sắt',
+    club_hybrids: 'Gậy lai',
+    club_wedges: 'Gậy wedge',
+    club_putters: 'Gậy putter',
+    view_4x4: '4 x 4',
+    view_5x5: '5 x 5',
+    no_products: 'Không có sản phẩm.',
+    product_bag_name: 'Túi Golf Da',
+    product_bag_desc: 'Túi da cao cấp bền bỉ và phong cách.',
+    product_bag_price: '500 USD',
+    product_balls_name: 'Bóng Golf Cao Cấp',
+    product_balls_desc: 'Bộ 12 bóng hiệu suất cao.',
+    product_balls_price: '60 USD',
+    product_tees_name: 'Bộ Tee Sang Trọng',
+    product_tees_desc: 'Tee mạ vàng cho cú đánh hoàn hảo.',
+    product_tees_price: '40 USD',
+    product_accessory_name: 'Dấu Bóng Vàng',
+    product_accessory_desc: 'Dấu bóng thanh lịch với logo Kentack.',
+    product_accessory_price: '25 USD',
     contact_title: 'Liên hệ với chúng tôi',
     contact_phone: 'Điện thoại: 0899033692',
     contact_location_title: 'Địa chỉ',
@@ -72,6 +122,31 @@ const translations = {
     product3_name: 'ドラゴンアイズパター',
     product3_desc: '精巧な彫刻入りのパター。',
     product3_price: '600ドル',
+    category_clubs: 'クラブ',
+    category_bags: 'バッグ',
+    category_balls: 'ボール',
+    category_tees: 'ティー',
+    category_accessories: 'アクセサリー',
+    club_woods: 'ウッド',
+    club_irons: 'アイアン',
+    club_hybrids: 'ハイブリッド',
+    club_wedges: 'ウェッジ',
+    club_putters: 'パター',
+    view_4x4: '4 x 4',
+    view_5x5: '5 x 5',
+    no_products: '商品がありません。',
+    product_bag_name: 'レザーゴルフバッグ',
+    product_bag_desc: 'スタイルと耐久性を兼ね備えた高級レザーバッグ。',
+    product_bag_price: '500ドル',
+    product_balls_name: 'プレミアムゴルフボール',
+    product_balls_desc: '高性能ボール12個セット。',
+    product_balls_price: '60ドル',
+    product_tees_name: 'ラグジュアリーティーセット',
+    product_tees_desc: '完璧なショットのための金メッキティー。',
+    product_tees_price: '40ドル',
+    product_accessory_name: 'ゴールドボールマーカー',
+    product_accessory_desc: 'Kentackロゴ入りのエレガントなマーカー。',
+    product_accessory_price: '25ドル',
     contact_title: 'お問い合わせ',
     contact_phone: '電話: 0899033692',
     contact_location_title: '住所',
@@ -196,10 +271,72 @@ function initNavScroll() {
   });
 }
 
+const productData = [];
+
+function renderProducts(filter = {}) {
+  const grid = document.getElementById('product-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const lang = document.documentElement.lang || 'en';
+  const items = productData.filter(p => {
+    if (filter.category && p.category !== filter.category) return false;
+    if (filter.type && p.type !== filter.type) return false;
+    return true;
+  });
+  if (!items.length) {
+    const msg = document.createElement('p');
+    msg.setAttribute('data-i18n', 'no_products');
+    msg.textContent = translations[lang].no_products;
+    grid.appendChild(msg);
+    return;
+  }
+  items.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'product animate';
+    div.innerHTML = `
+      <img src="${p.image}" alt="" class="product-image" loading="lazy">
+      <h2 data-i18n="${p.nameKey}">${translations[lang][p.nameKey]}</h2>
+      <p data-i18n="${p.descKey}">${translations[lang][p.descKey]}</p>
+      <p class="price" data-i18n="${p.priceKey}">${translations[lang][p.priceKey]}</p>
+    `;
+    grid.appendChild(div);
+  });
+  initAnimations();
+}
+
+function initProducts() {
+  const grid = document.getElementById('product-grid');
+  if (!grid) return;
+  renderProducts();
+
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category;
+      renderProducts({ category });
+    });
+  });
+
+  document.querySelectorAll('.club-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.dataset.type;
+      renderProducts({ category: 'clubs', type });
+    });
+  });
+
+  const viewSelect = document.getElementById('view-select');
+  if (viewSelect) {
+    viewSelect.addEventListener('change', e => {
+      grid.classList.remove('grid-4', 'grid-5');
+      grid.classList.add(`grid-${e.target.value}`);
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
   initAnimations();
   initCarousel();
   initNavScroll();
+  initProducts();
 });

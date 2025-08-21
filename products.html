@@ -33,26 +33,27 @@
 
   <main>
     <h1 class="animate" data-i18n="products_title">Our Products</h1>
-    <div class="product-grid">
-      <div class="product animate">
-        <img src="images/irons.svg" alt="Golden Irons" class="product-image" loading="lazy">
-        <h2 data-i18n="product1_name">Golden Irons Set</h2>
-        <p data-i18n="product1_desc">Complete set of handcrafted gold-plated irons.</p>
-        <p class="price" data-i18n="product1_price">$1,200</p>
+    <div class="filter-bar animate">
+      <div class="categories">
+        <button class="category-btn" data-category="clubs" data-i18n="category_clubs">Clubs</button>
+        <div id="club-dropdown">
+          <button class="club-btn" data-type="woods" data-i18n="club_woods">Woods</button>
+          <button class="club-btn" data-type="irons" data-i18n="club_irons">Irons</button>
+          <button class="club-btn" data-type="hybrids" data-i18n="club_hybrids">Hybrids</button>
+          <button class="club-btn" data-type="wedges" data-i18n="club_wedges">Wedges</button>
+          <button class="club-btn" data-type="putters" data-i18n="club_putters">Putters</button>
+        </div>
+        <button class="category-btn" data-category="bags" data-i18n="category_bags">Bags</button>
+        <button class="category-btn" data-category="balls" data-i18n="category_balls">Balls</button>
+        <button class="category-btn" data-category="tees" data-i18n="category_tees">Tees</button>
+        <button class="category-btn" data-category="accessories" data-i18n="category_accessories">Accessories</button>
       </div>
-      <div class="product animate">
-        <img src="images/driver.svg" alt="Golden Driver" class="product-image" loading="lazy">
-        <h2 data-i18n="product2_name">Golden Driver</h2>
-        <p data-i18n="product2_desc">Precision driver with gold finish.</p>
-        <p class="price" data-i18n="product2_price">$800</p>
-      </div>
-      <div class="product animate">
-        <img src="images/putter.svg" alt="DragonEyes Putter" class="product-image" loading="lazy">
-        <h2 data-i18n="product3_name">DragonEyes Putter</h2>
-        <p data-i18n="product3_desc">Artisan putter with detailed engraving.</p>
-        <p class="price" data-i18n="product3_price">$600</p>
-      </div>
+      <select id="view-select">
+        <option value="4" data-i18n="view_4x4">4 x 4</option>
+        <option value="5" data-i18n="view_5x5">5 x 5</option>
+      </select>
     </div>
+    <div id="product-grid" class="product-grid grid-4"></div>
   </main>
 
   <script src="script.js"></script>
