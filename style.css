@@ -336,4 +336,47 @@ h1, h2 {
   padding-bottom: 4px;
 }
 
+/* Responsive styles for device-specific layouts */
+body.device-phone nav {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+body.device-phone .nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+body.device-phone .controls {
+  margin-top: 0.5rem;
+}
+
+body.device-phone .image-item img {
+  height: 40vh;
+}
+
+body.device-phone .product-grid.grid-4,
+body.device-phone .product-grid.grid-5 {
+  grid-template-columns: 1fr;
+}
+
+body.device-tablet .product-grid.grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+body.device-tablet .product-grid.grid-5 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+body.device-desktop .product-grid.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+body.device-desktop .product-grid.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 
