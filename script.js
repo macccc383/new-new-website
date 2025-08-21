@@ -187,15 +187,16 @@ function initCarousel() {
         }
         return;
       }
+      const prevImg = currentImg;
       const nextImg = document.createElement('img');
       nextImg.src = mobileImages[i];
       nextImg.classList.add('next');
       container.appendChild(nextImg);
       requestAnimationFrame(() => {
-        currentImg.classList.add('slide-out-left');
+        prevImg.classList.add('slide-out-left');
         nextImg.classList.add('slide-in-right');
       });
-      currentImg.addEventListener('transitionend', () => currentImg.remove(), { once: true });
+      prevImg.addEventListener('transitionend', () => prevImg.remove(), { once: true });
       nextImg.addEventListener('transitionend', () => {
         nextImg.classList.remove('next', 'slide-in-right');
         currentImg = nextImg;
