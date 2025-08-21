@@ -274,6 +274,23 @@ function initNavScroll() {
   });
 }
 
+function initDeviceDetection() {
+  const body = document.body;
+  function updateDevice() {
+    const width = window.innerWidth;
+    body.classList.remove('device-phone', 'device-tablet', 'device-desktop');
+    if (width <= 600) {
+      body.classList.add('device-phone');
+    } else if (width <= 992) {
+      body.classList.add('device-tablet');
+    } else {
+      body.classList.add('device-desktop');
+    }
+  }
+  updateDevice();
+  window.addEventListener('resize', updateDevice);
+}
+
 const productData = [];
 
 function renderProducts(filter = {}) {
@@ -357,5 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimations();
   initCarousel();
   initNavScroll();
+  initDeviceDetection();
   initProducts();
 });
