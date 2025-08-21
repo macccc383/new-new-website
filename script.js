@@ -80,7 +80,7 @@ const translations = {
     category_accessories: 'Phụ kiện',
     club_woods: 'Gậy gỗ',
     club_irons: 'Gậy sắt',
-    club_hybrids: 'gậy hybrid',
+    club_hybrids: 'Gậy hybrid',
     club_wedges: 'Gậy wedge',
     club_putters: 'Gậy putter',
     view_4x4: '4 x 4',
