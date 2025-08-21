@@ -4,6 +4,7 @@
   --accent-color: #ffd700;
   --font-family: 'Montserrat', sans-serif;
   --heading-font: 'Playfair Display', serif;
+  --overlay-color: #ffffff;
 }
 
 html {
@@ -219,14 +220,14 @@ h1, h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #ffffff;
+  color: var(--overlay-color);
   text-align: center;
 }
 
 .overlay-link {
-  color: #ffffff;
+  color: var(--overlay-color);
   text-decoration: none;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid var(--overlay-color);
   padding-bottom: 4px;
 }
 
