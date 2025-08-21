@@ -94,6 +94,9 @@ const translations = {
   }
 };
 
+let carouselInterval;
+let currentDevice;
+
 function setLanguage(lang) {
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
@@ -163,10 +166,15 @@ function initAnimations() {
 }
 
 function initCarousel() {
+  if (carouselInterval) {
+    clearInterval(carouselInterval);
+    carouselInterval = null;
+  }
   const body = document.body;
   if (body.classList.contains('device-phone')) {
     const container = document.querySelector('.center-item');
     if (!container) return;
+    container.querySelectorAll('img:not(:first-child)').forEach(img => img.remove());
     let currentImg = container.querySelector('img');
     if (!currentImg) return;
     const overlay = container.querySelector('.overlay');
@@ -209,7 +217,7 @@ function initCarousel() {
       }, { once: true });
     }
     showImage(index, true);
-    setInterval(() => {
+    carouselInterval = setInterval(() => {
       index = (index + 1) % mobileImages.length;
       showImage(index);
     }, 5000);
@@ -217,6 +225,10 @@ function initCarousel() {
   }
   const items = Array.from(document.querySelectorAll('.image-item'));
   if (!items.length) return;
+  items.forEach(item => {
+    const imgs = item.querySelectorAll('img');
+    imgs.forEach((img, idx) => { if (idx > 0) img.remove(); });
+  });
   const imageSets = [
     ['images/carousel1.jpg', 'images/carousel2.jpg', 'images/carousel3.jpg'],
     ['images/carousel4.jpg', 'images/carousel5.jpg', 'images/carousel1.jpg']
@@ -260,7 +272,7 @@ function initCarousel() {
     });
   }
   showSet(index, true);
-  setInterval(() => {
+  carouselInterval = setInterval(() => {
     index = (index + 1) % imageSets.length;
     showSet(index);
   }, 5000);
@@ -309,13 +321,19 @@ function initDeviceDetection() {
   const body = document.body;
   function updateDevice() {
     const width = window.innerWidth;
-    body.classList.remove('device-phone', 'device-tablet', 'device-desktop');
+    let newDevice;
     if (width <= 600) {
-      body.classList.add('device-phone');
+      newDevice = 'device-phone';
     } else if (width <= 992) {
-      body.classList.add('device-tablet');
+      newDevice = 'device-tablet';
     } else {
-      body.classList.add('device-desktop');
+      newDevice = 'device-desktop';
+    }
+    if (currentDevice !== newDevice) {
+      body.classList.remove('device-phone', 'device-tablet', 'device-desktop');
+      body.classList.add(newDevice);
+      currentDevice = newDevice;
+      initCarousel();
     }
   }
   updateDevice();
@@ -405,7 +423,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initAnimations();
   initDeviceDetection();
-  initCarousel();
   initNavScroll();
   initProducts();
 });
