@@ -1,8 +1,9 @@
 :root {
-  --bg-color: #000000;
-  --text-color: #ffffff;
-  --accent-color: #ffd700;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #000000;
   --font-family: 'Montserrat', sans-serif;
+  --heading-font: 'Playfair Display', serif;
 }
 
 html {
@@ -19,10 +20,10 @@ body {
   transition: background-color 0.5s, color 0.5s;
 }
 
-.light-theme {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --accent-color: #ffd700;
+.dark-theme {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --accent-color: #ffffff;
 }
 
 nav {
@@ -31,11 +32,11 @@ nav {
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--bg-color);
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 
 nav a {
-  color: var(--accent-color);
+  color: var(--text-color);
   margin-right: 1rem;
   text-decoration: none;
   font-weight: 700;
@@ -50,7 +51,7 @@ nav a::after {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: var(--accent-color);
+  background: var(--text-color);
   transition: width 0.3s;
 }
 
@@ -70,7 +71,8 @@ nav a:hover::after {
 
 #language-select, #theme-toggle {
   padding: 0.3rem 0.5rem;
-  background-color: var(--accent-color);
+  background-color: var(--text-color);
+  color: var(--bg-color);
   border: none;
   cursor: pointer;
   font-weight: 700;
@@ -78,22 +80,32 @@ nav a:hover::after {
 
 .logo {
   font-size: 1.5rem;
-  animation: glow 3s ease-in-out infinite alternate;
+  font-family: var(--heading-font);
 }
 
 .hero {
   text-align: center;
-  padding: 5rem 1rem;
-  background: linear-gradient(135deg, #000000 0%, #333333 100%);
-  background-size: 400% 400%;
-  animation: gradientMove 8s ease infinite;
+  padding: 4rem 1rem;
+  background-color: var(--bg-color);
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
  .product {
   border: 1px solid var(--accent-color);
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
   transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 .product:hover {
@@ -106,14 +118,15 @@ main {
 }
 
 h1, h2 {
-  color: var(--accent-color);
+  font-family: var(--heading-font);
+  color: var(--text-color);
 }
 
 .btn-primary {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background: var(--accent-color);
+  background: var(--text-color);
   color: var(--bg-color);
   text-decoration: none;
   font-weight: 700;
@@ -137,16 +150,6 @@ h1, h2 {
   transform: translateY(0);
 }
 
-@keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 5px var(--accent-color); }
-  to { text-shadow: 0 0 20px var(--accent-color); }
-}
 
 @keyframes bodyFade {
   from { opacity: 0; }
