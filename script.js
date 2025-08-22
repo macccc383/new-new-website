@@ -317,6 +317,18 @@ function initNavScroll() {
   });
 }
 
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('nav');
+  if (!menuToggle || !nav) return;
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => nav.classList.remove('open'));
+  });
+}
+
 function initDeviceDetection() {
   const body = document.body;
   function updateDevice() {
@@ -334,6 +346,8 @@ function initDeviceDetection() {
       body.classList.add(newDevice);
       currentDevice = newDevice;
       initCarousel();
+      const nav = document.querySelector('nav');
+      if (nav) nav.classList.remove('open');
     }
   }
   updateDevice();
@@ -423,6 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initAnimations();
   initDeviceDetection();
+  initMobileMenu();
   initNavScroll();
   initProducts();
 });
