@@ -303,7 +303,7 @@ function updateOverlayColor() {
 
 function initNavScroll() {
   const nav = document.querySelector('nav');
-  if (!nav) return;
+  if (!nav || document.body.classList.contains('device-phone')) return;
   let lastScroll = window.pageYOffset;
   window.addEventListener('scroll', () => {
     const current = window.pageYOffset;

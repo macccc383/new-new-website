@@ -388,6 +388,11 @@ body.device-phone #menu-toggle {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+body.device-phone #menu-toggle span {
+  background: #ffffff;
+  width: 70%;
+}
+
 body.device-phone nav {
   display: none;
   flex-direction: column;
@@ -436,6 +441,10 @@ body.device-phone .image-wrapper {
 body.device-phone .image-item {
   flex: none;
   height: 100vh;
+}
+
+body.device-phone .image-item img {
+  object-fit: contain;
 }
 
 body.device-phone .image-item:not(.center-item) {
