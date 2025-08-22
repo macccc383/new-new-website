@@ -389,8 +389,11 @@ body.device-phone #menu-toggle {
 }
 
 body.device-phone #menu-toggle span {
-  background: #ffffff;
   width: 70%;
+  height: 3px;
+  margin: 4px auto;
+  background-color: #ffffff;
+  border-radius: 2px;
 }
 
 body.device-phone nav {
@@ -444,7 +447,9 @@ body.device-phone .image-item {
 }
 
 body.device-phone .image-item img {
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 body.device-phone .image-item:not(.center-item) {
