@@ -182,7 +182,6 @@ function initCarousel() {
       'images/carousel1.jpg',
       'images/carousel2.jpg',
       'images/carousel3.jpg',
-      'images/carousel4.jpg',
       'images/carousel5.jpg'
     ];
     let index = 0;
