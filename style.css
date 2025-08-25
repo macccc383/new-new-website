@@ -373,11 +373,12 @@ h1, h2 {
   padding-bottom: 4px;
 }
 
+
 .product-intro {
   position: relative;
-  height: 50vh;
+  height: 100vh;
   overflow: hidden;
-  margin-top: 2rem;
+  margin: -2rem -2rem 0 -2rem;
 }
 
 .product-intro img {
@@ -388,7 +389,7 @@ h1, h2 {
 
 .intro-content {
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
