@@ -373,6 +373,53 @@ h1, h2 {
   padding-bottom: 4px;
 }
 
+.product-intro {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.product-intro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.intro-content h2 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.intro-content p {
+  margin: 0.5rem 0 1.5rem;
+}
+
+.intro-btn {
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--accent-color);
+  background: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.intro-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  transform: translateY(-3px);
+}
+
 /* Responsive styles for device-specific layouts */
 @media (max-width: 600px) {
   #menu-toggle {

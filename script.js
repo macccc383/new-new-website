@@ -320,6 +320,16 @@ function initNavScroll() {
   });
 }
 
+function initIntroScroll() {
+  const intro = document.getElementById('putter-intro');
+  if (!intro) return;
+  const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+  setTimeout(() => {
+    const top = intro.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }, 500);
+}
+
 function initMobileMenu() {
   const menuToggle = document.getElementById('menu-toggle');
   const nav = document.querySelector('nav');
@@ -443,4 +453,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initNavScroll();
   initProducts();
+  initIntroScroll();
 });
