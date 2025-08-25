@@ -377,6 +377,7 @@ h1, h2 {
   position: relative;
   height: 50vh;
   overflow: hidden;
+  margin-top: 2rem;
 }
 
 .product-intro img {
@@ -391,7 +392,7 @@ h1, h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: var(--accent-color);
+  color: #000;
 }
 
 .intro-content h2 {
@@ -408,7 +409,7 @@ h1, h2 {
   padding: 0.75rem 2rem;
   border: 2px solid var(--accent-color);
   background: transparent;
-  color: var(--accent-color);
+  color: #000;
   cursor: pointer;
   font-weight: 700;
   transition: background 0.3s, color 0.3s, transform 0.3s;
@@ -416,7 +417,7 @@ h1, h2 {
 
 .intro-btn:hover {
   background: var(--accent-color);
-  color: var(--bg-color);
+  color: #000;
   transform: translateY(-3px);
 }
 

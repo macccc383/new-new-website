@@ -324,10 +324,13 @@ function initIntroScroll() {
   const intro = document.getElementById('putter-intro');
   if (!intro) return;
   const navHeight = document.querySelector('nav')?.offsetHeight || 0;
-  setTimeout(() => {
+  window.scrollTo(0, 0);
+  function handleFirstScroll() {
     const top = intro.getBoundingClientRect().top + window.pageYOffset - navHeight;
     window.scrollTo({ top, behavior: 'smooth' });
-  }, 500);
+    window.removeEventListener('scroll', handleFirstScroll);
+  }
+  window.addEventListener('scroll', handleFirstScroll, { once: true });
 }
 
 function initMobileMenu() {
