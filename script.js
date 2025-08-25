@@ -51,7 +51,7 @@ const translations = {
     club_woods: 'Gậy gỗ',
     club_irons: 'Gậy sắt',
     club_hybrids: 'Gậy hybrid',
-    club_wedges: 'Gậy wedge',
+    club_wedges: 'Gậy kĩ thuật',
     club_putters: 'Gậy putter',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
