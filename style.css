@@ -391,11 +391,10 @@ h1, h2 {
 .intro-content {
   position: absolute;
   bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  left: 0;
+  width: 100%;
   text-align: center;
   color: #000;
-  max-width: 200px;
 }
 
 .intro-content h2 {
