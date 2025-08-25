@@ -331,10 +331,31 @@ function initIntroScroll() {
   if (!intro) return;
   const navHeight = document.querySelector('nav')?.offsetHeight || 0;
   window.scrollTo(0, 0);
+  function prevent(e) { e.preventDefault(); }
+  let blocker;
+  function disableInput() {
+    blocker = document.createElement('div');
+    blocker.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;';
+    document.body.appendChild(blocker);
+    ['wheel', 'touchmove'].forEach(evt => window.addEventListener(evt, prevent, { passive: false }));
+    window.addEventListener('keydown', prevent, { passive: false });
+  }
+  function enableInput() {
+    blocker?.remove();
+    ['wheel', 'touchmove'].forEach(evt => window.removeEventListener(evt, prevent, { passive: false }));
+    window.removeEventListener('keydown', prevent, { passive: false });
+  }
   function handleFirstScroll() {
-    const top = intro.getBoundingClientRect().top + window.pageYOffset - navHeight;
-    window.scrollTo({ top, behavior: 'smooth' });
-    window.removeEventListener('scroll', handleFirstScroll);
+    disableInput();
+    const target = intro.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    window.scrollTo({ top: target, behavior: 'smooth' });
+    function checkScroll() {
+      if (window.pageYOffset >= target) {
+        enableInput();
+        window.removeEventListener('scroll', checkScroll);
+      }
+    }
+    window.addEventListener('scroll', checkScroll);
   }
   window.addEventListener('scroll', handleFirstScroll, { once: true });
 }
