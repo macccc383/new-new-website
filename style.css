@@ -319,6 +319,7 @@ h1, h2 {
 .carousel {
   width: 100%;
   overflow: hidden;
+  margin-bottom: 8rem;
 }
 
 .image-wrapper {
@@ -389,11 +390,12 @@ h1, h2 {
 
 .intro-content {
   position: absolute;
-  top: 65%;
-  left: 50%;
+  top: 50%;
+  left: 70%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: #000;
+  max-width: 200px;
 }
 
 .intro-content h2 {
