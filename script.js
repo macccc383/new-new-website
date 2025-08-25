@@ -134,7 +134,11 @@ function initLanguage() {
 }
 
 function initTheme() {
-  const saved = localStorage.getItem('theme');
+  let saved = localStorage.getItem('theme');
+  if (!saved) {
+    saved = 'dark';
+    localStorage.setItem('theme', 'dark');
+  }
   if (saved === 'dark') {
     document.body.classList.add('dark-theme');
   }
