@@ -427,7 +427,7 @@ const productData = [
   }
 ];
 
-let modal, modalImg, modalPrev, modalNext, modalClose;
+let modal, modalContent, modalImg, modalPrev, modalNext, modalClose, modalTitle, modalDesc, modalPrice;
 let modalImages = [];
 let modalIndex = 0;
 let modalTimer;
@@ -435,6 +435,22 @@ let modalTimer;
 function openProductModal(product) {
   modalImages = product.images;
   modalIndex = 0;
+  const lang = document.documentElement.lang || 'en';
+  if (modalTitle) {
+    modalTitle.textContent = translations[lang][product.nameKey];
+    modalTitle.setAttribute('data-i18n', product.nameKey);
+  }
+  if (modalDesc) {
+    modalDesc.textContent = translations[lang][product.descKey];
+    modalDesc.setAttribute('data-i18n', product.descKey);
+  }
+  if (modalPrice) {
+    modalPrice.textContent = translations[lang][product.priceKey];
+    modalPrice.setAttribute('data-i18n', product.priceKey);
+  }
+  if (modalImg) {
+    modalImg.alt = translations[lang][product.nameKey];
+  }
   updateModalImage();
   modal.classList.remove('hidden');
   document.body.classList.add('modal-open');
@@ -451,6 +467,9 @@ function updateModalImage() {
   if (modalImg) {
     modalImg.src = modalImages[modalIndex];
   }
+  if (modalContent) {
+    modalContent.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 function nextModalImage() {
@@ -466,10 +485,14 @@ function prevModalImage() {
 function initProductModal() {
   modal = document.getElementById('product-modal');
   if (!modal) return;
+  modalContent = modal.querySelector('.modal-content');
   modalImg = modal.querySelector('.modal-image');
   modalPrev = modal.querySelector('.prev');
   modalNext = modal.querySelector('.next');
   modalClose = modal.querySelector('.close');
+  modalTitle = modal.querySelector('.modal-title');
+  modalDesc = modal.querySelector('.modal-desc');
+  modalPrice = modal.querySelector('.modal-price');
   if (modalPrev) modalPrev.addEventListener('click', e => { e.stopPropagation(); prevModalImage(); });
   if (modalNext) modalNext.addEventListener('click', e => { e.stopPropagation(); nextModalImage(); });
   if (modalClose) modalClose.addEventListener('click', closeProductModal);

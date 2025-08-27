@@ -61,14 +61,19 @@
     </div>
     <div id="product-grid" class="product-grid grid-4"></div>
   </main>
-  <div id="product-modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <img class="modal-image" src="" alt="">
-      <button class="prev" aria-label="Previous">&#10094;</button>
-      <button class="next" aria-label="Next">&#10095;</button>
+    <div id="product-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="modal-image" src="" alt="">
+        <div class="modal-details">
+          <h2 class="modal-title"></h2>
+          <p class="modal-desc"></p>
+          <p class="modal-price price"></p>
+        </div>
+        <button class="prev" aria-label="Previous">&#10094;</button>
+        <button class="next" aria-label="Next">&#10095;</button>
+      </div>
     </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
