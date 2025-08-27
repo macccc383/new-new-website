@@ -31,7 +31,10 @@ const translations = {
     contact_title: 'Contact Us',
     contact_phone: 'Phone: 0899033692',
     contact_location_title: 'Location',
-    contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam'
+    contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
+    product_kh888_name: 'KH888 Driver',
+    product_kh888_desc: 'High-performance driver.',
+    product_kh888_price: 'Starting from $1,110'
   },
   vi: {
     nav_home: 'Trang chủ',
@@ -65,7 +68,10 @@ const translations = {
     contact_title: 'Liên hệ với chúng tôi',
     contact_phone: 'Điện thoại: 0899033692',
     contact_location_title: 'Địa chỉ',
-    contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam'
+    contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
+    product_kh888_name: 'KH888',
+    product_kh888_desc: 'Gậy driver hiệu suất cao.',
+    product_kh888_price: 'Giá từ 1.110$'
   },
   ja: {
     nav_home: 'ホーム',
@@ -99,7 +105,10 @@ const translations = {
     contact_title: 'お問い合わせ',
     contact_phone: '電話: 0899033692',
     contact_location_title: '住所',
-    contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam'
+    contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
+    product_kh888_name: 'KH888ドライバー',
+    product_kh888_desc: '高性能ドライバー。',
+    product_kh888_price: '1,110ドルから'
   }
 };
 
@@ -400,7 +409,72 @@ function initDeviceDetection() {
   window.addEventListener('resize', updateDevice);
 }
 
-const productData = [];
+const productData = [
+  {
+    id: 'kh888',
+    nameKey: 'product_kh888_name',
+    descKey: 'product_kh888_desc',
+    priceKey: 'product_kh888_price',
+    image: 'DRIVERS/KH888/KH888.jpg',
+    images: [
+      'DRIVERS/KH888/KH888.jpg',
+      'DRIVERS/KH888/163040d2a71f650c8db20e82842ed001.jpg',
+      'DRIVERS/KH888/1bd8db61bfe2d55cc16879b197540a17.jpg',
+      'DRIVERS/KH888/79806404c304699e68660657e00aaa57.jpg'
+    ],
+    category: 'clubs',
+    type: 'drivers'
+  }
+];
+
+let modal, modalImg, modalPrev, modalNext, modalClose;
+let modalImages = [];
+let modalIndex = 0;
+let modalTimer;
+
+function openProductModal(product) {
+  modalImages = product.images;
+  modalIndex = 0;
+  updateModalImage();
+  modal.classList.remove('hidden');
+  document.body.classList.add('modal-open');
+  modalTimer = setInterval(nextModalImage, 3000);
+}
+
+function closeProductModal() {
+  modal.classList.add('hidden');
+  document.body.classList.remove('modal-open');
+  clearInterval(modalTimer);
+}
+
+function updateModalImage() {
+  if (modalImg) {
+    modalImg.src = modalImages[modalIndex];
+  }
+}
+
+function nextModalImage() {
+  modalIndex = (modalIndex + 1) % modalImages.length;
+  updateModalImage();
+}
+
+function prevModalImage() {
+  modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
+  updateModalImage();
+}
+
+function initProductModal() {
+  modal = document.getElementById('product-modal');
+  if (!modal) return;
+  modalImg = modal.querySelector('.modal-image');
+  modalPrev = modal.querySelector('.prev');
+  modalNext = modal.querySelector('.next');
+  modalClose = modal.querySelector('.close');
+  if (modalPrev) modalPrev.addEventListener('click', e => { e.stopPropagation(); prevModalImage(); });
+  if (modalNext) modalNext.addEventListener('click', e => { e.stopPropagation(); nextModalImage(); });
+  if (modalClose) modalClose.addEventListener('click', closeProductModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeProductModal(); });
+}
 
 function renderProducts(filter = {}) {
   const grid = document.getElementById('product-grid');
@@ -429,6 +503,7 @@ function renderProducts(filter = {}) {
       <p data-i18n="${p.descKey}">${translations[lang][p.descKey]}</p>
       <p class="price" data-i18n="${p.priceKey}">${translations[lang][p.priceKey]}</p>
     `;
+    div.addEventListener('click', () => openProductModal(p));
     grid.appendChild(div);
   });
   initAnimations();
@@ -488,4 +563,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavScroll();
   initProducts();
   initIntroScroll();
+  initProductModal();
 });
