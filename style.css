@@ -564,19 +564,39 @@ body.device-desktop .product-grid.grid-5 {
 
 .modal-content {
   position: relative;
-  max-width: 80%;
+  width: 90%;
+  max-width: 600px;
   max-height: 80%;
+  overflow-y: auto;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 8px;
   animation: popIn 0.3s ease;
+}
+
+.modal-image-container {
+  position: relative;
 }
 
 .modal-image {
   width: 100%;
-  height: auto;
+  max-height: 300px;
+  object-fit: contain;
   display: block;
+  margin-bottom: 1rem;
 }
 
-.modal-content .prev,
-.modal-content .next {
+.modal-info {
+  padding: 0.5rem 0;
+}
+
+.modal-price {
+  font-weight: bold;
+}
+
+.modal-image-container .prev,
+.modal-image-container .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -587,11 +607,11 @@ body.device-desktop .product-grid.grid-5 {
   cursor: pointer;
 }
 
-.modal-content .prev {
+.modal-image-container .prev {
   left: 0;
 }
 
-.modal-content .next {
+.modal-image-container .next {
   right: 0;
 }
 
@@ -613,6 +633,15 @@ body.device-desktop .product-grid.grid-5 {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.fade {
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 body.modal-open {
