@@ -603,6 +603,11 @@ body.device-desktop .product-grid.grid-5 {
   font-weight: bold;
 }
 
+.kh888-highlight {
+  color: var(--accent-color);
+  font-size: 2rem;
+}
+
 .modal-image-container .prev,
 .modal-image-container .next {
   position: absolute;

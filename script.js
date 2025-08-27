@@ -72,7 +72,7 @@ const translations = {
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
     product_kh888_name: 'KH888',
     product_kh888_desc: 'Gậy driver hiệu suất cao.',
-    product_kh888_price: 'Giá từ 1.110$',
+    product_kh888_price: 'Giá khởi điểm từ <em>29,000,000 VND</em>',
     product_kh888_details: 'Được chế tạo với crown carbon siêu nhẹ và mặt gậy phay chính xác, KH888 mang lại khoảng cách vượt trội và độ khoan dung ấn tượng. Hosel có thể điều chỉnh cho phép bạn tinh chỉnh loft và lie phù hợp với cú swing, trong khi shaft cao cấp mang lại cảm giác và khả năng kiểm soát tuyệt vời.'
   },
   ja: {
@@ -115,6 +115,8 @@ const translations = {
   }
 };
 
+const htmlI18nKeys = ['product_kh888_price'];
+
 let carouselInterval;
 let currentDevice;
 
@@ -124,7 +126,11 @@ function setLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      if (htmlI18nKeys.includes(key)) {
+        el.innerHTML = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
     }
   });
   document.querySelectorAll('[data-i18n-alt]').forEach(el => {
@@ -442,9 +448,19 @@ function openProductModal(product) {
   modalIndex = 0;
   const lang = document.documentElement.lang || 'en';
   updateModalImage();
-  if (modalTitle) modalTitle.textContent = translations[lang][product.nameKey];
+  if (modalTitle) {
+    modalTitle.textContent = translations[lang][product.nameKey];
+    if (product.id === 'kh888') {
+      modalTitle.classList.add('kh888-highlight');
+    } else {
+      modalTitle.classList.remove('kh888-highlight');
+    }
+  }
   if (modalDesc) modalDesc.textContent = translations[lang][product.descKey];
-  if (modalPrice) modalPrice.textContent = translations[lang][product.priceKey];
+  if (modalPrice) {
+    modalPrice.innerHTML = translations[lang][product.priceKey];
+    modalPrice.setAttribute('data-i18n', product.priceKey);
+  }
   if (modalDetails && product.detailsKey) {
     modalDetails.textContent = translations[lang][product.detailsKey];
   }
@@ -534,9 +550,10 @@ function renderProducts(filter = {}) {
     const div = document.createElement('div');
     div.className = 'product animate';
     const name = translations[lang][p.nameKey];
+    const nameClass = p.id === 'kh888' ? 'kh888-highlight' : '';
     div.innerHTML = `
       <img src="${p.image}" alt="${name}" data-i18n-alt="${p.nameKey}" class="product-image" loading="lazy">
-      <h2 data-i18n="${p.nameKey}">${name}</h2>
+      <h2 data-i18n="${p.nameKey}"${nameClass ? ` class="${nameClass}"` : ''}>${name}</h2>
       <p data-i18n="${p.descKey}">${translations[lang][p.descKey]}</p>
       <p class="price" data-i18n="${p.priceKey}">${translations[lang][p.priceKey]}</p>
     `;
