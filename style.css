@@ -551,7 +551,7 @@ body.device-desktop .product-grid.grid-5 {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -565,7 +565,7 @@ body.device-desktop .product-grid.grid-5 {
 .modal-content {
   position: relative;
   width: 90%;
-  max-width: 600px;
+  max-width: 800px;
   max-height: 80%;
   overflow-y: auto;
   background: var(--bg-color);
@@ -581,10 +581,18 @@ body.device-desktop .product-grid.grid-5 {
 
 .modal-image {
   width: 100%;
-  max-height: 300px;
+  max-height: 500px;
   object-fit: contain;
   display: block;
   margin-bottom: 1rem;
+}
+
+.modal.closing {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+.modal-content.closing {
+  animation: popOut 0.3s ease forwards;
 }
 
 .modal-info {
@@ -635,6 +643,17 @@ body.device-desktop .product-grid.grid-5 {
   }
 }
 
+@keyframes popOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
 .fade {
   animation: fade 0.5s;
 }
@@ -642,6 +661,11 @@ body.device-desktop .product-grid.grid-5 {
 @keyframes fade {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 body.modal-open {
