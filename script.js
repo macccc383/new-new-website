@@ -34,7 +34,8 @@ const translations = {
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
     product_kh888_name: 'KH888 Driver',
     product_kh888_desc: 'High-performance driver.',
-    product_kh888_price: 'Starting from $1,110'
+    product_kh888_price: 'Starting from $1,110',
+    product_kh888_details: 'Engineered with a lightweight carbon crown and precision milled face, the KH888 delivers explosive distance and unmatched forgiveness. Its adjustable hosel lets you fine tune loft and lie for your swing, while premium shafts provide exceptional feel and control. Ideal for players seeking tour-level performance in a handcrafted package.'
   },
   vi: {
     nav_home: 'Trang chủ',
@@ -71,7 +72,8 @@ const translations = {
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
     product_kh888_name: 'KH888',
     product_kh888_desc: 'Gậy driver hiệu suất cao.',
-    product_kh888_price: 'Giá từ 1.110$'
+    product_kh888_price: 'Giá từ 1.110$',
+    product_kh888_details: 'Được chế tạo với crown carbon siêu nhẹ và mặt gậy phay chính xác, KH888 mang lại khoảng cách vượt trội và độ khoan dung ấn tượng. Hosel có thể điều chỉnh cho phép bạn tinh chỉnh loft và lie phù hợp với cú swing, trong khi shaft cao cấp mang lại cảm giác và khả năng kiểm soát tuyệt vời.'
   },
   ja: {
     nav_home: 'ホーム',
@@ -108,7 +110,8 @@ const translations = {
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
     product_kh888_name: 'KH888ドライバー',
     product_kh888_desc: '高性能ドライバー。',
-    product_kh888_price: '1,110ドルから'
+    product_kh888_price: '1,110ドルから',
+    product_kh888_details: '軽量カーボンクラウンと精密に削り出されたフェースを備えたKH888は、驚異的な飛距離と寛容性を発揮します。調整可能なホーゼルによりロフトとライを微調整でき、プレミアムシャフトが卓越したフィーリングとコントロールを提供します。'
   }
 };
 
@@ -415,6 +418,7 @@ const productData = [
     nameKey: 'product_kh888_name',
     descKey: 'product_kh888_desc',
     priceKey: 'product_kh888_price',
+    detailsKey: 'product_kh888_details',
     image: 'DRIVERS/KH888/KH888.jpg',
     images: [
       'DRIVERS/KH888/KH888.jpg',
@@ -428,6 +432,7 @@ const productData = [
 ];
 
 let modal, modalImg, modalPrev, modalNext, modalClose;
+let modalTitle, modalDesc, modalPrice, modalDetails;
 let modalImages = [];
 let modalIndex = 0;
 let modalTimer;
@@ -435,7 +440,14 @@ let modalTimer;
 function openProductModal(product) {
   modalImages = product.images;
   modalIndex = 0;
+  const lang = document.documentElement.lang || 'en';
   updateModalImage();
+  if (modalTitle) modalTitle.textContent = translations[lang][product.nameKey];
+  if (modalDesc) modalDesc.textContent = translations[lang][product.descKey];
+  if (modalPrice) modalPrice.textContent = translations[lang][product.priceKey];
+  if (modalDetails && product.detailsKey) {
+    modalDetails.textContent = translations[lang][product.detailsKey];
+  }
   modal.classList.remove('hidden');
   document.body.classList.add('modal-open');
   modalTimer = setInterval(nextModalImage, 3000);
@@ -449,7 +461,10 @@ function closeProductModal() {
 
 function updateModalImage() {
   if (modalImg) {
+    modalImg.classList.remove('fade');
+    void modalImg.offsetWidth;
     modalImg.src = modalImages[modalIndex];
+    modalImg.classList.add('fade');
   }
 }
 
@@ -470,6 +485,13 @@ function initProductModal() {
   modalPrev = modal.querySelector('.prev');
   modalNext = modal.querySelector('.next');
   modalClose = modal.querySelector('.close');
+  modalTitle = modal.querySelector('.modal-title');
+  modalDesc = modal.querySelector('.modal-desc');
+  modalPrice = modal.querySelector('.modal-price');
+  modalDetails = modal.querySelector('.modal-details');
+  if (modalImg) {
+    modalImg.addEventListener('animationend', () => modalImg.classList.remove('fade'));
+  }
   if (modalPrev) modalPrev.addEventListener('click', e => { e.stopPropagation(); prevModalImage(); });
   if (modalNext) modalNext.addEventListener('click', e => { e.stopPropagation(); nextModalImage(); });
   if (modalClose) modalClose.addEventListener('click', closeProductModal);
