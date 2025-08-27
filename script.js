@@ -19,7 +19,8 @@ const translations = {
     category_balls: 'Balls',
     category_tees: 'Tees',
     category_accessories: 'Accessories',
-    club_woods: 'Woods',
+      club_drivers: 'Drivers',
+      club_woods: 'Woods',
     club_irons: 'Irons',
     club_hybrids: 'Hybrids',
     club_wedges: 'Wedges',
@@ -52,6 +53,7 @@ const translations = {
     category_balls: 'Bóng',
     category_tees: 'Tee',
     category_accessories: 'Phụ kiện',
+    club_drivers: 'Gậy driver',
     club_woods: 'Gậy gỗ',
     club_irons: 'Gậy sắt',
     club_hybrids: 'Gậy hybrid',
@@ -85,6 +87,7 @@ const translations = {
     category_balls: 'ボール',
     category_tees: 'ティー',
     category_accessories: 'アクセサリー',
+    club_drivers: 'ドライバー',
     club_woods: 'ウッド',
     club_irons: 'アイアン',
     club_hybrids: 'ハイブリッド',
@@ -434,7 +437,6 @@ function renderProducts(filter = {}) {
 function initProducts() {
   const grid = document.getElementById('product-grid');
   if (!grid) return;
-  renderProducts();
 
   const clubDropdown = document.getElementById('club-dropdown');
   const clubsBtn = document.querySelector('.category-btn[data-category="clubs"]');
@@ -473,6 +475,8 @@ function initProducts() {
       grid.classList.add(`grid-${e.target.value}`);
     });
   }
+  // Show all products by default
+  renderProducts();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
