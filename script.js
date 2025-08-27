@@ -448,15 +448,30 @@ function openProductModal(product) {
   if (modalDetails && product.detailsKey) {
     modalDetails.textContent = translations[lang][product.detailsKey];
   }
-  modal.classList.remove('hidden');
+  modal.classList.remove('hidden', 'closing');
+  const content = modal.querySelector('.modal-content');
+  if (content) content.classList.remove('closing');
   document.body.classList.add('modal-open');
   modalTimer = setInterval(nextModalImage, 3000);
 }
 
 function closeProductModal() {
-  modal.classList.add('hidden');
-  document.body.classList.remove('modal-open');
+  if (!modal) return;
   clearInterval(modalTimer);
+  const content = modal.querySelector('.modal-content');
+  modal.classList.add('closing');
+  if (content) content.classList.add('closing');
+  const handleAnimationEnd = () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('closing');
+    if (content) content.classList.remove('closing');
+  };
+  if (content) {
+    content.addEventListener('animationend', handleAnimationEnd, { once: true });
+  } else {
+    handleAnimationEnd();
+  }
+  document.body.classList.remove('modal-open');
 }
 
 function updateModalImage() {
