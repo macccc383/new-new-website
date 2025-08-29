@@ -35,7 +35,11 @@ const translations = {
     product_kh888_name: 'KH888 Driver',
     product_kh888_desc: 'High-performance driver.',
     product_kh888_price: 'Starting from $1,110',
-    product_kh888_details: 'Engineered with a lightweight carbon crown and precision milled face, the KH888 delivers explosive distance and unmatched forgiveness. Its adjustable hosel lets you fine tune loft and lie for your swing, while premium shafts provide exceptional feel and control. Ideal for players seeking tour-level performance in a handcrafted package.'
+    product_kh888_details: 'Engineered with a lightweight carbon crown and precision milled face, the KH888 delivers explosive distance and unmatched forgiveness. Its adjustable hosel lets you fine tune loft and lie for your swing, while premium shafts provide exceptional feel and control. Ideal for players seeking tour-level performance in a handcrafted package.',
+    product_kh555_name: 'KH555 Driver',
+    product_kh555_desc: 'Forged precision driver.',
+    product_kh555_price: 'Starting from $555',
+    product_kh555_details: 'Crafted for control and distance, the KH555 blends advanced materials with classic shaping to inspire confidence from the tee.'
   },
   vi: {
     nav_home: 'Trang chủ',
@@ -73,7 +77,11 @@ const translations = {
     product_kh888_name: 'Driver KH888',
     product_kh888_desc: 'Gậy driver hiệu suất cao.',
     product_kh888_price: 'Giá khởi điểm từ <em>29,000,000 VND</em>',
-    product_kh888_details: 'Được chế tạo với crown carbon siêu nhẹ và mặt gậy phay chính xác, KH888 mang lại khoảng cách vượt trội và độ khoan dung ấn tượng. Hosel có thể điều chỉnh cho phép bạn tinh chỉnh loft và lie phù hợp với cú swing, trong khi shaft cao cấp mang lại cảm giác và khả năng kiểm soát tuyệt vời.'
+    product_kh888_details: 'Được chế tạo với crown carbon siêu nhẹ và mặt gậy phay chính xác, KH888 mang lại khoảng cách vượt trội và độ khoan dung ấn tượng. Hosel có thể điều chỉnh cho phép bạn tinh chỉnh loft và lie phù hợp với cú swing, trong khi shaft cao cấp mang lại cảm giác và khả năng kiểm soát tuyệt vời.',
+    product_kh555_name: 'Driver KH555',
+    product_kh555_desc: 'Gậy driver rèn chính xác.',
+    product_kh555_price: 'Giá khởi điểm từ <em>15,000,000 VND</em>',
+    product_kh555_details: 'Được chế tác để kiểm soát và khoảng cách, KH555 kết hợp vật liệu tiên tiến với thiết kế cổ điển giúp bạn tự tin khi phát bóng.'
   },
   ja: {
     nav_home: 'ホーム',
@@ -111,11 +119,15 @@ const translations = {
     product_kh888_name: 'KH888ドライバー',
     product_kh888_desc: '高性能ドライバー。',
     product_kh888_price: '1,110ドルから',
-    product_kh888_details: '軽量カーボンクラウンと精密に削り出されたフェースを備えたKH888は、驚異的な飛距離と寛容性を発揮します。調整可能なホーゼルによりロフトとライを微調整でき、プレミアムシャフトが卓越したフィーリングとコントロールを提供します。'
+    product_kh888_details: '軽量カーボンクラウンと精密に削り出されたフェースを備えたKH888は、驚異的な飛距離と寛容性を発揮します。調整可能なホーゼルによりロフトとライを微調整でき、プレミアムシャフトが卓越したフィーリングとコントロールを提供します。',
+    product_kh555_name: 'KH555ドライバー',
+    product_kh555_desc: '精密鍛造ドライバー。',
+    product_kh555_price: '555ドルから',
+    product_kh555_details: 'KH555は、先進素材とクラシックな形状を融合させ、ティーショットで自信を引き出すコントロール性と飛距離を実現します。'
   }
 };
 
-const htmlI18nKeys = ['product_kh888_price'];
+const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price'];
 
 let carouselInterval;
 let currentDevice;
@@ -431,6 +443,23 @@ const productData = [
       'DRIVERS/KH888/163040d2a71f650c8db20e82842ed001.jpg',
       'DRIVERS/KH888/1bd8db61bfe2d55cc16879b197540a17.jpg',
       'DRIVERS/KH888/79806404c304699e68660657e00aaa57.jpg'
+    ],
+    category: 'clubs',
+    type: 'drivers'
+  },
+  {
+    id: 'kh555',
+    nameKey: 'product_kh555_name',
+    descKey: 'product_kh555_desc',
+    priceKey: 'product_kh555_price',
+    detailsKey: 'product_kh555_details',
+    image: 'KH555/9182c9a214b86d5914344b07696bfe3e.jpg',
+    images: [
+      'KH555/9182c9a214b86d5914344b07696bfe3e.jpg',
+      'KH555/2781a0ba27f8d0c53a3f435136f0b1e1.jpg',
+      'KH555/30f2ed2ad346e02591f747cee3e8a232.jpg',
+      'KH555/7b7e2b56cc90f6bbbbb50675905656b5.jpg',
+      'KH555/s.jpg'
     ],
     category: 'clubs',
     type: 'drivers'
