@@ -38,7 +38,7 @@ const translations = {
       product_kh888_details: `The KH888 builds on the iconic golfing technology developed by legendary Japanese golf master Honma Hiro. During his time as Vice President of Honma Golf,Hiro specialized in developing clubs that were able to increase flight distance with ease for both professionals and novices alike. This beautiful red lacquer finished driver has all of the Honma Hiro trademarks of elite performance and sophisticated design. The head and shaft have been painted by a Japanese traditional technique known as Maki-e. This artistic method involves craftsmen carefully applying multiple layers of lacquer. The product is then finished by hand with a sprinkle of 24k golf leaf. The result is a stunningly opulent club with incredibly high performance.\n\nFeatures\n- 500cc head that hits with ease\n- Moment of inertia (MOI) that raises the direction\n- High repulsion face that speeds up the initial velocity\n\nProduct specifications\n1: Face material: 2041 βcup face. The face structure repels by changing the wall thickness of the entire face approximately (CT290-300).\n2: Head size: 500cc (the large size increases meet rate).\n3: Finish: Maki-e processing\n4: Shaft weight: 58g\n5: Shaft torque: 4.4(R); ultra-high elasticity (50t) with nanotech resin. The integration of 4-axis cloth sheets results in strong stability while maintaining ease of use.`,
     product_kh555_name: 'KH555 Driver',
     product_kh555_desc: 'Forged precision driver.',
-    product_kh555_price: 'Starting from $555',
+    product_kh555_price: 'Starting from $1,400',
     product_kh555_details: 'Crafted for control and distance, the KH555 blends advanced materials with classic shaping to inspire confidence from the tee.'
   },
   vi: {
@@ -80,7 +80,7 @@ const translations = {
       product_kh888_details: `The KH888 builds on the iconic golfing technology developed by legendary Japanese golf master Honma Hiro. During his time as Vice President of Honma Golf,Hiro specialized in developing clubs that were able to increase flight distance with ease for both professionals and novices alike. This beautiful red lacquer finished driver has all of the Honma Hiro trademarks of elite performance and sophisticated design. The head and shaft have been painted by a Japanese traditional technique known as Maki-e. This artistic method involves craftsmen carefully applying multiple layers of lacquer. The product is then finished by hand with a sprinkle of 24k golf leaf. The result is a stunningly opulent club with incredibly high performance.\n\nFeatures\n- 500cc head that hits with ease\n- Moment of inertia (MOI) that raises the direction\n- High repulsion face that speeds up the initial velocity\n\nProduct specifications\n1: Face material: 2041 βcup face. The face structure repels by changing the wall thickness of the entire face approximately (CT290-300).\n2: Head size: 500cc (the large size increases meet rate).\n3: Finish: Maki-e processing\n4: Shaft weight: 58g\n5: Shaft torque: 4.4(R); ultra-high elasticity (50t) with nanotech resin. The integration of 4-axis cloth sheets results in strong stability while maintaining ease of use.`,
     product_kh555_name: 'Driver KH555',
     product_kh555_desc: 'Gậy driver rèn chính xác.',
-    product_kh555_price: 'Giá khởi điểm từ <em>15,000,000 VND</em>',
+    product_kh555_price: 'Giá khởi điểm từ <em>36,000,000 VND</em>',
     product_kh555_details: 'Được chế tác để kiểm soát và khoảng cách, KH555 kết hợp vật liệu tiên tiến với thiết kế cổ điển giúp bạn tự tin khi phát bóng.'
   },
   ja: {
@@ -122,7 +122,7 @@ const translations = {
       product_kh888_details: `The KH888 builds on the iconic golfing technology developed by legendary Japanese golf master Honma Hiro. During his time as Vice President of Honma Golf,Hiro specialized in developing clubs that were able to increase flight distance with ease for both professionals and novices alike. This beautiful red lacquer finished driver has all of the Honma Hiro trademarks of elite performance and sophisticated design. The head and shaft have been painted by a Japanese traditional technique known as Maki-e. This artistic method involves craftsmen carefully applying multiple layers of lacquer. The product is then finished by hand with a sprinkle of 24k golf leaf. The result is a stunningly opulent club with incredibly high performance.\n\nFeatures\n- 500cc head that hits with ease\n- Moment of inertia (MOI) that raises the direction\n- High repulsion face that speeds up the initial velocity\n\nProduct specifications\n1: Face material: 2041 βcup face. The face structure repels by changing the wall thickness of the entire face approximately (CT290-300).\n2: Head size: 500cc (the large size increases meet rate).\n3: Finish: Maki-e processing\n4: Shaft weight: 58g\n5: Shaft torque: 4.4(R); ultra-high elasticity (50t) with nanotech resin. The integration of 4-axis cloth sheets results in strong stability while maintaining ease of use.`,
     product_kh555_name: 'KH555ドライバー',
     product_kh555_desc: '精密鍛造ドライバー。',
-    product_kh555_price: '555ドルから',
+    product_kh555_price: '198,000円から',
     product_kh555_details: 'KH555は、先進素材とクラシックな形状を融合させ、ティーショットで自信を引き出すコントロール性と飛距離を実現します。'
   }
 };
