@@ -2,6 +2,7 @@
   --bg-color: #ffffff;
   --text-color: #000000;
   --accent-color: #ffd700;
+  --price-color: #fff4b2;
   --font-family: 'Montserrat', sans-serif;
   --heading-font: 'Playfair Display', serif;
   --overlay-color: #000000;
@@ -602,8 +603,13 @@ body.device-desktop .product-grid.grid-5 {
   padding: 0.5rem 0;
 }
 
+.modal-title {
+  color: var(--accent-color);
+}
+
 .modal-price {
   font-weight: bold;
+  color: var(--price-color);
 }
 
 .kh888-highlight {
