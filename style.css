@@ -392,6 +392,10 @@ h1, h2 {
   object-fit: cover;
 }
 
+#putter-intro img {
+  object-position: 55% center;
+}
+
 .intro-content {
   position: absolute;
   bottom: 5%;
