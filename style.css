@@ -174,9 +174,9 @@ nav a:hover::after {
   margin-bottom: 1rem;
 }
 
-/* Shift KH888 driver image slightly left for better framing */
+/* Shift KH888 driver image slightly further left for better framing */
 .product-image[src="DRIVERS/KH888/KH888.jpg"] {
-  object-position: 55% center;
+  object-position: 60% center;
 }
 
 .product:hover {
