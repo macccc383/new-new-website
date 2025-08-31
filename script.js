@@ -56,7 +56,26 @@ const translations = {
     product_kh555_name: 'KH555 Driver',
     product_kh555_desc: 'Forged precision driver.',
     product_kh555_price: 'Starting from $1,400',
-    product_kh555_details: 'Crafted for control and distance, the KH555 blends advanced materials with classic shaping to inspire confidence from the tee.'
+    product_kh555_details: 'The Kentack KH555 Driver fuses forged titanium power with refined precision, delivering effortless distance and unwavering stability. Crafted with a premium carbon shaft and tour-inspired balance, it embodies the harmony of performance and elegance for the discerning golfer.',
+      product_kh555_specs: `
+<table class="spec-table">
+  <tr><th colspan="2">KH-555 DRIVER</th></tr>
+  <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
+  <tr><td>FACE material</td><td>2041CupFace</td></tr>
+  <tr><td>LOFT(deg)</td><td>10.5 / 9.5</td></tr>
+  <tr><td>FA(Face angle)</td><td>1.0</td></tr>
+  <tr><td>Lie angle(deg)</td><td>59</td></tr>
+  <tr><td>HEAD volume(cc)</td><td>488</td></tr>
+  <tr><td>Distance to center of gravity(mm)</td><td>40</td></tr>
+  <tr><td>Depth to center of gravity(mm)</td><td>36.5</td></tr>
+  <tr><td>Degree of gravity</td><td>19.5</td></tr>
+  <tr><td>High of gravity(mm)</td><td>36</td></tr>
+  <tr><td>Balance</td><td>D3</td></tr>
+  <tr><td>Club weight</td><td>306g</td></tr>
+  <tr><td>Length(inch)</td><td>46.0</td></tr>
+  <tr><td>CT(Characteristic time)</td><td>290~302</td></tr>
+</table>
+`
   },
   vi: {
     nav_home: 'Trang chủ',
@@ -95,27 +114,10 @@ const translations = {
     product_kh888_desc: 'Gậy driver hiệu suất cao.',
     product_kh888_price: 'Giá khởi điểm từ <em>29,000,000 VND</em>',
         product_kh888_details: `KH888 kế thừa công nghệ golf mang tính biểu tượng do huyền thoại Nhật Bản Honma Hiro phát triển. Trong thời gian giữ chức Phó Chủ tịch Honma Golf, Hiro chuyên nghiên cứu những cây gậy có thể dễ dàng tăng khoảng cách bay cho cả golfer chuyên nghiệp lẫn người mới chơi. Chiếc driver hoàn thiện bằng sơn mài đỏ tuyệt đẹp này mang đầy đủ dấu ấn Honma Hiro về hiệu suất đỉnh cao và thiết kế tinh tế. Phần đầu và thân gậy được sơn bằng kỹ thuật truyền thống của Nhật Bản gọi là Maki-e. Phương pháp nghệ thuật này đòi hỏi nghệ nhân tỉ mỉ phủ nhiều lớp sơn mài. Sản phẩm sau đó được hoàn thiện thủ công với một lớp rắc lá vàng 24k. Kết quả là một cây gậy xa hoa lộng lẫy với hiệu suất cực kỳ cao.`,
-        product_kh888_specs: `
-<table class="spec-table">
-  <tr><th colspan="2">KH888 DRIVER</th></tr>
-  <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
-  <tr><td>FACE material</td><td>2041CUP Face</td></tr>
-  <tr><td>LOFT(deg)</td><td>10.5 / 9.5</td></tr>
-  <tr><td>FA(Face angle)</td><td>1.5</td></tr>
-  <tr><td>Lie angle(deg)</td><td>60</td></tr>
-  <tr><td>HEAD volume(cc)</td><td>500</td></tr>
-  <tr><td>Distance to center of gravity(mm)</td><td>42</td></tr>
-  <tr><td>Depth to center of gravity(mm)</td><td>39</td></tr>
-  <tr><td>Degree of gravity</td><td>24</td></tr>
-  <tr><td>High of gravity(mm)</td><td>35.2</td></tr>
-  <tr><td>Head of gravity(g)</td><td>198g</td></tr>
-  <tr><td>CT(Characteristic time)</td><td>290</td></tr>
-</table>
-`,
     product_kh555_name: 'Driver KH555',
     product_kh555_desc: 'Gậy driver rèn chính xác.',
     product_kh555_price: 'Giá khởi điểm từ <em>36,000,000 VND</em>',
-    product_kh555_details: 'Được chế tác để kiểm soát và khoảng cách, KH555 kết hợp vật liệu tiên tiến với thiết kế cổ điển giúp bạn tự tin khi phát bóng.'
+    product_kh555_details: 'Driver Kentack KH555 kết hợp sức mạnh titan rèn với độ chính xác tinh xảo, mang đến khoảng cách dễ dàng và sự ổn định vững vàng. Được chế tác với cán carbon cao cấp và cân bằng lấy cảm hứng từ tour, nó thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer sành điệu.',
   },
   ja: {
     nav_home: 'ホーム',
@@ -154,31 +156,14 @@ const translations = {
     product_kh888_desc: '高性能ドライバー。',
     product_kh888_price: '1,110ドルから',
         product_kh888_details: `KH888は、日本の伝説的なゴルフマスター本間弘が開発した象徴的なゴルフ技術を基に作られています。本間ゴルフの副社長を務めていた時期、弘氏はプロから初心者まで誰もが簡単に飛距離を伸ばせるクラブの開発に専念しました。この美しい赤い漆仕上げのドライバーには、本間弘ならではの卓越した性能と洗練されたデザインがすべて備わっています。ヘッドとシャフトには「蒔絵」と呼ばれる日本の伝統技法が施されています。この芸術的な手法では、職人が何層もの漆を丁寧に重ねていきます。そして製品は24Kの金箔を散らして手作業で仕上げられます。その結果、驚くほど高い性能を持つ豪華絢爛なクラブが完成します。`,
-        product_kh888_specs: `
-<table class="spec-table">
-  <tr><th colspan="2">KH888 DRIVER</th></tr>
-  <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
-  <tr><td>FACE material</td><td>2041CUP Face</td></tr>
-  <tr><td>LOFT(deg)</td><td>10.5 / 9.5</td></tr>
-  <tr><td>FA(Face angle)</td><td>1.5</td></tr>
-  <tr><td>Lie angle(deg)</td><td>60</td></tr>
-  <tr><td>HEAD volume(cc)</td><td>500</td></tr>
-  <tr><td>Distance to center of gravity(mm)</td><td>42</td></tr>
-  <tr><td>Depth to center of gravity(mm)</td><td>39</td></tr>
-  <tr><td>Degree of gravity</td><td>24</td></tr>
-  <tr><td>High of gravity(mm)</td><td>35.2</td></tr>
-  <tr><td>Head of gravity(g)</td><td>198g</td></tr>
-  <tr><td>CT(Characteristic time)</td><td>290</td></tr>
-</table>
-`,
     product_kh555_name: 'KH555ドライバー',
     product_kh555_desc: '精密鍛造ドライバー。',
     product_kh555_price: '198,000円から',
-    product_kh555_details: 'KH555は、先進素材とクラシックな形状を融合させ、ティーショットで自信を引き出すコントロール性と飛距離を実現します。'
+    product_kh555_details: 'ケンタック KH555 ドライバーは鍛造チタンのパワーと洗練された精度を融合し、楽に飛距離を伸ばし揺るぎない安定性をもたらします。プレミアムカーボンシャフトとツアーインスパイアのバランスで仕上げられ、性能とエレガンスの調和を求める目の肥えたゴルファーのための一本です。',
   }
 };
 
-const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price', 'product_kh888_specs'];
+const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price'];
 
 let carouselInterval;
 let currentDevice;
@@ -505,6 +490,7 @@ const productData = [
     descKey: 'product_kh555_desc',
     priceKey: 'product_kh555_price',
     detailsKey: 'product_kh555_details',
+    specsKey: 'product_kh555_specs',
     image: 'KH555/9182c9a214b86d5914344b07696bfe3e.jpg',
     images: [
       'KH555/9182c9a214b86d5914344b07696bfe3e.jpg',
@@ -547,9 +533,8 @@ function openProductModal(product) {
   }
   if (modalSpecs) {
     if (product.specsKey) {
-      modalSpecs.innerHTML = translations[lang][product.specsKey];
+      modalSpecs.innerHTML = translations['en'][product.specsKey];
       modalSpecs.classList.remove('hidden');
-      modalSpecs.setAttribute('data-i18n', product.specsKey);
     } else {
       modalSpecs.classList.add('hidden');
     }
