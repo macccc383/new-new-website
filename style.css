@@ -401,6 +401,12 @@ h1, h2 {
   object-position: 55% center;
 }
 
+@media (max-width: 600px) {
+  #putter-intro img {
+    object-position: 65% center;
+  }
+}
+
 .intro-content {
   position: absolute;
   bottom: 5%;
