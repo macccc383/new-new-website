@@ -36,6 +36,23 @@ const translations = {
     product_kh888_desc: 'High-performance driver.',
     product_kh888_price: 'Starting from $1,110',
       product_kh888_details: `The KH888 builds on the iconic golfing technology developed by legendary Japanese golf master Honma Hiro. During his time as Vice President of Honma Golf, Hiro specialized in developing clubs that were able to increase flight distance with ease for both professionals and novices alike. This beautiful red lacquer finished driver has all of the Honma Hiro trademarks of elite performance and sophisticated design. The head and shaft have been painted by a Japanese traditional technique known as Maki-e. This artistic method involves craftsmen carefully applying multiple layers of lacquer. The product is then finished by hand with a sprinkle of 24k gold leaf. The result is a stunningly opulent club with incredibly high performance.`,
+      product_kh888_specs: `
+<table class="spec-table">
+  <tr><th colspan="2">KH888 DRIVER</th></tr>
+  <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
+  <tr><td>FACE material</td><td>2041CUP Face</td></tr>
+  <tr><td>LOFT(deg)</td><td>10.5 / 9.5</td></tr>
+  <tr><td>FA(Face angle)</td><td>1.5</td></tr>
+  <tr><td>Lie angle(deg)</td><td>60</td></tr>
+  <tr><td>HEAD volume(cc)</td><td>500</td></tr>
+  <tr><td>Distance to center of gravity(mm)</td><td>42</td></tr>
+  <tr><td>Depth to center of gravity(mm)</td><td>39</td></tr>
+  <tr><td>Degree of gravity</td><td>24</td></tr>
+  <tr><td>High of gravity(mm)</td><td>35.2</td></tr>
+  <tr><td>Head of gravity(g)</td><td>198g</td></tr>
+  <tr><td>CT(Characteristic time)</td><td>290</td></tr>
+</table>
+`,
     product_kh555_name: 'KH555 Driver',
     product_kh555_desc: 'Forged precision driver.',
     product_kh555_price: 'Starting from $1,400',
@@ -78,6 +95,23 @@ const translations = {
     product_kh888_desc: 'Gậy driver hiệu suất cao.',
     product_kh888_price: 'Giá khởi điểm từ <em>29,000,000 VND</em>',
         product_kh888_details: `KH888 kế thừa công nghệ golf mang tính biểu tượng do huyền thoại Nhật Bản Honma Hiro phát triển. Trong thời gian giữ chức Phó Chủ tịch Honma Golf, Hiro chuyên nghiên cứu những cây gậy có thể dễ dàng tăng khoảng cách bay cho cả golfer chuyên nghiệp lẫn người mới chơi. Chiếc driver hoàn thiện bằng sơn mài đỏ tuyệt đẹp này mang đầy đủ dấu ấn Honma Hiro về hiệu suất đỉnh cao và thiết kế tinh tế. Phần đầu và thân gậy được sơn bằng kỹ thuật truyền thống của Nhật Bản gọi là Maki-e. Phương pháp nghệ thuật này đòi hỏi nghệ nhân tỉ mỉ phủ nhiều lớp sơn mài. Sản phẩm sau đó được hoàn thiện thủ công với một lớp rắc lá vàng 24k. Kết quả là một cây gậy xa hoa lộng lẫy với hiệu suất cực kỳ cao.`,
+        product_kh888_specs: `
+<table class="spec-table">
+  <tr><th colspan="2">KH888 DRIVER</th></tr>
+  <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
+  <tr><td>FACE material</td><td>2041CUP Face</td></tr>
+  <tr><td>LOFT(deg)</td><td>10.5 / 9.5</td></tr>
+  <tr><td>FA(Face angle)</td><td>1.5</td></tr>
+  <tr><td>Lie angle(deg)</td><td>60</td></tr>
+  <tr><td>HEAD volume(cc)</td><td>500</td></tr>
+  <tr><td>Distance to center of gravity(mm)</td><td>42</td></tr>
+  <tr><td>Depth to center of gravity(mm)</td><td>39</td></tr>
+  <tr><td>Degree of gravity</td><td>24</td></tr>
+  <tr><td>High of gravity(mm)</td><td>35.2</td></tr>
+  <tr><td>Head of gravity(g)</td><td>198g</td></tr>
+  <tr><td>CT(Characteristic time)</td><td>290</td></tr>
+</table>
+`,
     product_kh555_name: 'Driver KH555',
     product_kh555_desc: 'Gậy driver rèn chính xác.',
     product_kh555_price: 'Giá khởi điểm từ <em>36,000,000 VND</em>',
@@ -120,6 +154,23 @@ const translations = {
     product_kh888_desc: '高性能ドライバー。',
     product_kh888_price: '1,110ドルから',
         product_kh888_details: `KH888は、日本の伝説的なゴルフマスター本間弘が開発した象徴的なゴルフ技術を基に作られています。本間ゴルフの副社長を務めていた時期、弘氏はプロから初心者まで誰もが簡単に飛距離を伸ばせるクラブの開発に専念しました。この美しい赤い漆仕上げのドライバーには、本間弘ならではの卓越した性能と洗練されたデザインがすべて備わっています。ヘッドとシャフトには「蒔絵」と呼ばれる日本の伝統技法が施されています。この芸術的な手法では、職人が何層もの漆を丁寧に重ねていきます。そして製品は24Kの金箔を散らして手作業で仕上げられます。その結果、驚くほど高い性能を持つ豪華絢爛なクラブが完成します。`,
+        product_kh888_specs: `
+<table class="spec-table">
+  <tr><th colspan="2">KH888 DRIVER</th></tr>
+  <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
+  <tr><td>FACE material</td><td>2041CUP Face</td></tr>
+  <tr><td>LOFT(deg)</td><td>10.5 / 9.5</td></tr>
+  <tr><td>FA(Face angle)</td><td>1.5</td></tr>
+  <tr><td>Lie angle(deg)</td><td>60</td></tr>
+  <tr><td>HEAD volume(cc)</td><td>500</td></tr>
+  <tr><td>Distance to center of gravity(mm)</td><td>42</td></tr>
+  <tr><td>Depth to center of gravity(mm)</td><td>39</td></tr>
+  <tr><td>Degree of gravity</td><td>24</td></tr>
+  <tr><td>High of gravity(mm)</td><td>35.2</td></tr>
+  <tr><td>Head of gravity(g)</td><td>198g</td></tr>
+  <tr><td>CT(Characteristic time)</td><td>290</td></tr>
+</table>
+`,
     product_kh555_name: 'KH555ドライバー',
     product_kh555_desc: '精密鍛造ドライバー。',
     product_kh555_price: '198,000円から',
@@ -127,7 +178,7 @@ const translations = {
   }
 };
 
-const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price'];
+const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price', 'product_kh888_specs'];
 
 let carouselInterval;
 let currentDevice;
@@ -434,10 +485,11 @@ const productData = [
   {
     id: 'kh888',
     nameKey: 'product_kh888_name',
-    descKey: 'product_kh888_desc',
-    priceKey: 'product_kh888_price',
-    detailsKey: 'product_kh888_details',
-    image: 'DRIVERS/KH888/KH888.jpg',
+      descKey: 'product_kh888_desc',
+      priceKey: 'product_kh888_price',
+      detailsKey: 'product_kh888_details',
+      specsKey: 'product_kh888_specs',
+      image: 'DRIVERS/KH888/KH888.jpg',
     images: [
       'DRIVERS/KH888/KH888.jpg',
       'DRIVERS/KH888/163040d2a71f650c8db20e82842ed001.jpg',
@@ -467,7 +519,7 @@ const productData = [
 ];
 
 let modal, modalImg, modalPrev, modalNext, modalClose;
-let modalTitle, modalDesc, modalPrice, modalDetails;
+let modalTitle, modalDesc, modalPrice, modalDetails, modalSpecs;
 let modalImages = [];
 let modalIndex = 0;
 let modalTimer;
@@ -492,6 +544,15 @@ function openProductModal(product) {
   }
   if (modalDetails && product.detailsKey) {
     modalDetails.textContent = translations[lang][product.detailsKey];
+  }
+  if (modalSpecs) {
+    if (product.specsKey) {
+      modalSpecs.innerHTML = translations[lang][product.specsKey];
+      modalSpecs.classList.remove('hidden');
+      modalSpecs.setAttribute('data-i18n', product.specsKey);
+    } else {
+      modalSpecs.classList.add('hidden');
+    }
   }
   modal.classList.remove('hidden', 'closing');
   const content = modal.querySelector('.modal-content');
@@ -549,6 +610,7 @@ function initProductModal() {
   modalDesc = modal.querySelector('.modal-desc');
   modalPrice = modal.querySelector('.modal-price');
   modalDetails = modal.querySelector('.modal-details');
+  modalSpecs = modal.querySelector('.modal-specs');
   if (modalImg) {
     modalImg.addEventListener('animationend', () => modalImg.classList.remove('fade'));
   }
