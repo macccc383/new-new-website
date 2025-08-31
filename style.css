@@ -626,6 +626,31 @@ body.device-desktop .product-grid.grid-5 {
   font-size: 2rem;
 }
 
+.modal-specs {
+  margin-top: 1rem;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.spec-table th {
+  background-color: #007bff;
+  color: #fff;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.spec-table td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.spec-table td:first-child {
+  font-weight: bold;
+}
+
 .modal-image-container .prev,
 .modal-image-container .next {
   position: absolute;
