@@ -117,7 +117,7 @@ const translations = {
     product_kh555_name: 'Driver KH555',
     product_kh555_desc: 'Gậy driver rèn chính xác.',
     product_kh555_price: 'Giá khởi điểm từ <em>36,000,000 VND</em>',
-    product_kh555_details: 'Driver Kentack KH555 kết hợp sức mạnh titan rèn với độ chính xác tinh xảo, mang đến khoảng cách dễ dàng và sự ổn định vững vàng. Được chế tác với cán carbon cao cấp và cân bằng lấy cảm hứng từ tour, nó thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer sành điệu.',
+    product_kh555_details: 'Driver Kentack KH555 với thiết kế mặt gậy bằng chất liệu Titanium với độ chính xác cao, +20 Yard so với dòng gậy thông thường. Với tiếp xúc đa điểm mang lại sự ổn định đồng thời  luôn đẩy bóng bề tiêu cự tốt nhất có thể. Cán gậy được làm bằng sợi Nano (mảnh và nhỏ như hạt vải) giúp xa và mang lại sự cân bằng tốt nhất, KH555 là sự thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer yêu thích sự bứt phá, ổn định.',
   },
   ja: {
     nav_home: 'ホーム',
