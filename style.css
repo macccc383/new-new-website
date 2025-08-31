@@ -176,7 +176,7 @@ nav a:hover::after {
 
 /* Shift KH888 driver image slightly left for better framing */
 .product-image[src="DRIVERS/KH888/KH888.jpg"] {
-  object-position: 40% center;
+  object-position: 55% center;
 }
 
 .product:hover {
