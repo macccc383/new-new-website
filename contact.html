@@ -71,7 +71,6 @@
 
             const bounds = vietnamLayer.getBounds();
             map.fitBounds(bounds);
-            map.setMaxBounds(bounds);
             map.setMinZoom(map.getZoom());
 
             L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -121,6 +120,7 @@
 
             const markerBounds = L.latLngBounds(points.map(p => p.coords));
             map.flyToBounds(markerBounds, { padding: [50, 50] });
+            map.setMaxBounds(bounds);
           });
       });
     </script>
