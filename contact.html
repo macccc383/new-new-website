@@ -110,8 +110,17 @@
                 color: '#ff0000',
                 fillColor: '#ff0000',
                 fillOpacity: 0.8
-              }).addTo(map).bindPopup(p.label).openPopup();
+              })
+                .addTo(map)
+                .bindPopup(p.label, {
+                  autoClose: false,
+                  closeOnClick: false
+                })
+                .openPopup();
             });
+
+            const markerBounds = L.latLngBounds(points.map(p => p.coords));
+            map.flyToBounds(markerBounds, { padding: [50, 50] });
           });
       });
     </script>
