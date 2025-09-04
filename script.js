@@ -496,8 +496,7 @@ const productData = [
       'KH555/9182c9a214b86d5914344b07696bfe3e.jpg',
       'KH555/2781a0ba27f8d0c53a3f435136f0b1e1.jpg',
       'KH555/30f2ed2ad346e02591f747cee3e8a232.jpg',
-      'KH555/7b7e2b56cc90f6bbbbb50675905656b5.jpg',
-      'KH555/s.jpg'
+      'KH555/7b7e2b56cc90f6bbbbb50675905656b5.jpg'
     ],
     category: 'clubs',
     type: 'drivers'
