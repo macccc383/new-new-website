@@ -4,36 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Vietnam Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    html, body, #map {
+    html, body {
       height: 100%;
       margin: 0;
     }
-    .leaflet-tile {
-      filter: grayscale(100%);
+    #map {
+      height: 100vh;
+      width: 100%;
+      background: #000;
     }
   </style>
 </head>
 <body>
-  <div id="map"></div>
+  <button id="menu-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="animate">
+    <div class="logo">KENTACK</div>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="products.html" data-i18n="nav_products">Products</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="controls">
+      <div class="language-dropdown">
+        <button id="language-toggle" aria-label="Language">🌐</button>
+        <select id="language-select" class="hidden">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+    </div>
+  </nav>
+
+  <main>
+    <div id="map"></div>
+  </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
   <script>
-    const map = L.map('map');
-    const vietnamBounds = [[8.179, 102.144], [23.392, 109.464]];
+    document.addEventListener('DOMContentLoaded', () => {
+      const map = L.map('map', {
+        zoomControl: false,
+        attributionControl: false,
+        dragging: false,
+        scrollWheelZoom: false,
+        doubleClickZoom: false,
+        boxZoom: false,
+        keyboard: false,
+        tap: false,
+        touchZoom: false
+      });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    map.fitBounds(vietnamBounds);
-
-    const hanoi = [21.0278, 105.8342];
-    setTimeout(() => {
-      map.setView(hanoi, 12, { animate: true, duration: 2 });
-    }, 1000);
+      fetch('vietnam.geojson')
+        .then(response => response.json())
+        .then(data => {
+          const layer = L.geoJSON(data, {
+            style: {
+              color: '#ffd700',
+              weight: 1,
+              fillColor: '#ffd700',
+              fillOpacity: 1
+            }
+          }).addTo(map);
+          map.fitBounds(layer.getBounds());
+        });
+    });
   </script>
 </body>
 </html>
