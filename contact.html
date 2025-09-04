@@ -64,7 +64,8 @@
         boxZoom: false,
         keyboard: false,
         tap: false,
-        touchZoom: false
+        touchZoom: false,
+        closePopupOnClick: false
       });
 
       fetch('vietnam.geojson')
@@ -79,6 +80,26 @@
             }
           }).addTo(map);
           map.fitBounds(layer.getBounds());
+
+          const hanoiCenter = [21.035, 105.82];
+          setTimeout(() => {
+            map.flyTo(hanoiCenter, 12, { duration: 3 });
+            const points = [
+              { coords: [21.025714568715166, 105.7585740417602], label: 'San phuong dong' },
+              { coords: [21.04441803000998, 105.88411139998547], label: 'San dao sen' }
+            ];
+            points.forEach(p => {
+              L.circleMarker(p.coords, {
+                radius: 8,
+                color: '#ff0000',
+                fillColor: '#ff0000',
+                fillOpacity: 0.8
+              }).addTo(map).bindPopup(p.label, {
+                autoClose: false,
+                closeOnClick: false
+              }).openPopup();
+            });
+          }, 1000);
         });
     });
   </script>
