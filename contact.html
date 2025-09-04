@@ -103,19 +103,50 @@
               { coords: [21.025714568715166, 105.7585740417602], label: 'San phuong dong' },
               { coords: [21.04441803000998, 105.88411139998547], label: 'San dao sen' }
             ];
+
+            const defaultStyle = {
+              radius: 8,
+              color: '#ff0000',
+              fillColor: '#ff0000',
+              fillOpacity: 0.8
+            };
+
+            const highlightStyle = {
+              radius: 12,
+              color: '#ffd700',
+              fillColor: '#ffd700',
+              fillOpacity: 1
+            };
+
+            let activeMarker = null;
+
             points.forEach(p => {
-              L.circleMarker(p.coords, {
-                radius: 8,
-                color: '#ff0000',
-                fillColor: '#ff0000',
-                fillOpacity: 0.8
-              })
+              const marker = L.circleMarker(p.coords, defaultStyle)
                 .addTo(map)
                 .bindPopup(p.label, {
-                  autoClose: false,
-                  closeOnClick: false
-                })
-                .openPopup();
+                  autoClose: true,
+                  closeOnClick: true,
+                  offset: L.point(0, -10)
+                });
+
+              marker.on('click', () => {
+                if (activeMarker && activeMarker !== marker) {
+                  activeMarker.setStyle(defaultStyle);
+                  activeMarker.closePopup();
+                }
+                marker.setStyle(highlightStyle);
+                marker.openPopup();
+                map.flyTo(marker.getLatLng(), 13);
+                activeMarker = marker;
+              });
+            });
+
+            map.on('click', () => {
+              if (activeMarker) {
+                activeMarker.setStyle(defaultStyle);
+                activeMarker.closePopup();
+                activeMarker = null;
+              }
             });
 
             const markerBounds = L.latLngBounds(points.map(p => p.coords));
@@ -124,5 +155,5 @@
           });
       });
     </script>
-</body>
+  </body>
 </html>
