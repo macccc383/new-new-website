@@ -55,52 +55,40 @@
   <script src="script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const map = L.map('map', {
-        zoomControl: false,
-        attributionControl: false,
-        dragging: false,
-        scrollWheelZoom: false,
-        doubleClickZoom: false,
-        boxZoom: false,
-        keyboard: false,
-        tap: false,
-        touchZoom: false,
-        closePopupOnClick: false
-      });
+      const hanoiCenter = [21.035, 105.82];
+      const map = L.map('map').setView(hanoiCenter, 12);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 20,
+        subdomains: 'abcd',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      }).addTo(map);
 
       fetch('vietnam.geojson')
         .then(response => response.json())
         .then(data => {
-          const layer = L.geoJSON(data, {
+          L.geoJSON(data, {
             style: {
               color: '#ffd700',
               weight: 1,
-              fillColor: '#ffd700',
-              fillOpacity: 1
-            }
+              fillOpacity: 0
+            },
+            interactive: false
           }).addTo(map);
-          map.fitBounds(layer.getBounds());
-
-          const hanoiCenter = [21.035, 105.82];
-          setTimeout(() => {
-            map.flyTo(hanoiCenter, 12, { duration: 3 });
-            const points = [
-              { coords: [21.025714568715166, 105.7585740417602], label: 'San phuong dong' },
-              { coords: [21.04441803000998, 105.88411139998547], label: 'San dao sen' }
-            ];
-            points.forEach(p => {
-              L.circleMarker(p.coords, {
-                radius: 8,
-                color: '#ff0000',
-                fillColor: '#ff0000',
-                fillOpacity: 0.8
-              }).addTo(map).bindPopup(p.label, {
-                autoClose: false,
-                closeOnClick: false
-              }).openPopup();
-            });
-          }, 1000);
         });
+
+      const points = [
+        { coords: [21.025714568715166, 105.7585740417602], label: 'San phuong dong' },
+        { coords: [21.04441803000998, 105.88411139998547], label: 'San dao sen' }
+      ];
+      points.forEach(p => {
+        L.circleMarker(p.coords, {
+          radius: 8,
+          color: '#ff0000',
+          fillColor: '#ff0000',
+          fillOpacity: 0.8
+        }).addTo(map).bindPopup(p.label).openPopup();
+      });
     });
   </script>
 </body>
