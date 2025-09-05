@@ -77,26 +77,6 @@
               maxZoom: 19
             }).addTo(map);
 
-            const worldCoords = [
-              [90, -180],
-              [90, 180],
-              [-90, 180],
-              [-90, -180]
-            ];
-
-            const vietnamCoords = [];
-            vietnamLayer.eachLayer(layer => {
-              const latlngs = layer.getLatLngs()[0];
-              vietnamCoords.push(latlngs.map(ll => [ll.lat, ll.lng]));
-            });
-
-            L.polygon([worldCoords, ...vietnamCoords], {
-              stroke: false,
-              fillColor: '#000',
-              fillOpacity: 1,
-              interactive: false
-            }).addTo(map);
-
             const points = [
               { coords: [21.025793392445078, 105.7584890522287], label: 'Phuong Dong Golf' },
               { coords: [21.044462699017213, 105.88413346662968], label: 'Dao Sen Golf' }
