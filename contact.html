@@ -100,8 +100,8 @@
             }).addTo(map);
 
             const points = [
-              { coords: [21.025714568715166, 105.7585740417602], label: 'San phuong dong' },
-              { coords: [21.04441803000998, 105.88411139998547], label: 'San dao sen' }
+              { coords: [21.025793392445078, 105.7584890522287], label: 'Phuong Dong Golf' },
+              { coords: [21.044462699017213, 105.88413346662968], label: 'Dao Sen Golf' }
             ];
 
             const defaultStyle = {
@@ -150,7 +150,9 @@
             });
 
             const markerBounds = L.latLngBounds(points.map(p => p.coords));
-            map.flyToBounds(markerBounds, { padding: [50, 50] });
+            map.whenReady(() => {
+              map.fitBounds(markerBounds, { padding: [50, 50] });
+            });
             map.setMaxBounds(bounds);
           });
       });
