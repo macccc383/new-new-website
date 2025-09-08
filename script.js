@@ -146,7 +146,7 @@ const translations = {
     product_kh555_price: 'Giá khởi điểm từ <em>36,000,000 VND</em>',
     product_kh555_details: 'Driver Kentack KH555 với thiết kế mặt gậy bằng chất liệu Titanium với độ chính xác cao, +20 Yard so với dòng gậy thông thường. Với tiếp xúc đa điểm mang lại sự ổn định đồng thời  luôn đẩy bóng bề tiêu cự tốt nhất có thể. Cán gậy được làm bằng sợi Nano (mảnh và nhỏ như hạt vải) giúp xa và mang lại sự cân bằng tốt nhất, KH555 là sự thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer yêu thích sự bứt phá, ổn định.',
     product_white_oyster_name: 'Gậy sắt rèn rỗng White Pearl / vàng 24K',
-    product_white_oyster_desc: 'Độ chính xác. Thanh lịch. Hiệu suất vô song.',
+    product_white_oyster_desc: 'Chính xác. Thanh lịch. Hiệu suất vô song.',
     product_white_oyster_price: 'Giá liên hệ.',
     product_white_oyster_details: `Được chế tác cho những người am hiểu cả hiệu suất lẫn đẳng cấp, bộ gậy sắt White Pearl / 24K Gold Hollow Forged (#5-9, PW/SW) là kiệt tác về kỹ thuật và sự tao nhã—sử dụng mặt gậy bằng thép maraging cho độ phản hồi bùng nổ, các góc loft được tinh chỉnh chính xác (24°-43°), kiểm soát độ bounce (0°-5°) và góc lie (61.5°-63°) cho khả năng tiếp xúc mặt cỏ hoàn hảo và độ tinh xảo trong từng cú đánh; cân bằng nội bộ với tiến trình mặt gậy phân bậc, tâm trọng lực tối ưu (≈39.2 mm khoảng cách, ≈4.8 mm chiều sâu, ~17 mm chiều cao) và đi kèm shaft NS950 mạ vàng (≈94.5 g, điểm uốn thấp-trung) mang lại cảm giác mượt mà, ổn định tuyệt vời và sức mạnh đầy uy lực—những cây gậy này kết hợp sự chế tác xa hoa với chức năng đẳng cấp tour để nâng tầm mỗi cú swing thành một tuyên ngôn phong cách.`,
   },
