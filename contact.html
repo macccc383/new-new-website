@@ -55,7 +55,13 @@
     <script src="script.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const map = L.map('map', { maxBoundsViscosity: 1.0 });
+        const map = L.map('map', { maxBoundsViscosity: 1.0 }).setView([16.047079, 108.206230], 5);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attribution">CARTO</a>',
+          subdomains: 'abcd',
+          maxZoom: 19
+        }).addTo(map);
 
         fetch('vietnam.geojson')
           .then(response => response.json())
@@ -70,12 +76,6 @@
             }).addTo(map);
 
             const bounds = vietnamLayer.getBounds();
-
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attribution">CARTO</a>',
-              subdomains: 'abcd',
-              maxZoom: 19
-            }).addTo(map);
 
             const points = [
               { coords: [21.025793392445078, 105.7584890522287], label: 'Phuong Dong Golf' },
@@ -130,7 +130,8 @@
             const markerBounds = L.latLngBounds(points.map(p => p.coords));
             map.fitBounds(markerBounds, { padding: [50, 50] });
             map.setMaxBounds(bounds);
-          });
+          })
+          .catch(err => console.error('Failed to load Vietnam map data', err));
       });
     </script>
   </body>
