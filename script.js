@@ -75,7 +75,34 @@ const translations = {
   <tr><td>Length(inch)</td><td>46.0</td></tr>
   <tr><td>CT(Characteristic time)</td><td>290~302</td></tr>
 </table>
-`
+`,
+    product_white_oyster_name: 'White Pearl / 24K Gold Hollow Forged Irons',
+    product_white_oyster_desc: 'Precision. Elegance. Unrivaled Performance.',
+    product_white_oyster_price: 'Price upon request.',
+    product_white_oyster_details: `Crafted for the connoisseur of both performance and prestige, this set of White Pearl / 24K Gold Hollow Forged Irons (#5-9, PW/SW) is a masterclass in engineering and elegance — featuring maraging steel faces for explosive responsiveness, precisely graduated lofts (24°-43°), bounce-control (0°-5°), and lie angles (61.5°-63°) for flawless turf interaction and shot-making finesse; internally balanced with stepped face progression, an optimized center of gravity (≈39.2 mm distance, ≈4.8 mm depth, ~17 mm height), and matched with NS950 Gold shafts (≈94.5 g, low-mid kick point) that deliver a silken feel, exceptional stability, and commanding power—these irons marry opulent craftsmanship with tour-level function to elevate every swing into a statement of style.`,
+    product_white_oyster_specs: `
+<table class="spec-table">
+  <tr><th colspan="2">WHITE PEARL / 24K GOLD HOLLOW FORGED IRONS</th></tr>
+  <tr><td>HEAD material / Manufacturing process</td><td>Hollow Forging(#5–PW) / Forged Face Milling(AW、SW)</td></tr>
+  <tr><td>NO</td><td>5,6,7,8,9,P</td></tr>
+  <tr><td>LOFT(deg)</td><td>24/27/30/34/38/43</td></tr>
+  <tr><td>BOUNCE</td><td>0/1/2/3/4/5</td></tr>
+  <tr><td>Lie angle(deg)</td><td>61.5/61.75/62/62.25/62.5/63</td></tr>
+  <tr><td>Face Progression</td><td>1/1/1/1.5/1.8/2</td></tr>
+  <tr><td>Head Weight(g)</td><td>257/264/271/278/285/293</td></tr>
+  <tr><td>Distance to center of gravity(mm)</td><td>39.2</td></tr>
+  <tr><td>Depth to center of gravity(mm)</td><td>4.8</td></tr>
+  <tr><td>High of gravity(mm)</td><td>17</td></tr>
+  <tr><th colspan="2">NS950 Shaft(GOLD)</th></tr>
+  <tr><td>Length</td><td>35</td></tr>
+  <tr><td>Flex</td><td>R</td></tr>
+  <tr><td>Shaft Weight(g)</td><td>94.5</td></tr>
+  <tr><td>Torque(degree)</td><td>2</td></tr>
+  <tr><td>Butt diameter(mm)</td><td>15.5</td></tr>
+  <tr><td>Tip diameter(mm)</td><td>9.02</td></tr>
+  <tr><td>Kick point</td><td>Low Mid</td></tr>
+</table>
+`,
   },
   vi: {
     nav_home: 'Trang chủ',
@@ -118,6 +145,10 @@ const translations = {
     product_kh555_desc: 'Gậy driver rèn chính xác.',
     product_kh555_price: 'Giá khởi điểm từ <em>36,000,000 VND</em>',
     product_kh555_details: 'Driver Kentack KH555 với thiết kế mặt gậy bằng chất liệu Titanium với độ chính xác cao, +20 Yard so với dòng gậy thông thường. Với tiếp xúc đa điểm mang lại sự ổn định đồng thời  luôn đẩy bóng bề tiêu cự tốt nhất có thể. Cán gậy được làm bằng sợi Nano (mảnh và nhỏ như hạt vải) giúp xa và mang lại sự cân bằng tốt nhất, KH555 là sự thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer yêu thích sự bứt phá, ổn định.',
+    product_white_oyster_name: 'Gậy sắt rèn rỗng White Pearl / vàng 24K',
+    product_white_oyster_desc: 'Độ chính xác. Thanh lịch. Hiệu suất vô song.',
+    product_white_oyster_price: 'Giá liên hệ.',
+    product_white_oyster_details: `Được chế tác cho những người am hiểu cả hiệu suất lẫn đẳng cấp, bộ gậy sắt White Pearl / 24K Gold Hollow Forged (#5-9, PW/SW) là kiệt tác về kỹ thuật và sự tao nhã—sử dụng mặt gậy bằng thép maraging cho độ phản hồi bùng nổ, các góc loft được tinh chỉnh chính xác (24°-43°), kiểm soát độ bounce (0°-5°) và góc lie (61.5°-63°) cho khả năng tiếp xúc mặt cỏ hoàn hảo và độ tinh xảo trong từng cú đánh; cân bằng nội bộ với tiến trình mặt gậy phân bậc, tâm trọng lực tối ưu (≈39.2 mm khoảng cách, ≈4.8 mm chiều sâu, ~17 mm chiều cao) và đi kèm shaft NS950 mạ vàng (≈94.5 g, điểm uốn thấp-trung) mang lại cảm giác mượt mà, ổn định tuyệt vời và sức mạnh đầy uy lực—những cây gậy này kết hợp sự chế tác xa hoa với chức năng đẳng cấp tour để nâng tầm mỗi cú swing thành một tuyên ngôn phong cách.`,
   },
   ja: {
     nav_home: 'ホーム',
@@ -160,10 +191,14 @@ const translations = {
     product_kh555_desc: '精密鍛造ドライバー。',
     product_kh555_price: '198,000円から',
     product_kh555_details: 'ケンタック KH555 ドライバーは鍛造チタンのパワーと洗練された精度を融合し、楽に飛距離を伸ばし揺るぎない安定性をもたらします。プレミアムカーボンシャフトとツアーインスパイアのバランスで仕上げられ、性能とエレガンスの調和を求める目の肥えたゴルファーのための一本です。',
+    product_white_oyster_name: 'ホワイトパール／24Kゴールド中空鍛造アイアン',
+    product_white_oyster_desc: '精度。優雅さ。比類なきパフォーマンス。',
+    product_white_oyster_price: '価格はお問い合わせください。',
+    product_white_oyster_details: `性能と威厳の両方を求める鑑賞家のために作られた、このホワイトパール／24Kゴールド中空鍛造アイアンセット（#5-9、PW/SW）は、エンジニアリングとエレガンスの傑作です。マレージング鋼フェースによる爆発的な反応性、精密に調整されたロフト（24°～43°）、バウンスコントロール（0°～5°）、ライ角（61.5°～63°）が芝との完璧なインタラクションとショットの巧みさを実現。段階的なフェースプログレッションで内部バランスを取り、重心位置を最適化（重心距離約39.2mm、重心深さ約4.8mm、重心高約17mm）、さらにNS950ゴールドシャフト（約94.5g、ロー～ミッドキックポイント）を組み合わせることで、絹のようなフィーリング、卓越した安定性、力強いパワーを提供します——ツアーレベルの機能と華麗なクラフトマンシップが融合し、すべてのスイングをスタイルの宣言へと昇華させます。`,
   }
 };
 
-const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price'];
+const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price', 'product_white_oyster_price'];
 
 let carouselInterval;
 let currentDevice;
@@ -478,6 +513,24 @@ const productData = [
     ],
     category: 'clubs',
     type: 'drivers'
+  },
+  {
+    id: 'white_oyster_irons',
+    nameKey: 'product_white_oyster_name',
+    descKey: 'product_white_oyster_desc',
+    priceKey: 'product_white_oyster_price',
+    detailsKey: 'product_white_oyster_details',
+    specsKey: 'product_white_oyster_specs',
+    image: 'IRONS/WHITE OYSTER/61688Wn8q7L._AC_SL1500_.jpg',
+    images: [
+      'IRONS/WHITE OYSTER/61688Wn8q7L._AC_SL1500_.jpg',
+      'IRONS/WHITE OYSTER/61Ozsa3UT2L._AC_SL1500_.jpg',
+      'IRONS/WHITE OYSTER/61UGnL1FL9L._AC_SL1500_.jpg',
+      'IRONS/WHITE OYSTER/61Y9b+NjKvL._AC_SL1500_.jpg',
+      'IRONS/WHITE OYSTER/71VXdND3xhL._AC_SL1500_.jpg'
+    ],
+    category: 'clubs',
+    type: 'irons'
   }
 ];
 
