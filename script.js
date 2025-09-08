@@ -79,7 +79,7 @@ const translations = {
     product_white_oyster_name: 'White Pearl / 24K Gold Hollow Forged Irons',
     product_white_oyster_desc: 'Precision. Elegance. Unrivaled Performance.',
     product_white_oyster_price: 'Price upon request.',
-    product_white_oyster_details: `Crafted for the connoisseur of both performance and prestige, this set of White Pearl / 24K Gold Hollow Forged Irons (#5-9, PW/SW) is a masterclass in engineering and elegance — featuring maraging steel faces for explosive responsiveness, precisely graduated lofts (24°-43°), bounce-control (0°-5°), and lie angles (61.5°-63°) for flawless turf interaction and shot-making finesse; internally balanced with stepped face progression, an optimized center of gravity (≈39.2 mm distance, ≈4.8 mm depth, ~17 mm height), and matched with NS950 Gold shafts (≈94.5 g, low-mid kick point) that deliver a silken feel, exceptional stability, and commanding power—these irons marry opulent craftsmanship with tour-level function to elevate every swing into a statement of style.`,
+    product_white_oyster_details: `Elevate your game with the White Pearl / 24K Gold Hollow-Forged Irons — a stunning blend of art and performance that redefines what it means to swing in style. From their exquisite gold accents and luminous White Pearl finish to the silky NS950 Gold shafts, every detail communicates refinement. These irons deliver impressive feel, forgiving launch, and an unmistakable presence at address: power with poise, forged for those who demand the best in both aesthetics and functionality.',
     product_white_oyster_specs: `
 <table class="spec-table">
   <tr><th colspan="2">WHITE PEARL / 24K GOLD HOLLOW FORGED IRONS</th></tr>
@@ -148,7 +148,7 @@ const translations = {
     product_white_oyster_name: 'Gậy sắt rèn rỗng White Pearl / vàng 24K',
     product_white_oyster_desc: 'Chính xác. Thanh lịch. Hiệu suất vô song.',
     product_white_oyster_price: 'Giá liên hệ.',
-    product_white_oyster_details: `Được chế tác cho những người am hiểu cả hiệu suất lẫn đẳng cấp, bộ gậy sắt White Pearl / 24K Gold Hollow Forged (#5-9, PW/SW) là kiệt tác về kỹ thuật và sự tao nhã—sử dụng mặt gậy bằng thép maraging cho độ phản hồi bùng nổ, các góc loft được tinh chỉnh chính xác (24°-43°), kiểm soát độ bounce (0°-5°) và góc lie (61.5°-63°) cho khả năng tiếp xúc mặt cỏ hoàn hảo và độ tinh xảo trong từng cú đánh; cân bằng nội bộ với tiến trình mặt gậy phân bậc, tâm trọng lực tối ưu (≈39.2 mm khoảng cách, ≈4.8 mm chiều sâu, ~17 mm chiều cao) và đi kèm shaft NS950 mạ vàng (≈94.5 g, điểm uốn thấp-trung) mang lại cảm giác mượt mà, ổn định tuyệt vời và sức mạnh đầy uy lực—những cây gậy này kết hợp sự chế tác xa hoa với chức năng đẳng cấp tour để nâng tầm mỗi cú swing thành một tuyên ngôn phong cách.`,
+    product_white_oyster_details: `Bộ gậy sắt Hollow Forged White Pearl / 24K Gold này là sự kết hợp tuyệt vời giữa phong cách và hiệu suất, khiến mỗi cú swing đều toát lên vẻ sang trọng. Các chi tiết mạ vàng tinh xảo và lớp hoàn thiện White Pearl lấp lánh thu hút ánh nhìn, cùng với shaft NS950 Gold mềm mại mang lại cảm giác cao cấp. Cảm giác khi đánh là sự mượt mà, tha thứ cho sai sót, và sự hiện diện đẳng cấp ngay từ lúc đứng chuẩn bị (address). Đầy uy lực nhưng vẫn giữ nét tao nhã — đây là bộ iron dành cho những ai coi golf là phong cách, không chỉ là trò chơi.`,
   },
   ja: {
     nav_home: 'ホーム',
@@ -194,7 +194,7 @@ const translations = {
     product_white_oyster_name: 'ホワイトパール／24Kゴールド中空鍛造アイアン',
     product_white_oyster_desc: '精度。優雅さ。比類なきパフォーマンス。',
     product_white_oyster_price: '価格はお問い合わせください。',
-    product_white_oyster_details: `性能と威厳の両方を求める鑑賞家のために作られた、このホワイトパール／24Kゴールド中空鍛造アイアンセット（#5-9、PW/SW）は、エンジニアリングとエレガンスの傑作です。マレージング鋼フェースによる爆発的な反応性、精密に調整されたロフト（24°～43°）、バウンスコントロール（0°～5°）、ライ角（61.5°～63°）が芝との完璧なインタラクションとショットの巧みさを実現。段階的なフェースプログレッションで内部バランスを取り、重心位置を最適化（重心距離約39.2mm、重心深さ約4.8mm、重心高約17mm）、さらにNS950ゴールドシャフト（約94.5g、ロー～ミッドキックポイント）を組み合わせることで、絹のようなフィーリング、卓越した安定性、力強いパワーを提供します——ツアーレベルの機能と華麗なクラフトマンシップが融合し、すべてのスイングをスタイルの宣言へと昇華させます。`,
+    product_white_oyster_details: `ホワイトパールと24Kゴールドで仕上げられたホローフォージド・アイアンセットは、スタイルと性能を見事に融合させ、スイングひとつで品格を物語ります。洗練されたゴールドのアクセントと輝くホワイトパールのフィニッシュが目を引き、滑らかなNS950ゴールドシャフトが手にする喜びを与える。打感は上質で寛容さもあり、あなたの姿勢（アドレス時）で威厳を放つ一振り。力強さを備えながらも、優雅さを失わないアイアンです。`,
   }
 };
 
