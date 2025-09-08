@@ -55,13 +55,66 @@
     <script src="script.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const map = L.map('map', { maxBoundsViscosity: 1.0 }).setView([16.047079, 108.206230], 5);
+        const points = [
+          { coords: [21.025793392445078, 105.7584890522287], label: 'Phuong Dong Golf' },
+          { coords: [21.044462699017213, 105.88413346662968], label: 'Dao Sen Golf' }
+        ];
+
+        const markerBounds = L.latLngBounds(points.map(p => p.coords));
+        const map = L.map('map', { maxBoundsViscosity: 1.0 }).fitBounds(markerBounds);
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attribution">CARTO</a>',
           subdomains: 'abcd',
           maxZoom: 19
         }).addTo(map);
+
+        const defaultStyle = {
+          radius: 8,
+          color: '#ff0000',
+          fillColor: '#ff0000',
+          fillOpacity: 0.8
+        };
+
+        const highlightStyle = {
+          radius: 12,
+          color: '#ffd700',
+          fillColor: '#ffd700',
+          fillOpacity: 1
+        };
+
+        let activeMarker = null;
+
+        points.forEach(p => {
+          const marker = L.circleMarker(p.coords, defaultStyle)
+            .addTo(map)
+            .bindPopup(p.label, {
+              autoClose: true,
+              closeOnClick: true,
+              offset: L.point(0, -10)
+            });
+
+          marker.on('click', () => {
+            if (activeMarker && activeMarker !== marker) {
+              activeMarker.setStyle(defaultStyle);
+              activeMarker.closePopup();
+            }
+            marker.setStyle(highlightStyle);
+            marker.openPopup();
+            map.flyTo(marker.getLatLng(), 13);
+            activeMarker = marker;
+          });
+        });
+
+        map.on('click', () => {
+          if (activeMarker) {
+            activeMarker.setStyle(defaultStyle);
+            activeMarker.closePopup();
+            activeMarker = null;
+          }
+        });
+
+        map.fitBounds(markerBounds, { padding: [50, 50] });
 
         fetch('vietnam.geojson')
           .then(response => response.json())
@@ -75,61 +128,7 @@
               interactive: false
             }).addTo(map);
 
-            const bounds = vietnamLayer.getBounds();
-
-            const points = [
-              { coords: [21.025793392445078, 105.7584890522287], label: 'Phuong Dong Golf' },
-              { coords: [21.044462699017213, 105.88413346662968], label: 'Dao Sen Golf' }
-            ];
-
-            const defaultStyle = {
-              radius: 8,
-              color: '#ff0000',
-              fillColor: '#ff0000',
-              fillOpacity: 0.8
-            };
-
-            const highlightStyle = {
-              radius: 12,
-              color: '#ffd700',
-              fillColor: '#ffd700',
-              fillOpacity: 1
-            };
-
-            let activeMarker = null;
-
-            points.forEach(p => {
-              const marker = L.circleMarker(p.coords, defaultStyle)
-                .addTo(map)
-                .bindPopup(p.label, {
-                  autoClose: true,
-                  closeOnClick: true,
-                  offset: L.point(0, -10)
-                });
-
-              marker.on('click', () => {
-                if (activeMarker && activeMarker !== marker) {
-                  activeMarker.setStyle(defaultStyle);
-                  activeMarker.closePopup();
-                }
-                marker.setStyle(highlightStyle);
-                marker.openPopup();
-                map.flyTo(marker.getLatLng(), 13);
-                activeMarker = marker;
-              });
-            });
-
-            map.on('click', () => {
-              if (activeMarker) {
-                activeMarker.setStyle(defaultStyle);
-                activeMarker.closePopup();
-                activeMarker = null;
-              }
-            });
-
-            const markerBounds = L.latLngBounds(points.map(p => p.coords));
-            map.fitBounds(markerBounds, { padding: [50, 50] });
-            map.setMaxBounds(bounds);
+            map.setMaxBounds(vietnamLayer.getBounds());
           })
           .catch(err => console.error('Failed to load Vietnam map data', err));
       });
