@@ -79,7 +79,7 @@ const translations = {
     product_white_oyster_name: 'White Pearl / 24K Gold Hollow Forged Irons',
     product_white_oyster_desc: 'Precision. Elegance. Unrivaled Performance.',
     product_white_oyster_price: 'Price upon request.',
-    product_white_oyster_details: `Elevate your game with the White Pearl / 24K Gold Hollow-Forged Irons — a stunning blend of art and performance that redefines what it means to swing in style. From their exquisite gold accents and luminous White Pearl finish to the silky NS950 Gold shafts, every detail communicates refinement. These irons deliver impressive feel, forgiving launch, and an unmistakable presence at address: power with poise, forged for those who demand the best in both aesthetics and functionality.',
+    product_white_oyster_details: `Elevate your game with the White Pearl / 24K Gold Hollow-Forged Irons — a stunning blend of art and performance that redefines what it means to swing in style. From their exquisite gold accents and luminous White Pearl finish to the silky NS950 Gold shafts, every detail communicates refinement. These irons deliver impressive feel, forgiving launch, and an unmistakable presence at address: power with poise, forged for those who demand the best in both aesthetics and functionality.`,
     product_white_oyster_specs: `
 <table class="spec-table">
   <tr><th colspan="2">WHITE PEARL / 24K GOLD HOLLOW FORGED IRONS</th></tr>
