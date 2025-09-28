@@ -398,7 +398,7 @@ h1, h2 {
 
 @media (max-width: 600px) {
   #putter-intro img {
-    object-position: 65% center;
+    object-position: 78% center;
   }
 }
 
@@ -453,19 +453,20 @@ h1, h2 {
     left: 1rem;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    padding: 0.5rem;
+    width: 44px;
+    height: 44px;
+    padding: 0;
     border-radius: 50%;
-    background-color: var(--bg-color);
-    border: 1px solid var(--text-color);
+    background-color: var(--text-color);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   #menu-toggle span {
-    width: 70%;
+    width: 60%;
     height: 3px;
     margin: 4px auto;
-    background-color: var(--text-color);
+    background-color: var(--bg-color);
     border-radius: 2px;
   }
 
