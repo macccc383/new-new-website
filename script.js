@@ -445,20 +445,28 @@ function initIntroScroll() {
 function initMobileMenu() {
   const menuToggle = document.getElementById('menu-toggle');
   const nav = document.querySelector('nav');
+  const overlay = document.getElementById('nav-overlay');
   if (!menuToggle || !nav) return;
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
+
+  const setMenuState = isOpen => {
+    nav.classList.toggle('open', isOpen);
     menuToggle.classList.toggle('open', isOpen);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
+    if (overlay) {
+      overlay.classList.toggle('active', isOpen);
+    }
+  };
+
+  setMenuState(false);
+
+  menuToggle.addEventListener('click', () => {
+    const shouldOpen = !nav.classList.contains('open');
+    setMenuState(shouldOpen);
   });
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      menuToggle.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
+
+  if (overlay) {
+    overlay.addEventListener('click', () => setMenuState(false));
+  }
 }
 
 function initDeviceDetection() {
@@ -480,6 +488,13 @@ function initDeviceDetection() {
       initCarousel();
       const nav = document.querySelector('nav');
       if (nav) nav.classList.remove('open');
+      const menuToggle = document.getElementById('menu-toggle');
+      if (menuToggle) {
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+      const overlay = document.getElementById('nav-overlay');
+      if (overlay) overlay.classList.remove('active');
     }
   }
   updateDevice();
