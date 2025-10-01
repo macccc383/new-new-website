@@ -453,6 +453,11 @@ h1, h2 {
     top: 18%;
     bottom: auto;
   }
+
+  .intro-btn {
+    background: var(--accent-color);
+    color: #000;
+  }
 }
 
 .intro-content h2 {
