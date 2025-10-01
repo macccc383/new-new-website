@@ -429,10 +429,6 @@ h1, h2 {
     object-position: 42% center;
   }
 
-  #putter-intro .intro-content {
-    bottom: 500%;
-  }
-
   #putter-intro .intro-content p {
     color: #000000;
   }
@@ -450,6 +446,13 @@ h1, h2 {
 #putter-intro .intro-content {
   bottom: 20%;
   left: 49%;
+}
+
+@media (max-width: 600px) {
+  #putter-intro .intro-content {
+    top: 18%;
+    bottom: auto;
+  }
 }
 
 .intro-content h2 {
