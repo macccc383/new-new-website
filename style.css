@@ -91,6 +91,10 @@ nav.nav-hidden {
   transition: opacity 0.3s ease;
 }
 
+#menu-toggle.open span {
+  opacity: 0;
+}
+
 nav a {
   color: var(--text-color);
   margin-right: 1rem;
@@ -420,6 +424,10 @@ h1, h2 {
 @media (max-width: 600px) {
   #putter-intro img {
     object-position: 42% center;
+  }
+
+  #putter-intro .intro-content {
+    bottom: 32%;
   }
 }
 
