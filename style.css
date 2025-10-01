@@ -88,6 +88,7 @@ nav.nav-hidden {
   height: 3px;
   background: var(--text-color);
   margin: 4px 0;
+  transition: opacity 0.3s ease;
 }
 
 nav a {
@@ -488,6 +489,10 @@ h1, h2 {
     margin: 4px auto;
     background-color: #ffffff;
     border-radius: 2px;
+  }
+
+  #menu-toggle.open span {
+    opacity: 0;
   }
 
   nav {
