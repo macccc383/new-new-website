@@ -432,6 +432,10 @@ h1, h2 {
   #putter-intro .intro-content {
     bottom: 75%;
   }
+
+  #putter-intro .intro-content p {
+    color: #ffffff;
+  }
 }
 
 .intro-content {
