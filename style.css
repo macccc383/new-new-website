@@ -60,6 +60,7 @@ nav.nav-hidden {
   border: none;
   cursor: pointer;
   z-index: 1300;
+  transition: opacity 0.3s ease;
 }
 
 #nav-overlay {
@@ -93,6 +94,8 @@ nav.nav-hidden {
 
 #menu-toggle.open span {
   opacity: 0;
+  visibility: hidden;
+  transform: scaleX(0);
 }
 
 nav a {
@@ -427,7 +430,7 @@ h1, h2 {
   }
 
   #putter-intro .intro-content {
-    bottom: 32%;
+    bottom: 42%;
   }
 }
 
@@ -499,8 +502,16 @@ h1, h2 {
     border-radius: 2px;
   }
 
+  #menu-toggle.open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   #menu-toggle.open span {
     opacity: 0;
+    visibility: hidden;
+    transform: scaleX(0);
   }
 
   nav {
