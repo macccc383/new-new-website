@@ -247,6 +247,14 @@ main {
   position: relative;
 }
 
+.categories.categories--stack-accessories {
+  flex-wrap: wrap;
+}
+
+.categories.categories--stack-accessories .category-btn[data-category="accessories"] {
+  flex-basis: 100%;
+}
+
 #club-dropdown {
   position: absolute;
   top: 100%;
