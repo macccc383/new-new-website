@@ -58,8 +58,16 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const points = [
-          { coords: [21.025793392445078, 105.7584890522287], label: 'Phuong Dong Golf' },
-          { coords: [21.044462699017213, 105.88413346662968], label: 'Dao Sen Golf' }
+          {
+            coords: [21.025793392445078, 105.7584890522287],
+            label: 'Phuong Dong Golf',
+            url: 'https://maps.app.goo.gl/T1nwq6GEUX5nTA3SA?g_st=ipc'
+          },
+          {
+            coords: [21.044462699017213, 105.88413346662968],
+            label: 'Dao Sen Golf',
+            url: 'https://maps.app.goo.gl/nC3MFsNDQJjk2cNF6?g_st=ipc'
+          }
         ];
 
         const markerBounds = L.latLngBounds(points.map(p => p.coords));
@@ -88,9 +96,16 @@
         let activeMarker = null;
 
         points.forEach(p => {
+          const popupContent = `
+            <div class="map-popup">
+              <strong>${p.label}</strong><br>
+              <a href="${p.url}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </div>
+          `.trim();
+
           const marker = L.circleMarker(p.coords, defaultStyle)
             .addTo(map)
-            .bindPopup(p.label, {
+            .bindPopup(popupContent, {
               autoClose: true,
               closeOnClick: true,
               offset: L.point(0, -10)
