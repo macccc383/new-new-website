@@ -55,21 +55,22 @@ const translations = {
 `,
     product_kh888_putter_name: 'KH888 Putter',
     product_kh888_putter_desc: 'Limited-edition Japanese-crafted precision putter.',
-    product_kh888_putter_price: 'From $1,080.00 (≈ ₫29,000,000 / ¥159,059)',
+    product_kh888_putter_price: 'From $1,080.00',
       product_kh888_putter_details: `The Kentack KH888 is not just a golf putter—it is a statement of craftsmanship and engineering excellence from Japan. Meticulously forged from premium SUS303 stainless steel, this masterpiece delivers unmatched balance, stability, and feel with every stroke.
 Each putter is the result of a painstaking Japanese manufacturing process, where cutting-edge precision meets artisanal finesse. The refined metallic finish highlights the clean lines and sharp geometry, while the deep-milled face ensures superior roll and consistency.
 The steel shaft is seamlessly integrated to provide unmatched durability and fluid energy transfer, while the emblem badge and engraving signify authenticity and attention to detail. Every KH888 proudly bears the mark “Made in Japan”, a seal synonymous with trust and uncompromising quality.
 With production strictly limited to 150 units worldwide, and each individually numbered, this is not merely an instrument—it is a collector’s piece. The KH888 is crafted for golfers who demand perfection, seek distinction, and understand that luxury lies in the details.`,
       product_kh888_putter_specs: `
-<ul class="spec-list">
-  <li><strong>Head Material:</strong> Premium SUS303 Stainless Steel</li>
-  <li><strong>Manufacturing:</strong> Precision Japanese Craftsmanship</li>
-  <li><strong>Finish:</strong> Luxury metallic precision-milled surface</li>
-  <li><strong>Shaft:</strong> High-quality steel</li>
-  <li><strong>Length:</strong> Custom-fitted for balance and control</li>
-  <li><strong>Production:</strong> Limited to 150 pieces (individually numbered)</li>
-  <li><strong>Origin:</strong> 100% Made in Japan</li>
-</ul>
+<table class="spec-table">
+  <tr><th colspan="2">KH888 PUTTER</th></tr>
+  <tr><td>Head Material</td><td>Premium SUS303 Stainless Steel</td></tr>
+  <tr><td>Manufacturing</td><td>Precision Japanese Craftsmanship</td></tr>
+  <tr><td>Finish</td><td>Luxury metallic precision-milled surface</td></tr>
+  <tr><td>Shaft</td><td>High-quality steel</td></tr>
+  <tr><td>Length</td><td>Custom-fitted for balance and control</td></tr>
+  <tr><td>Production</td><td>Limited to 150 pieces (individually numbered)</td></tr>
+  <tr><td>Origin</td><td>100% Made in Japan</td></tr>
+</table>
 `,
     product_kh555_name: 'KH555 Driver',
     product_kh555_desc: 'Forged precision driver.',
@@ -157,29 +158,30 @@ With production strictly limited to 150 units worldwide, and each individually n
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
     product_kh888_name: 'Driver KH888',
     product_kh888_desc: 'Gậy driver hiệu suất cao.',
-    product_kh888_price: 'Giá khởi điểm từ <em>29,000,000 VND</em>',
+    product_kh888_price: 'Giá khởi điểm từ <em>29.000.000₫</em>',
         product_kh888_details: `KH888 kế thừa công nghệ golf mang tính biểu tượng do huyền thoại Nhật Bản Honma Hiro phát triển. Trong thời gian giữ chức Phó Chủ tịch Honma Golf, Hiro chuyên nghiên cứu những cây gậy có thể dễ dàng tăng khoảng cách bay cho cả golfer chuyên nghiệp lẫn người mới chơi. Chiếc driver hoàn thiện bằng sơn mài đỏ tuyệt đẹp này mang đầy đủ dấu ấn Honma Hiro về hiệu suất đỉnh cao và thiết kế tinh tế. Phần đầu và thân gậy được sơn bằng kỹ thuật truyền thống của Nhật Bản gọi là Maki-e. Phương pháp nghệ thuật này đòi hỏi nghệ nhân tỉ mỉ phủ nhiều lớp sơn mài. Sản phẩm sau đó được hoàn thiện thủ công với một lớp rắc lá vàng 24k. Kết quả là một cây gậy xa hoa lộng lẫy với hiệu suất cực kỳ cao.`,
     product_kh555_name: 'Driver KH555',
     product_kh555_desc: 'Gậy driver rèn chính xác.',
-    product_kh555_price: 'Giá khởi điểm từ <em>36,000,000 VND</em>',
+    product_kh555_price: 'Giá khởi điểm từ <em>36.000.000₫</em>',
     product_kh555_details: 'Driver Kentack KH555 với thiết kế mặt gậy bằng chất liệu Titanium với độ chính xác cao, +20 Yard so với dòng gậy thông thường. Với tiếp xúc đa điểm mang lại sự ổn định đồng thời  luôn đẩy bóng bề tiêu cự tốt nhất có thể. Cán gậy được làm bằng sợi Nano (mảnh và nhỏ như hạt vải) giúp xa và mang lại sự cân bằng tốt nhất, KH555 là sự thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer yêu thích sự bứt phá, ổn định.',
     product_kh888_putter_name: 'Putter KH888',
     product_kh888_putter_desc: 'Putter chuẩn xác phiên bản giới hạn chế tác tại Nhật Bản.',
-    product_kh888_putter_price: 'Giá từ $1.080,00 (≈ 29.000.000 VND / ¥159.059)',
+    product_kh888_putter_price: 'Giá từ <em>29.000.000₫</em>',
         product_kh888_putter_details: `Kentack KH888 không chỉ là một cây putter — đó là tuyên ngôn về sự tinh xảo và kỹ nghệ đỉnh cao từ Nhật Bản. Được rèn từ thép không gỉ SUS303 cao cấp, tuyệt phẩm này mang đến sự cân bằng, ổn định và cảm giác vượt trội trong từng cú gạt.
 Mỗi cây gậy là kết quả của quy trình chế tác Nhật Bản tỉ mỉ, nơi công nghệ chính xác gặp gỡ sự khéo léo của nghệ nhân. Lớp hoàn thiện kim loại sang trọng làm nổi bật những đường nét sắc sảo, trong khi mặt gậy phay sâu giúp bóng lăn ổn định và đồng nhất.
 Cán thép liền khối tạo nên độ bền vượt trội và truyền năng lượng mượt mà, cùng huy hiệu và khắc dập thể hiện tính chính danh và sự chú trọng từng chi tiết. Mỗi KH888 đều tự hào mang dấu “Made in Japan” — biểu tượng của niềm tin và chất lượng không khoan nhượng.
 Sản lượng giới hạn chỉ 150 cây trên toàn thế giới, mỗi cây đều được đánh số riêng. KH888 không đơn thuần là dụng cụ thi đấu, mà còn là món sưu tầm dành cho golfer yêu sự hoàn hảo, khác biệt và trân trọng giá trị đến từ những chi tiết tinh tế.`,
     product_kh888_putter_specs: `
-<ul class="spec-list">
-  <li><strong>Chất liệu đầu gậy:</strong> Thép không gỉ SUS303 cao cấp</li>
-  <li><strong>Quy trình chế tác:</strong> Kỹ nghệ Nhật Bản chính xác</li>
-  <li><strong>Hoàn thiện:</strong> Bề mặt kim loại mài chính xác cao cấp</li>
-  <li><strong>Shaft:</strong> Thép chất lượng cao</li>
-  <li><strong>Chiều dài:</strong> Tùy chỉnh để cân bằng và kiểm soát</li>
-  <li><strong>Sản xuất:</strong> Giới hạn 150 cây (đánh số riêng)</li>
-  <li><strong>Xuất xứ:</strong> 100% Made in Japan</li>
-</ul>
+<table class="spec-table">
+  <tr><th colspan="2">PUTTER KH888</th></tr>
+  <tr><td>Chất liệu đầu gậy</td><td>Thép không gỉ SUS303 cao cấp</td></tr>
+  <tr><td>Quy trình chế tác</td><td>Kỹ nghệ Nhật Bản chính xác</td></tr>
+  <tr><td>Hoàn thiện</td><td>Bề mặt kim loại mài chính xác cao cấp</td></tr>
+  <tr><td>Shaft</td><td>Thép chất lượng cao</td></tr>
+  <tr><td>Chiều dài</td><td>Tùy chỉnh để cân bằng và kiểm soát</td></tr>
+  <tr><td>Sản xuất</td><td>Giới hạn 150 cây (đánh số riêng)</td></tr>
+  <tr><td>Xuất xứ</td><td>100% Made in Japan</td></tr>
+</table>
 `,
     product_white_oyster_name: 'Gậy sắt rèn rỗng White Pearl / vàng 24K',
     product_white_oyster_desc: 'Chính xác. Thanh lịch. Hiệu suất vô song.',
@@ -221,7 +223,7 @@ Sản lượng giới hạn chỉ 150 cây trên toàn thế giới, mỗi cây 
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
     product_kh888_name: 'KH888ドライバー',
     product_kh888_desc: '高性能ドライバー。',
-    product_kh888_price: '1,110ドルから',
+    product_kh888_price: '163,500円から',
         product_kh888_details: `KH888は、日本の伝説的なゴルフマスター本間弘が開発した象徴的なゴルフ技術を基に作られています。本間ゴルフの副社長を務めていた時期、弘氏はプロから初心者まで誰もが簡単に飛距離を伸ばせるクラブの開発に専念しました。この美しい赤い漆仕上げのドライバーには、本間弘ならではの卓越した性能と洗練されたデザインがすべて備わっています。ヘッドとシャフトには「蒔絵」と呼ばれる日本の伝統技法が施されています。この芸術的な手法では、職人が何層もの漆を丁寧に重ねていきます。そして製品は24Kの金箔を散らして手作業で仕上げられます。その結果、驚くほど高い性能を持つ豪華絢爛なクラブが完成します。`,
     product_kh555_name: 'KH555ドライバー',
     product_kh555_desc: '精密鍛造ドライバー。',
@@ -229,21 +231,22 @@ Sản lượng giới hạn chỉ 150 cây trên toàn thế giới, mỗi cây 
     product_kh555_details: 'ケンタック KH555 ドライバーは鍛造チタンのパワーと洗練された精度を融合し、楽に飛距離を伸ばし揺るぎない安定性をもたらします。プレミアムカーボンシャフトとツアーインスパイアのバランスで仕上げられ、性能とエレガンスの調和を求める目の肥えたゴルファーのための一本です。',
     product_kh888_putter_name: 'KH888パター',
     product_kh888_putter_desc: '日本で鍛えられた限定プレシジョンパター。',
-    product_kh888_putter_price: '1,080ドルから（約29,000,000ドン / 159,059円）',
+    product_kh888_putter_price: '159,059円から',
         product_kh888_putter_details: `Kentack KH888は単なるゴルフパターではなく、日本が誇るクラフトマンシップとエンジニアリングの結晶です。高級SUS303ステンレススチールを精密に鍛造し、比類なきバランス・安定性・打感を1打ごとに提供します。
 最先端の精度と職人技が融合した緻密な日本の製造工程によって、エッジの効いたラインと洗練されたメタリック仕上げが際立ち、深いミーリングが施されたフェースは転がりと再現性を高めます。
 スチールシャフトはシームレスに組み込まれ、耐久性とスムーズなエネルギー伝達を実現。エンブレムバッジと刻印は真正性と細部へのこだわりを象徴します。すべてのKH888には「Made in Japan」の刻印が施され、信頼と揺るぎない品質を約束します。
 生産数は世界でわずか150本、すべてにシリアルナンバーが付与されたコレクターズピース。完璧を求め、個性を大切にし、細部に宿るラグジュアリーを知るゴルファーのために作られた一本です。`,
     product_kh888_putter_specs: `
-<ul class="spec-list">
-  <li><strong>ヘッド素材:</strong> 高級SUS303ステンレススチール</li>
-  <li><strong>製造:</strong> 日本の精密クラフトマンシップ</li>
-  <li><strong>仕上げ:</strong> ラグジュアリーなメタリック精密ミルド仕上げ</li>
-  <li><strong>シャフト:</strong> 高品質スチール</li>
-  <li><strong>長さ:</strong> バランスとコントロールのためのカスタムフィット</li>
-  <li><strong>生産本数:</strong> 限定150本（シリアルナンバー付与）</li>
-  <li><strong>原産国:</strong> 日本製</li>
-</ul>
+<table class="spec-table">
+  <tr><th colspan="2">KH888パター</th></tr>
+  <tr><td>ヘッド素材</td><td>高級SUS303ステンレススチール</td></tr>
+  <tr><td>製造</td><td>日本の精密クラフトマンシップ</td></tr>
+  <tr><td>仕上げ</td><td>ラグジュアリーなメタリック精密ミルド仕上げ</td></tr>
+  <tr><td>シャフト</td><td>高品質スチール</td></tr>
+  <tr><td>長さ</td><td>バランスとコントロールのためのカスタムフィット</td></tr>
+  <tr><td>生産本数</td><td>限定150本（シリアルナンバー付与）</td></tr>
+  <tr><td>原産国</td><td>日本製</td></tr>
+</table>
 `,
     product_white_oyster_name: 'ホワイトパール／24Kゴールド中空鍛造アイアン',
     product_white_oyster_desc: '精度。優雅さ。比類なきパフォーマンス。',
@@ -502,8 +505,25 @@ function initPutterModalTrigger() {
   const product = productData.find(p => p.id === 'kh888_putter');
   if (!product) return;
   btn.addEventListener('click', () => {
-    openProductModal(product);
+    window.location.href = `products.html?product=${product.id}`;
   });
+}
+
+function initProductDeepLink() {
+  const grid = document.getElementById('product-grid');
+  if (!grid) return;
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get('product');
+  if (!productId) return;
+  const product = productData.find(p => p.id === productId);
+  if (!product) return;
+  if (!modal) return;
+  requestAnimationFrame(() => openProductModal(product));
+  if (history.replaceState) {
+    const url = new URL(window.location);
+    url.searchParams.delete('product');
+    history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+  }
 }
 
 function initMobileMenu() {
@@ -827,5 +847,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initProducts();
   initIntroScroll();
   initProductModal();
+  initProductDeepLink();
   initPutterModalTrigger();
 });
