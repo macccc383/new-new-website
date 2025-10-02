@@ -56,10 +56,9 @@ const translations = {
     product_kh888_putter_name: 'KH888 Putter',
     product_kh888_putter_desc: 'Limited-edition Japanese-crafted precision putter.',
     product_kh888_putter_price: 'From $1,080.00',
-      product_kh888_putter_details: `The Kentack KH888 is not just a golf putter—it is a statement of craftsmanship and engineering excellence from Japan. Meticulously forged from premium SUS303 stainless steel, this masterpiece delivers unmatched balance, stability, and feel with every stroke.
-Each putter is the result of a painstaking Japanese manufacturing process, where cutting-edge precision meets artisanal finesse. The refined metallic finish highlights the clean lines and sharp geometry, while the deep-milled face ensures superior roll and consistency.
-The steel shaft is seamlessly integrated to provide unmatched durability and fluid energy transfer, while the emblem badge and engraving signify authenticity and attention to detail. Every KH888 proudly bears the mark “Made in Japan”, a seal synonymous with trust and uncompromising quality.
-With production strictly limited to 150 units worldwide, and each individually numbered, this is not merely an instrument—it is a collector’s piece. The KH888 is crafted for golfers who demand perfection, seek distinction, and understand that luxury lies in the details.`,
+    product_kh888_putter_details: `The Kentack KH888 is more than a putter—it is Japanese craftsmanship at its finest. Forged from premium SUS303 stainless steel, it delivers exceptional balance, stability, and feel.
+Its refined metallic finish and deep-milled face ensure consistent roll and precision, while the steel shaft provides durability and smooth energy transfer.
+Each emblem and engraving reflects authentic artistry, proudly marked “Made in Japan.” With only 150 numbered pieces worldwide, the KH888 is both a performance instrument and a collector’s treasure—crafted for golfers who demand perfection and distinction.`,
       product_kh888_putter_specs: `
 <table class="spec-table">
   <tr><th colspan="2">KH888 PUTTER</th></tr>
@@ -167,10 +166,10 @@ With production strictly limited to 150 units worldwide, and each individually n
     product_kh888_putter_name: 'Putter KH888',
     product_kh888_putter_desc: 'Putter chuẩn xác phiên bản giới hạn chế tác tại Nhật Bản.',
     product_kh888_putter_price: 'Giá từ <em>29.000.000₫</em>',
-        product_kh888_putter_details: `Kentack KH888 không chỉ là một cây putter — đó là tuyên ngôn về sự tinh xảo và kỹ nghệ đỉnh cao từ Nhật Bản. Được rèn từ thép không gỉ SUS303 cao cấp, tuyệt phẩm này mang đến sự cân bằng, ổn định và cảm giác vượt trội trong từng cú gạt.
-Mỗi cây gậy là kết quả của quy trình chế tác Nhật Bản tỉ mỉ, nơi công nghệ chính xác gặp gỡ sự khéo léo của nghệ nhân. Lớp hoàn thiện kim loại sang trọng làm nổi bật những đường nét sắc sảo, trong khi mặt gậy phay sâu giúp bóng lăn ổn định và đồng nhất.
-Cán thép liền khối tạo nên độ bền vượt trội và truyền năng lượng mượt mà, cùng huy hiệu và khắc dập thể hiện tính chính danh và sự chú trọng từng chi tiết. Mỗi KH888 đều tự hào mang dấu “Made in Japan” — biểu tượng của niềm tin và chất lượng không khoan nhượng.
-Sản lượng giới hạn chỉ 150 cây trên toàn thế giới, mỗi cây đều được đánh số riêng. KH888 không đơn thuần là dụng cụ thi đấu, mà còn là món sưu tầm dành cho golfer yêu sự hoàn hảo, khác biệt và trân trọng giá trị đến từ những chi tiết tinh tế.`,
+        product_kh888_putter_details: `Kentack KH888 không chỉ là một cây putter — đó là tinh hoa của nghề thủ công Nhật Bản. Được rèn từ thép không gỉ SUS303 cao cấp, gậy mang đến sự cân bằng, ổn định và cảm giác vượt trội.
+Lớp hoàn thiện kim loại tinh xảo cùng mặt gậy phay sâu giúp bóng lăn ổn định và chính xác, trong khi cán thép đảm bảo độ bền và truyền năng lượng mượt mà.
+Mỗi huy hiệu và đường khắc đều toát lên nghệ thuật chính thống, tự hào mang dấu “Made in Japan”.
+Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888 vừa là công cụ thi đấu hiệu suất cao vừa là báu vật sưu tầm — dành cho golfer yêu cầu sự hoàn hảo và khác biệt.`,
     product_kh888_putter_specs: `
 <table class="spec-table">
   <tr><th colspan="2">PUTTER KH888</th></tr>
@@ -232,10 +231,10 @@ Sản lượng giới hạn chỉ 150 cây trên toàn thế giới, mỗi cây 
     product_kh888_putter_name: 'KH888パター',
     product_kh888_putter_desc: '日本で鍛えられた限定プレシジョンパター。',
     product_kh888_putter_price: '159,059円から',
-        product_kh888_putter_details: `Kentack KH888は単なるゴルフパターではなく、日本が誇るクラフトマンシップとエンジニアリングの結晶です。高級SUS303ステンレススチールを精密に鍛造し、比類なきバランス・安定性・打感を1打ごとに提供します。
-最先端の精度と職人技が融合した緻密な日本の製造工程によって、エッジの効いたラインと洗練されたメタリック仕上げが際立ち、深いミーリングが施されたフェースは転がりと再現性を高めます。
-スチールシャフトはシームレスに組み込まれ、耐久性とスムーズなエネルギー伝達を実現。エンブレムバッジと刻印は真正性と細部へのこだわりを象徴します。すべてのKH888には「Made in Japan」の刻印が施され、信頼と揺るぎない品質を約束します。
-生産数は世界でわずか150本、すべてにシリアルナンバーが付与されたコレクターズピース。完璧を求め、個性を大切にし、細部に宿るラグジュアリーを知るゴルファーのために作られた一本です。`,
+        product_kh888_putter_details: `Kentack KH888は単なるパターではなく、日本のクラフトマンシップの粋を集めた一本です。高級SUS303ステンレススチールから鍛造され、卓越したバランス、安定性、打感をもたらします。
+精緻なメタリック仕上げと深いミーリングフェースが安定した転がりと高い再現性を生み出し、スチールシャフトは耐久性と滑らかなエネルギー伝達を提供します。
+あらゆるエンブレムと刻印が本物の職人技を物語り、「Made in Japan」の刻印が誇らしく輝きます。
+世界限定150本のシリアルナンバー入りで、KH888は高性能なギアであると同時にコレクターズアイテムでもあり、完璧と個性を求めるゴルファーのために仕立てられています。`,
     product_kh888_putter_specs: `
 <table class="spec-table">
   <tr><th colspan="2">KH888パター</th></tr>
@@ -837,6 +836,35 @@ function initProducts() {
   renderProducts();
 }
 
+function initCategoryOverflowHandling() {
+  const categories = document.querySelector('.categories');
+  const accessoriesBtn = categories?.querySelector('.category-btn[data-category="accessories"]');
+  if (!categories || !accessoriesBtn) return;
+
+  const updateLayout = () => {
+    categories.classList.remove('categories--stack-accessories');
+    if (document.documentElement.lang !== 'en') {
+      return;
+    }
+
+    const accessoriesEdge = accessoriesBtn.offsetLeft + accessoriesBtn.offsetWidth;
+    if (accessoriesEdge > categories.clientWidth + 1) {
+      categories.classList.add('categories--stack-accessories');
+    }
+  };
+
+  const languageSelect = document.getElementById('language-select');
+  if (languageSelect) {
+    languageSelect.addEventListener('change', () => {
+      setTimeout(updateLayout, 0);
+    });
+  }
+
+  window.addEventListener('resize', updateLayout);
+
+  requestAnimationFrame(updateLayout);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
@@ -849,4 +877,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductModal();
   initProductDeepLink();
   initPutterModalTrigger();
+  initCategoryOverflowHandling();
 });
