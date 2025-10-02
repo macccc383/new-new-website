@@ -53,6 +53,24 @@ const translations = {
   <tr><td>CT(Characteristic time)</td><td>290</td></tr>
 </table>
 `,
+    product_kh888_putter_name: 'KH888 Putter',
+    product_kh888_putter_desc: 'Limited-edition Japanese-crafted precision putter.',
+    product_kh888_putter_price: 'From $1,080.00 (≈ ₫29,000,000 / ¥159,059)',
+      product_kh888_putter_details: `The Kentack KH888 is not just a golf putter—it is a statement of craftsmanship and engineering excellence from Japan. Meticulously forged from premium SUS303 stainless steel, this masterpiece delivers unmatched balance, stability, and feel with every stroke.
+Each putter is the result of a painstaking Japanese manufacturing process, where cutting-edge precision meets artisanal finesse. The refined metallic finish highlights the clean lines and sharp geometry, while the deep-milled face ensures superior roll and consistency.
+The steel shaft is seamlessly integrated to provide unmatched durability and fluid energy transfer, while the emblem badge and engraving signify authenticity and attention to detail. Every KH888 proudly bears the mark “Made in Japan”, a seal synonymous with trust and uncompromising quality.
+With production strictly limited to 150 units worldwide, and each individually numbered, this is not merely an instrument—it is a collector’s piece. The KH888 is crafted for golfers who demand perfection, seek distinction, and understand that luxury lies in the details.`,
+      product_kh888_putter_specs: `
+<ul class="spec-list">
+  <li><strong>Head Material:</strong> Premium SUS303 Stainless Steel</li>
+  <li><strong>Manufacturing:</strong> Precision Japanese Craftsmanship</li>
+  <li><strong>Finish:</strong> Luxury metallic precision-milled surface</li>
+  <li><strong>Shaft:</strong> High-quality steel</li>
+  <li><strong>Length:</strong> Custom-fitted for balance and control</li>
+  <li><strong>Production:</strong> Limited to 150 pieces (individually numbered)</li>
+  <li><strong>Origin:</strong> 100% Made in Japan</li>
+</ul>
+`,
     product_kh555_name: 'KH555 Driver',
     product_kh555_desc: 'Forged precision driver.',
     product_kh555_price: 'Starting from $1,400',
@@ -145,6 +163,24 @@ const translations = {
     product_kh555_desc: 'Gậy driver rèn chính xác.',
     product_kh555_price: 'Giá khởi điểm từ <em>36,000,000 VND</em>',
     product_kh555_details: 'Driver Kentack KH555 với thiết kế mặt gậy bằng chất liệu Titanium với độ chính xác cao, +20 Yard so với dòng gậy thông thường. Với tiếp xúc đa điểm mang lại sự ổn định đồng thời  luôn đẩy bóng bề tiêu cự tốt nhất có thể. Cán gậy được làm bằng sợi Nano (mảnh và nhỏ như hạt vải) giúp xa và mang lại sự cân bằng tốt nhất, KH555 là sự thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer yêu thích sự bứt phá, ổn định.',
+    product_kh888_putter_name: 'Putter KH888',
+    product_kh888_putter_desc: 'Putter chuẩn xác phiên bản giới hạn chế tác tại Nhật Bản.',
+    product_kh888_putter_price: 'Giá từ $1.080,00 (≈ 29.000.000 VND / ¥159.059)',
+        product_kh888_putter_details: `Kentack KH888 không chỉ là một cây putter — đó là tuyên ngôn về sự tinh xảo và kỹ nghệ đỉnh cao từ Nhật Bản. Được rèn từ thép không gỉ SUS303 cao cấp, tuyệt phẩm này mang đến sự cân bằng, ổn định và cảm giác vượt trội trong từng cú gạt.
+Mỗi cây gậy là kết quả của quy trình chế tác Nhật Bản tỉ mỉ, nơi công nghệ chính xác gặp gỡ sự khéo léo của nghệ nhân. Lớp hoàn thiện kim loại sang trọng làm nổi bật những đường nét sắc sảo, trong khi mặt gậy phay sâu giúp bóng lăn ổn định và đồng nhất.
+Cán thép liền khối tạo nên độ bền vượt trội và truyền năng lượng mượt mà, cùng huy hiệu và khắc dập thể hiện tính chính danh và sự chú trọng từng chi tiết. Mỗi KH888 đều tự hào mang dấu “Made in Japan” — biểu tượng của niềm tin và chất lượng không khoan nhượng.
+Sản lượng giới hạn chỉ 150 cây trên toàn thế giới, mỗi cây đều được đánh số riêng. KH888 không đơn thuần là dụng cụ thi đấu, mà còn là món sưu tầm dành cho golfer yêu sự hoàn hảo, khác biệt và trân trọng giá trị đến từ những chi tiết tinh tế.`,
+    product_kh888_putter_specs: `
+<ul class="spec-list">
+  <li><strong>Chất liệu đầu gậy:</strong> Thép không gỉ SUS303 cao cấp</li>
+  <li><strong>Quy trình chế tác:</strong> Kỹ nghệ Nhật Bản chính xác</li>
+  <li><strong>Hoàn thiện:</strong> Bề mặt kim loại mài chính xác cao cấp</li>
+  <li><strong>Shaft:</strong> Thép chất lượng cao</li>
+  <li><strong>Chiều dài:</strong> Tùy chỉnh để cân bằng và kiểm soát</li>
+  <li><strong>Sản xuất:</strong> Giới hạn 150 cây (đánh số riêng)</li>
+  <li><strong>Xuất xứ:</strong> 100% Made in Japan</li>
+</ul>
+`,
     product_white_oyster_name: 'Gậy sắt rèn rỗng White Pearl / vàng 24K',
     product_white_oyster_desc: 'Chính xác. Thanh lịch. Hiệu suất vô song.',
     product_white_oyster_price: 'Giá liên hệ.',
@@ -191,6 +227,24 @@ const translations = {
     product_kh555_desc: '精密鍛造ドライバー。',
     product_kh555_price: '198,000円から',
     product_kh555_details: 'ケンタック KH555 ドライバーは鍛造チタンのパワーと洗練された精度を融合し、楽に飛距離を伸ばし揺るぎない安定性をもたらします。プレミアムカーボンシャフトとツアーインスパイアのバランスで仕上げられ、性能とエレガンスの調和を求める目の肥えたゴルファーのための一本です。',
+    product_kh888_putter_name: 'KH888パター',
+    product_kh888_putter_desc: '日本で鍛えられた限定プレシジョンパター。',
+    product_kh888_putter_price: '1,080ドルから（約29,000,000ドン / 159,059円）',
+        product_kh888_putter_details: `Kentack KH888は単なるゴルフパターではなく、日本が誇るクラフトマンシップとエンジニアリングの結晶です。高級SUS303ステンレススチールを精密に鍛造し、比類なきバランス・安定性・打感を1打ごとに提供します。
+最先端の精度と職人技が融合した緻密な日本の製造工程によって、エッジの効いたラインと洗練されたメタリック仕上げが際立ち、深いミーリングが施されたフェースは転がりと再現性を高めます。
+スチールシャフトはシームレスに組み込まれ、耐久性とスムーズなエネルギー伝達を実現。エンブレムバッジと刻印は真正性と細部へのこだわりを象徴します。すべてのKH888には「Made in Japan」の刻印が施され、信頼と揺るぎない品質を約束します。
+生産数は世界でわずか150本、すべてにシリアルナンバーが付与されたコレクターズピース。完璧を求め、個性を大切にし、細部に宿るラグジュアリーを知るゴルファーのために作られた一本です。`,
+    product_kh888_putter_specs: `
+<ul class="spec-list">
+  <li><strong>ヘッド素材:</strong> 高級SUS303ステンレススチール</li>
+  <li><strong>製造:</strong> 日本の精密クラフトマンシップ</li>
+  <li><strong>仕上げ:</strong> ラグジュアリーなメタリック精密ミルド仕上げ</li>
+  <li><strong>シャフト:</strong> 高品質スチール</li>
+  <li><strong>長さ:</strong> バランスとコントロールのためのカスタムフィット</li>
+  <li><strong>生産本数:</strong> 限定150本（シリアルナンバー付与）</li>
+  <li><strong>原産国:</strong> 日本製</li>
+</ul>
+`,
     product_white_oyster_name: 'ホワイトパール／24Kゴールド中空鍛造アイアン',
     product_white_oyster_desc: '精度。優雅さ。比類なきパフォーマンス。',
     product_white_oyster_price: '価格はお問い合わせください。',
@@ -198,7 +252,7 @@ const translations = {
   }
 };
 
-const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price', 'product_white_oyster_price'];
+const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price', 'product_white_oyster_price', 'product_kh888_putter_price'];
 
 let carouselInterval;
 let currentDevice;
@@ -442,6 +496,16 @@ function initIntroScroll() {
   window.addEventListener('scroll', handleFirstScroll, { once: true });
 }
 
+function initPutterModalTrigger() {
+  const btn = document.querySelector('#putter-intro .intro-btn');
+  if (!btn) return;
+  const product = productData.find(p => p.id === 'kh888_putter');
+  if (!product) return;
+  btn.addEventListener('click', () => {
+    openProductModal(product);
+  });
+}
+
 function initMobileMenu() {
   const menuToggle = document.getElementById('menu-toggle');
   const nav = document.querySelector('nav');
@@ -520,6 +584,23 @@ const productData = [
     type: 'drivers'
   },
   {
+    id: 'kh888_putter',
+    nameKey: 'product_kh888_putter_name',
+    descKey: 'product_kh888_putter_desc',
+    priceKey: 'product_kh888_putter_price',
+    detailsKey: 'product_kh888_putter_details',
+    specsKey: 'product_kh888_putter_specs',
+    image: 'PUTTER/PUTTERKH888img/IMG_0023.jpeg',
+    images: [
+      'PUTTER/PUTTERKH888img/IMG_0023.jpeg',
+      'PUTTER/PUTTERKH888img/IMG_0024.jpeg',
+      'PUTTER/PUTTERKH888img/IMG_0025.jpeg',
+      'PUTTER/PUTTERKH888img/IMG_0026.jpeg'
+    ],
+    category: 'clubs',
+    type: 'putters'
+  },
+  {
     id: 'kh555',
     nameKey: 'product_kh555_name',
     descKey: 'product_kh555_desc',
@@ -585,7 +666,8 @@ function openProductModal(product) {
   }
   if (modalSpecs) {
     if (product.specsKey) {
-      modalSpecs.innerHTML = translations['en'][product.specsKey];
+      const specsContent = translations[lang][product.specsKey] || translations['en'][product.specsKey];
+      modalSpecs.innerHTML = specsContent;
       modalSpecs.classList.remove('hidden');
     } else {
       modalSpecs.classList.add('hidden');
@@ -745,4 +827,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initProducts();
   initIntroScroll();
   initProductModal();
+  initPutterModalTrigger();
 });
