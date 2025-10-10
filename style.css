@@ -172,6 +172,13 @@ nav a:hover::after {
   font-size: 1.5rem;
   font-family: var(--heading-font);
   color: var(--accent-color);
+  text-decoration: none;
+}
+
+.logo:visited,
+.logo:active,
+.logo:hover {
+  color: var(--accent-color);
 }
 
 .hero {
