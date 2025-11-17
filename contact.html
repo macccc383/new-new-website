@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Vietnam Map</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    #map {
+      height: 100vh;
+      width: 100%;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <button id="menu-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="animate">
+    <a class="logo" href="index.html">KENTACK</a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="products.html" data-i18n="nav_products">Products</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="controls">
+      <div class="language-dropdown">
+        <button id="language-toggle" aria-label="Language">🌐</button>
+        <select id="language-select" class="hidden">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+    </div>
+  </nav>
+  <div id="nav-overlay"></div>
+
+  <main>
+    <div id="map"></div>
+  </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const points = [
+          {
+            coords: [21.025793392445078, 105.7584890522287],
+            label: 'Phuong Dong Golf',
+            url: 'https://maps.app.goo.gl/T1nwq6GEUX5nTA3SA?g_st=ipc'
+          },
+          {
+            coords: [21.044462699017213, 105.88413346662968],
+            label: 'Dao Sen Golf',
+            url: 'https://maps.app.goo.gl/nC3MFsNDQJjk2cNF6?g_st=ipc'
+          }
+        ];
+
+        const markerBounds = L.latLngBounds(points.map(p => p.coords));
+        const map = L.map('map', { maxBoundsViscosity: 1.0, zoomControl: false }).fitBounds(markerBounds);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attribution">CARTO</a>',
+          subdomains: 'abcd',
+          maxZoom: 19
+        }).addTo(map);
+
+        const defaultStyle = {
+          radius: 8,
+          color: '#ff0000',
+          fillColor: '#ff0000',
+          fillOpacity: 0.8
+        };
+
+        const highlightStyle = {
+          radius: 12,
+          color: '#ffd700',
+          fillColor: '#ffd700',
+          fillOpacity: 1
+        };
+
+        let activeMarker = null;
+
+        points.forEach(p => {
+          const popupContent = `
+            <div class="map-popup">
+              <strong>${p.label}</strong><br>
+              <a href="${p.url}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </div>
+          `.trim();
+
+          const marker = L.circleMarker(p.coords, defaultStyle)
+            .addTo(map)
+            .bindPopup(popupContent, {
+              autoClose: true,
+              closeOnClick: true,
+              offset: L.point(0, -10)
+            });
+
+          marker.on('click', () => {
+            if (activeMarker && activeMarker !== marker) {
+              activeMarker.setStyle(defaultStyle);
+              activeMarker.closePopup();
+            }
+            marker.setStyle(highlightStyle);
+            marker.openPopup();
+            map.flyTo(marker.getLatLng(), 13);
+            activeMarker = marker;
+          });
+        });
+
+        map.on('click', () => {
+          if (activeMarker) {
+            activeMarker.setStyle(defaultStyle);
+            activeMarker.closePopup();
+            activeMarker = null;
+          }
+        });
+
+        map.fitBounds(markerBounds, { padding: [50, 50] });
+
+        fetch('vietnam.geojson')
+          .then(response => response.json())
+          .then(data => {
+            const vietnamLayer = L.geoJSON(data, {
+              style: {
+                color: '#ffd700',
+                weight: 1,
+                fillOpacity: 0
+              },
+              interactive: false
+            }).addTo(map);
+
+            map.setMaxBounds(vietnamLayer.getBounds());
+          })
+          .catch(err => console.error('Failed to load Vietnam map data', err));
+      });
+    </script>
+  </body>
+</html>

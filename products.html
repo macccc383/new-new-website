@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Kentack's collection of premium golf clubs and accessories.">
+  <title>Kentack - Products</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="menu-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="animate">
+    <a class="logo" href="index.html">KENTACK</a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="products.html" data-i18n="nav_products">Products</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="controls">
+      <div class="language-dropdown">
+        <button id="language-toggle" aria-label="Language">🌐</button>
+        <select id="language-select" class="hidden">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+    </div>
+  </nav>
+  <div id="nav-overlay"></div>
+
+  <main>
+    <section class="club-gallery animate" aria-label="Kentack product categories">
+      <article class="club-card" data-category-card data-category="clubs" data-type="drivers" role="button" tabindex="0">
+        <div class="club-visual">
+          <img src="products/unnamed.png" alt="Kentack driver illustration" loading="lazy">
+          <span class="club-label">Drivers</span>
+        </div>
+        <div class="club-info">
+          <p class="club-type">High-performance driver.</p>
+          <h2>Driver KH888</h2>
+          <p>High-launch titanium heads finished with layered lacquer and gold leaf for effortless distance.</p>
+        </div>
+      </article>
+
+      <article class="club-card" data-category-card data-category="clubs" data-type="irons" role="button" tabindex="0">
+        <div class="club-visual">
+          <img src="products/IMG_0260.png" alt="Kentack irons illustration" loading="lazy">
+          <span class="club-label">Irons</span>
+        </div>
+        <div class="club-info">
+          <p class="club-type">Forged Precision</p>
+          <h2>White Pearl Studio</h2>
+          <p>Hollow-forged faces with mirror-polished fluting and 24K gold accents for sculpted trajectories.</p>
+        </div>
+      </article>
+
+      <article class="club-card" data-category-card data-category="clubs" data-type="putters" role="button" tabindex="0">
+        <div class="club-visual">
+          <img src="products/IMG_0261.png" alt="Kentack putter illustration" loading="lazy">
+          <span class="club-label">Putters</span>
+        </div>
+        <div class="club-info">
+          <p class="club-type">Limited-edition Japanese-crafted precision putter.</p>
+          <h2>KH888 Putter</h2>
+          <p>Deep-milled SUS303 blocks balanced for a satin roll, complete with hand-engraved emblems.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="filter-bar animate" aria-label="Product filters">
+      <div class="categories">
+        <button type="button" class="category-btn" data-category="clubs" data-i18n="category_clubs">Clubs</button>
+        <div id="club-dropdown" class="hidden">
+          <button type="button" class="club-btn" data-type="drivers" data-i18n="club_drivers">Drivers</button>
+          <button type="button" class="club-btn" data-type="woods" data-i18n="club_woods">Woods</button>
+          <button type="button" class="club-btn" data-type="irons" data-i18n="club_irons">Irons</button>
+          <button type="button" class="club-btn" data-type="hybrids" data-i18n="club_hybrids">Hybrids</button>
+          <button type="button" class="club-btn" data-type="wedges" data-i18n="club_wedges">Wedges</button>
+          <button type="button" class="club-btn" data-type="putters" data-i18n="club_putters">Putters</button>
+        </div>
+        <button type="button" class="category-btn" data-category="bags" data-i18n="category_bags">Bags</button>
+        <button type="button" class="category-btn" data-category="balls" data-i18n="category_balls">Balls</button>
+        <button type="button" class="category-btn" data-category="tees" data-i18n="category_tees">Tees</button>
+        <button type="button" class="category-btn" data-category="accessories" data-i18n="category_accessories">Accessories</button>
+      </div>
+    </section>
+
+    <section id="product-grid" class="product-grid grid-4 animate" aria-live="polite">
+      <!-- Product cards are rendered here by script.js -->
+    </section>
+
+    <section class="products-note animate">
+      <p>Looking for a bespoke shaft pairing or a private fitting? Reach out through the <a href="contact.html">contact page</a> and we will tailor the build to your swing.</p>
+    </section>
+  </main>
+  <div id="product-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-image-container">
+        <img class="modal-image" src="" alt="">
+        <button class="prev" aria-label="Previous">&#10094;</button>
+        <button class="next" aria-label="Next">&#10095;</button>
+      </div>
+      <div class="modal-info">
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <p class="modal-price"></p>
+        <p class="modal-details"></p>
+        <div class="modal-specs hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
