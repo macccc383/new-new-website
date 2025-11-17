@@ -258,11 +258,6 @@ main {
   outline-offset: 6px;
 }
 
-.device-phone .club-card.card-await-confirm {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 6px;
-}
-
 .club-visual {
   position: relative;
   width: 100%;

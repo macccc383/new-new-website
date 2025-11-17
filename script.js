@@ -836,33 +836,6 @@ function initCategoryCardFilters() {
   const filterBar = document.querySelector('.filter-bar');
   const grid = document.getElementById('product-grid');
 
-  let pendingCard = null;
-  let pendingTimer = null;
-
-  const requiresDoubleTap = () => document.body.classList.contains('device-phone');
-
-  const clearPendingState = () => {
-    if (pendingTimer) {
-      clearTimeout(pendingTimer);
-      pendingTimer = null;
-    }
-    if (pendingCard) {
-      pendingCard.classList.remove('card-await-confirm');
-      pendingCard = null;
-    }
-  };
-
-  const armCardForSecondTap = card => {
-    clearPendingState();
-    pendingCard = card;
-    card.classList.add('card-await-confirm');
-    pendingTimer = setTimeout(() => {
-      if (pendingCard === card) {
-        clearPendingState();
-      }
-    }, 1500);
-  };
-
   const applyFilter = (category, type) => {
     const filter = {};
     if (category) filter.category = category;
@@ -878,14 +851,6 @@ function initCategoryCardFilters() {
     const category = card.getAttribute('data-category');
     const type = card.getAttribute('data-type');
     card.addEventListener('click', () => {
-      if (requiresDoubleTap()) {
-        if (pendingCard === card) {
-          clearPendingState();
-        } else {
-          armCardForSecondTap(card);
-          return;
-        }
-      }
       applyFilter(category, type);
     });
     card.addEventListener('keydown', e => {
