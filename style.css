@@ -327,7 +327,7 @@ main {
   z-index: 0;
   top: 35%;
   left: 50%;
-  transform: translate(-50%, -50%) scaleY(1.8);
+  transform: translate(-50%, -50%) scaleY(2.1);
   font-family: var(--heading-font);
   font-style: italic;
   font-weight: 600;
@@ -416,7 +416,7 @@ main {
   }
   .club-label {
     font-size: clamp(4rem, 18vw, 8rem);
-    transform: translate(-50%, -60%) scale(0.75, 1.4);
+    transform: translate(-50%, -60%) scale(0.75, 1.7);
     letter-spacing: 0.35rem;
   }
   .club-card:hover img,
