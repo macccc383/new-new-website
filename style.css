@@ -258,22 +258,23 @@ main {
   outline-offset: 6px;
 }
 
+
 .club-visual {
   position: relative;
   width: 100%;
-  min-height: 380px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1.5rem;
+  padding: 2.25rem 1rem;
   overflow: hidden;
 }
 
 .club-visual::after {
   content: '';
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   background: rgba(255, 213, 0, 0.85);
   top: 50%;
@@ -285,7 +286,7 @@ main {
 }
 
 .club-card img {
-  max-width: 320px;
+  max-width: 260px;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -298,13 +299,13 @@ main {
 }
 
 .club-card:hover img {
-  clip-path: inset(0 0 25% 0);
-  transform: translateY(220px);
+  clip-path: inset(0 0 20% 0);
+  transform: translateY(150px);
 }
 
 .club-card:nth-child(1):hover img {
-  clip-path: inset(0 0 20% 0);
-  transform: translateY(170px);
+  clip-path: inset(0 0 16% 0);
+  transform: translateY(120px);
 }
 
 .club-card:hover .club-visual::after {
@@ -317,13 +318,13 @@ main {
   z-index: 0;
   top: 35%;
   left: 50%;
-  transform: translate(-50%, -50%) scaleY(1.9);
+  transform: translate(-50%, -50%) scaleY(1.8);
   font-family: var(--heading-font);
   font-style: italic;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  font-size: clamp(3.5rem, 9vw, 8rem);
+  letter-spacing: 0.25rem;
+  font-size: clamp(3rem, 8vw, 6.5rem);
   color: #ffffff;
   opacity: 1;
   white-space: nowrap;
@@ -388,27 +389,27 @@ main {
     width: 100%;
   }
   .club-card img {
-    max-width: 220px;
+    max-width: 200px;
   }
   .club-visual::after {
-    width: 360px;
-    height: 360px;
-    top: 40%;
+    width: 320px;
+    height: 320px;
+    top: 42%;
   }
   .club-label {
-    font-size: clamp(5rem, 20vw, 10rem);
-    transform: translate(-50%, -60%) scale(0.8, 1.5);
-    letter-spacing: 0.4rem;
+    font-size: clamp(4rem, 18vw, 8rem);
+    transform: translate(-50%, -60%) scale(0.75, 1.4);
+    letter-spacing: 0.35rem;
   }
   .club-card:hover img,
   .club-card:focus-within img {
-    clip-path: inset(0 0 18% 0);
-    transform: translateY(140px);
+    clip-path: inset(0 0 16% 0);
+    transform: translateY(110px);
   }
   .club-card:nth-child(1):hover img,
   .club-card:nth-child(1):focus-within img {
-    clip-path: inset(0 0 15% 0);
-    transform: translateY(110px);
+    clip-path: inset(0 0 14% 0);
+    transform: translateY(90px);
   }
 }
 
