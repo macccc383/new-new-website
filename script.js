@@ -25,6 +25,7 @@ const translations = {
     club_hybrids: 'Hybrids',
     club_wedges: 'Wedges',
     club_putters: 'Putters',
+    club_rescue: 'Rescue',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
     no_products: 'No products available.',
@@ -121,6 +122,10 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
   <tr><td>Kick point</td><td>Low Mid</td></tr>
 </table>
 `,
+    product_rescue_name: 'Kentack Platinum Rescue',
+    product_rescue_desc: 'Confident launch from any lie.',
+    product_rescue_price: 'Price upon request.',
+    product_rescue_details: 'Shallow-faced construction with a neutral lie angle and responsive steel face for easy launch and workable trajectories from the fairway or rough.',
   },
   vi: {
     nav_home: 'Trang chủ',
@@ -148,6 +153,7 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
     club_hybrids: 'Gậy hybrid',
     club_wedges: 'Gậy kĩ thuật',
     club_putters: 'Gậy putter',
+    club_rescue: 'Rescue',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
     no_products: 'Không có sản phẩm.',
@@ -186,6 +192,10 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
     product_white_oyster_desc: 'Chính xác. Thanh lịch. Hiệu suất vô song.',
     product_white_oyster_price: 'Giá liên hệ.',
     product_white_oyster_details: `Bộ gậy sắt Hollow Forged White Pearl / 24K Gold này là sự kết hợp tuyệt vời giữa phong cách và hiệu suất, khiến mỗi cú swing đều toát lên vẻ sang trọng. Các chi tiết mạ vàng tinh xảo và lớp hoàn thiện White Pearl lấp lánh thu hút ánh nhìn, cùng với shaft NS950 Gold mềm mại mang lại cảm giác cao cấp. Cảm giác khi đánh là sự mượt mà, tha thứ cho sai sót, và sự hiện diện đẳng cấp ngay từ lúc đứng chuẩn bị (address). Đầy uy lực nhưng vẫn giữ nét tao nhã — đây là bộ iron dành cho những ai coi golf là phong cách, không chỉ là trò chơi.`,
+    product_rescue_name: 'Kentack Platinum Rescue',
+    product_rescue_desc: 'Tự tin phóng bóng từ mọi địa hình.',
+    product_rescue_price: 'Giá liên hệ.',
+    product_rescue_details: 'Thiết kế mặt nông, lie trung tính cùng mặt gậy thép nhạy giúp bóng vọt lên dễ dàng và điều bóng linh hoạt dù ở fairway hay rough.',
   },
   ja: {
     nav_home: 'ホーム',
@@ -213,6 +223,7 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
     club_hybrids: 'ハイブリッド',
     club_wedges: 'ウェッジ',
     club_putters: 'パター',
+    club_rescue: 'レスキュー',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
     no_products: '商品がありません。',
@@ -251,6 +262,10 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
     product_white_oyster_desc: '精度。優雅さ。比類なきパフォーマンス。',
     product_white_oyster_price: '価格はお問い合わせください。',
     product_white_oyster_details: `ホワイトパールと24Kゴールドで仕上げられたホローフォージド・アイアンセットは、スタイルと性能を見事に融合させ、スイングひとつで品格を物語ります。洗練されたゴールドのアクセントと輝くホワイトパールのフィニッシュが目を引き、滑らかなNS950ゴールドシャフトが手にする喜びを与える。打感は上質で寛容さもあり、あなたの姿勢（アドレス時）で威厳を放つ一振り。力強さを備えながらも、優雅さを失わないアイアンです。`,
+    product_rescue_name: 'Kentack プラチナレスキュー',
+    product_rescue_desc: 'どんなライからも高弾道で攻める。',
+    product_rescue_price: '価格はお問い合わせください。',
+    product_rescue_details: '浅めのフェースとニュートラルライ設計、反応の良いスチールフェースで、フェアウェイでもラフでも安定した打ち出しと操作性を実現します。',
   }
 };
 
@@ -653,6 +668,19 @@ const productData = [
     ],
     category: 'clubs',
     type: 'irons'
+  },
+  {
+    id: 'platinum_rescue',
+    nameKey: 'product_rescue_name',
+    descKey: 'product_rescue_desc',
+    priceKey: 'product_rescue_price',
+    detailsKey: 'product_rescue_details',
+    image: 'products/IMG_0259.png',
+    images: [
+      'products/IMG_0259.png'
+    ],
+    category: 'clubs',
+    type: 'rescue'
   }
 ];
 
