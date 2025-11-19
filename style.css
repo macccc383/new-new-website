@@ -262,11 +262,11 @@ main {
 .club-visual {
   position: relative;
   width: 100%;
-  min-height: 320px;
+  min-height: clamp(320px, 32vw, 520px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2.25rem 1rem;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
   overflow: hidden;
 }
 
@@ -286,7 +286,7 @@ main {
 }
 
 .club-card img {
-  max-width: 260px;
+  max-width: clamp(220px, 24vw, 420px);
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -298,14 +298,15 @@ main {
   will-change: transform;
 }
 
+
 .club-card:hover img {
   clip-path: inset(0 0 20% 0);
-  transform: translateY(150px);
+  transform: translateY(clamp(120px, 14vw, 180px));
 }
 
 .club-card:nth-child(1):hover img {
   clip-path: inset(0 0 16% 0);
-  transform: translateY(120px);
+  transform: translateY(clamp(90px, 12vw, 150px));
 }
 
 .club-card:hover .club-visual::after {
@@ -334,6 +335,15 @@ main {
   line-height: 1.15;
   word-break: normal;
   text-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
+}
+
+.club-info h2 {
+  font-size: clamp(1.25rem, 2vw, 2.25rem);
+  margin: 0.35rem 0 0;
+}
+
+.club-info p {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
 }
 
 .club-info {
