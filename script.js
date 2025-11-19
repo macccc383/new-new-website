@@ -822,39 +822,6 @@ function renderProducts(filter = {}) {
 function initProducts() {
   const grid = document.getElementById('product-grid');
   if (!grid) return;
-
-  const clubDropdown = document.getElementById('club-dropdown');
-  const clubsBtn = document.querySelector('.category-btn[data-category="clubs"]');
-  if (clubDropdown && clubsBtn) {
-    clubsBtn.addEventListener('click', () => {
-      clubDropdown.classList.toggle('hidden');
-    });
-  }
-
-  document.querySelectorAll('.category-btn').forEach(btn => {
-    const category = btn.dataset.category;
-    if (category !== 'clubs') {
-      btn.addEventListener('click', () => {
-        renderProducts({ category });
-        if (clubDropdown) {
-          clubDropdown.classList.add('hidden');
-        }
-      });
-    }
-  });
-
-  document.querySelectorAll('.club-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const type = btn.dataset.type;
-      renderProducts({ category: 'clubs', type });
-      if (clubDropdown) {
-        clubDropdown.classList.add('hidden');
-      }
-    });
-  });
-
-  const viewSelect = document.getElementById('view-select');
-  // Show all products by default
   renderProducts();
 }
 
@@ -864,11 +831,7 @@ function initCategoryCardFilters() {
   const filterBar = document.querySelector('.filter-bar');
   const grid = document.getElementById('product-grid');
 
-  const applyFilter = (category, type) => {
-    const filter = {};
-    if (category) filter.category = category;
-    if (type) filter.type = type;
-    renderProducts(filter);
+  const scrollToGrid = () => {
     const target = filterBar || grid;
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -876,47 +839,16 @@ function initCategoryCardFilters() {
   };
 
   cards.forEach(card => {
-    const category = card.getAttribute('data-category');
-    const type = card.getAttribute('data-type');
     card.addEventListener('click', () => {
-      applyFilter(category, type);
+      scrollToGrid();
     });
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        applyFilter(category, type);
+        scrollToGrid();
       }
     });
   });
-}
-
-function initCategoryOverflowHandling() {
-  const categories = document.querySelector('.categories');
-  const accessoriesBtn = categories?.querySelector('.category-btn[data-category="accessories"]');
-  if (!categories || !accessoriesBtn) return;
-
-  const updateLayout = () => {
-    categories.classList.remove('categories--stack-accessories');
-    if (document.documentElement.lang !== 'en') {
-      return;
-    }
-
-    const accessoriesEdge = accessoriesBtn.offsetLeft + accessoriesBtn.offsetWidth;
-    if (accessoriesEdge > categories.clientWidth + 1) {
-      categories.classList.add('categories--stack-accessories');
-    }
-  };
-
-  const languageSelect = document.getElementById('language-select');
-  if (languageSelect) {
-    languageSelect.addEventListener('change', () => {
-      setTimeout(updateLayout, 0);
-    });
-  }
-
-  window.addEventListener('resize', updateLayout);
-
-  requestAnimationFrame(updateLayout);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -932,5 +864,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initCategoryCardFilters();
   initProductDeepLink();
   initPutterModalTrigger();
-  initCategoryOverflowHandling();
 });
