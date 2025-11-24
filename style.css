@@ -333,7 +333,7 @@ main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(2.6rem, 5vw + 0.5rem, 6rem);
   color: #ffffff;
   opacity: 1;
   white-space: nowrap;
@@ -415,9 +415,9 @@ main {
     top: 42%;
   }
   .club-label {
-    font-size: clamp(4rem, 18vw, 8rem);
+    font-size: clamp(3.2rem, 12vw, 6.5rem);
     transform: translate(-50%, -60%) scale(0.75, 1.7);
-    letter-spacing: 0.35rem;
+    letter-spacing: clamp(0.22rem, 0.75vw, 0.35rem);
   }
   .club-card:hover img,
   .club-card:focus-within img {
