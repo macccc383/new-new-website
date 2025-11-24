@@ -345,6 +345,13 @@ main {
   text-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
 }
 
+@media (min-width: 1024px) {
+  .club-label {
+    font-size: clamp(3.2rem, 6vw + 0.25rem, 7.5rem);
+    transform: translate(-50%, -50%) scaleY(2.35);
+  }
+}
+
 .club-info h2 {
   font-size: clamp(1.25rem, 2vw, 2.25rem);
   margin: 0.35rem 0 0;
