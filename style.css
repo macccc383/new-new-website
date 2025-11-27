@@ -223,6 +223,11 @@ main {
   margin-top: 80px;
 }
 
+.products-main {
+  padding: 1rem 1.25rem;
+  margin-top: 40px;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -239,6 +244,7 @@ main {
 }
 
 .club-card {
+  --hover-drop: clamp(120px, 14vw, 180px);
   border: none;
   background: none;
   padding: 0;
@@ -294,8 +300,42 @@ main {
   clip-path: inset(0 0 0 0);
   position: relative;
   z-index: 1;
-  transition: transform 0.5s ease;
+  transform: translateY(0);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
+  opacity: 1;
+  animation: club-rise-in 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.club-card:nth-child(1) img { animation-delay: 0.05s; }
+.club-card:nth-child(2) img { animation-delay: 0.12s; }
+.club-card:nth-child(3) img { animation-delay: 0.18s; }
+.club-card:nth-child(4) img { animation-delay: 0.24s; }
+
+.club-card:nth-child(1) {
+  --hover-drop: clamp(90px, 12vw, 150px);
+}
+
+@keyframes club-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(70px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes club-hover-drop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--hover-drop));
+  }
 }
 
 .club-card[data-type="rescue"] .club-visual {
@@ -307,14 +347,18 @@ main {
 }
 
 
-.club-card:hover img {
+.club-card:hover img,
+.club-card:focus-within img {
   clip-path: inset(0 0 20% 0);
-  transform: translateY(clamp(120px, 14vw, 180px));
+  transform: translateY(var(--hover-drop));
+  animation: club-hover-drop 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.club-card:nth-child(1):hover img {
+.club-card:nth-child(1):hover img,
+.club-card:nth-child(1):focus-within img {
   clip-path: inset(0 0 16% 0);
-  transform: translateY(clamp(90px, 12vw, 150px));
+  transform: translateY(var(--hover-drop));
+  animation: club-hover-drop 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .club-card:hover .club-visual::after {
@@ -327,7 +371,7 @@ main {
   z-index: 0;
   top: 35%;
   left: 50%;
-  transform: translate(-50%, -50%) scaleY(2.1);
+  transform: translate(-50%, -50%) scaleY(2.4);
   font-family: var(--heading-font);
   font-style: italic;
   font-weight: 600;
@@ -348,7 +392,7 @@ main {
 @media (min-width: 1024px) {
   .club-label {
     font-size: clamp(3.2rem, 6vw + 0.25rem, 7.5rem);
-    transform: translate(-50%, -50%) scaleY(2.35);
+    transform: translate(-50%, -50%) scaleY(2.85);
   }
 }
 
@@ -400,6 +444,54 @@ main {
   text-decoration: underline;
 }
 
+.back-link-wrapper {
+  margin: 0 0 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.dark-theme .back-link {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: var(--accent-color);
+}
+
+.back-link:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.back-icon {
+  display: inline-flex;
+  width: 1.1rem;
+  height: 1.1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--accent-color);
+}
+
 @media (max-width: 1100px) {
   .club-gallery {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -413,6 +505,12 @@ main {
     max-width: 360px;
     width: 100%;
   }
+  .club-card {
+    --hover-drop: 110px;
+  }
+  .club-card:nth-child(1) {
+    --hover-drop: 90px;
+  }
   .club-card img {
     max-width: 200px;
   }
@@ -422,19 +520,21 @@ main {
     top: 42%;
   }
   .club-label {
-    font-size: clamp(3.2rem, 12vw, 6.5rem);
-    transform: translate(-50%, -60%) scale(0.75, 1.7);
+    font-size: clamp(3.6rem, 14vw, 7.4rem);
+    transform: translate(-50%, -60%) scale(0.9, 3.2);
     letter-spacing: clamp(0.22rem, 0.75vw, 0.35rem);
   }
   .club-card:hover img,
   .club-card:focus-within img {
     clip-path: inset(0 0 16% 0);
-    transform: translateY(110px);
+    transform: translateY(var(--hover-drop));
+    animation: club-hover-drop 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
   .club-card:nth-child(1):hover img,
   .club-card:nth-child(1):focus-within img {
     clip-path: inset(0 0 14% 0);
-    transform: translateY(90px);
+    transform: translateY(var(--hover-drop));
+    animation: club-hover-drop 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 }
 

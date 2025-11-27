@@ -790,6 +790,7 @@ function renderProducts(filter = {}) {
   const grid = document.getElementById('product-grid');
   if (!grid) return;
   grid.innerHTML = '';
+  updateProductHeading(filter);
   const lang = document.documentElement.lang || 'en';
   const items = productData.filter(p => {
     if (filter.category && p.category !== filter.category) return false;
@@ -819,33 +820,126 @@ function renderProducts(filter = {}) {
   initAnimations();
 }
 
+function updateProductFilterURL(filter) {
+  const params = new URLSearchParams(window.location.search);
+  if (filter.type) {
+    params.set('type', filter.type);
+  } else {
+    params.delete('type');
+  }
+  if (filter.category) {
+    params.set('category', filter.category);
+  } else {
+    params.delete('category');
+  }
+  const queryString = params.toString();
+  const newUrl = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+  if (history.replaceState) {
+    history.replaceState({}, '', newUrl);
+  }
+}
+
+function saveProductsScroll() {
+  try {
+    localStorage.setItem('productsScrollTop', String(window.scrollY));
+  } catch (e) {
+    /* ignore storage errors */
+  }
+}
+
+function restoreProductsScroll() {
+  const isProductsPage = window.location.pathname.endsWith('products.html') || window.location.pathname.endsWith('/products');
+  if (!isProductsPage) return;
+  let saved = null;
+  try {
+    saved = localStorage.getItem('productsScrollTop');
+    if (saved !== null) {
+      localStorage.removeItem('productsScrollTop');
+    }
+  } catch (e) {
+    saved = null;
+  }
+  const top = saved !== null ? parseInt(saved, 10) : null;
+  if (Number.isFinite(top) && top > 0) {
+    requestAnimationFrame(() => {
+      window.scrollTo({ top, behavior: 'auto' });
+    });
+  }
+}
+
+function navigateToCollection(filter) {
+  saveProductsScroll();
+  const params = new URLSearchParams();
+  if (filter.category) params.set('category', filter.category);
+  if (filter.type) params.set('type', filter.type);
+  const queryString = params.toString();
+  const target = queryString ? `category.html?${queryString}` : 'category.html';
+  window.location.href = target;
+}
+
+function updateProductHeading(filter) {
+  const heading = document.getElementById('product-heading');
+  if (!heading) return;
+  const lang = document.documentElement.lang || 'en';
+  const t = translations[lang] || translations['en'];
+  let text = (t && t.products_title) || 'Products';
+  if (filter.type) {
+    const typeKey = `club_${filter.type}`;
+    text = (t && t[typeKey]) || filter.type;
+  } else if (filter.category) {
+    const categoryKey = `category_${filter.category}`;
+    text = (t && t[categoryKey]) || filter.category;
+  }
+  heading.textContent = text;
+}
+
 function initProducts() {
   const grid = document.getElementById('product-grid');
   if (!grid) return;
-  renderProducts();
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type');
+  const category = params.get('category');
+  const initialFilter = {};
+  if (category) initialFilter.category = category;
+  if (type) initialFilter.type = type;
+  renderProducts(initialFilter);
 }
 
 function initCategoryCardFilters() {
   const cards = document.querySelectorAll('[data-category-card]');
   if (!cards.length) return;
-  const filterBar = document.querySelector('.filter-bar');
-  const grid = document.getElementById('product-grid');
-
-  const scrollToGrid = () => {
-    const target = filterBar || grid;
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   cards.forEach(card => {
-    card.addEventListener('click', () => {
-      scrollToGrid();
-    });
+    const type = card.getAttribute('data-type');
+    const category = card.getAttribute('data-category');
+    const filter = {};
+    if (category) filter.category = category;
+    if (type) filter.type = type;
+    const goToCollection = () => navigateToCollection(filter);
+    const label = card.querySelector('.club-label');
+    if (label) {
+      label.setAttribute('tabindex', '0');
+      label.setAttribute('role', 'link');
+      label.style.cursor = 'pointer';
+      label.addEventListener('click', e => {
+        e.stopPropagation();
+        e.preventDefault();
+        goToCollection();
+      });
+      label.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          e.stopPropagation();
+          goToCollection();
+        }
+      });
+    }
+
+    card.addEventListener('click', goToCollection);
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        scrollToGrid();
+        goToCollection();
       }
     });
   });
@@ -864,4 +958,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCategoryCardFilters();
   initProductDeepLink();
   initPutterModalTrigger();
+  restoreProductsScroll();
 });
