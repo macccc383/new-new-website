@@ -14,6 +14,12 @@ const translations = {
       story_title: 'Message from Ken Karahawa',
     story_message: `The name Golf Honma has long symbolized top-class Japanese craftsmanship, admired by golfers worldwide. Our KENTACK brand carries forward this proud tradition and superior techniques. Founded in 2007 by Yukihiro Honma, co-founder of Honma Golf, KENTACK was created to preserve the spirit and identity of the original Honma legacy after the brand became foreign-owned.\n\nYukihiro Honma, a master craftsman, once produced the finest clubs under the name HIRO HONMA, blending performance and beauty with over 50 years of expertise. With KENTACK, he revived that genuine tradition. Though he has since stepped back, his techniques and philosophy remain at the heart of our work.\n\nToday, KENTACK continues to craft elegant, precise, and high-performing clubs through meticulous Japanese artistry. We are committed to honoring our heritage while advancing technology, delivering top-quality clubs that add value for discerning golfers worldwide.`,
     products_title: 'Our Products',
+    back_to_products: 'Back to Products',
+    category_intro: 'Browse the selected club type below.',
+    hero_alt_drivers: 'Kentack driver hero',
+    hero_alt_irons: 'Kentack irons hero',
+    hero_alt_putters: 'Kentack putter hero',
+    hero_alt_rescue: 'Kentack rescue hero',
     category_clubs: 'Clubs',
     category_bags: 'Bags',
     category_balls: 'Balls',
@@ -126,6 +132,17 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
     product_rescue_desc: 'Confident launch from any lie.',
     product_rescue_price: 'Price upon request.',
     product_rescue_details: 'Shallow-faced construction with a neutral lie angle and responsive steel face for easy launch and workable trajectories from the fairway or rough.',
+    prod_card_driver_alt: 'Kentack driver illustration',
+    prod_card_driver_blurb: 'High-launch titanium heads finished with layered lacquer and gold leaf for effortless distance.',
+    prod_card_irons_alt: 'Kentack irons illustration',
+    prod_card_irons_tagline: 'Forged Precision',
+    prod_card_irons_blurb: 'Hollow-forged faces with mirror-polished fluting and 24K gold accents for sculpted trajectories.',
+    prod_card_putter_alt: 'Kentack putter illustration',
+    prod_card_putter_blurb: 'Deep-milled SUS303 blocks balanced for a satin roll, complete with hand-engraved emblems.',
+    prod_card_rescue_alt: 'Kentack rescue club illustration',
+    prod_card_rescue_tagline: 'High-launch, turf-cutting versatility.',
+    prod_card_rescue_blurb: 'Shallow-faced profile with a neutral lie and responsive face for confident shots from any lie.',
+    products_note_text: 'Looking for a bespoke shaft pairing or a private fitting? Reach out through the <a href="contact.html">contact page</a> and we will tailor the build to your swing.',
   },
   vi: {
     nav_home: 'Trang chủ',
@@ -142,17 +159,23 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
       story_title: 'Thông điệp từ Ken Karahawa',
     story_message: `Tên Golf Honma từ lâu đã tượng trưng cho tay nghề Nhật Bản đẳng cấp, được các golfer trên toàn thế giới ngưỡng mộ. Thương hiệu KENTACK của chúng tôi tiếp nối truyền thống đáng tự hào và kỹ thuật ưu việt đó. Được thành lập năm 2007 bởi ông Yukihiro Honma, đồng sáng lập Honma Golf, KENTACK ra đời để gìn giữ tinh thần và bản sắc di sản Honma nguyên bản sau khi thương hiệu trở thành sở hữu nước ngoài.\n\nYukihiro Honma, một bậc thầy chế tác, từng tạo ra những cây gậy hoàn hảo nhất dưới tên HIRO HONMA, kết hợp hiệu suất và vẻ đẹp với hơn 50 năm kinh nghiệm. Với KENTACK, ông đã hồi sinh truyền thống chân chính đó. Dù nay ông đã lui về, kỹ thuật và triết lý của ông vẫn là cốt lõi trong công việc của chúng tôi.\n\nNgày nay, KENTACK tiếp tục chế tác những cây gậy thanh lịch, chính xác và hiệu suất cao bằng nghệ thuật Nhật Bản tỉ mỉ. Chúng tôi cam kết tôn vinh di sản đồng thời phát triển công nghệ, mang đến những cây gậy chất lượng hàng đầu tạo giá trị cho các golfer sành điệu trên toàn thế giới.`,
     products_title: 'Sản phẩm của chúng tôi',
+    back_to_products: 'Quay lại Sản phẩm',
+    category_intro: 'Xem loại gậy đã chọn bên dưới.',
+    hero_alt_drivers: 'Ảnh hero gậy driver Kentack',
+    hero_alt_irons: 'Ảnh hero gậy sắt Kentack',
+    hero_alt_putters: 'Ảnh hero gậy putter Kentack',
+    hero_alt_rescue: 'Ảnh hero gậy rescue Kentack',
     category_clubs: 'Gậy',
     category_bags: 'Túi',
     category_balls: 'Bóng',
     category_tees: 'Tee',
     category_accessories: 'Phụ kiện',
-    club_drivers: 'Gậy driver',
-    club_woods: 'Gậy gỗ',
-    club_irons: 'Gậy sắt',
-    club_hybrids: 'Gậy hybrid',
-    club_wedges: 'Gậy kĩ thuật',
-    club_putters: 'Gậy putter',
+    club_drivers: 'Driver',
+    club_woods: 'Gỗ',
+    club_irons: 'Iron',
+    club_hybrids: 'Hybrid',
+    club_wedges: 'Wedge',
+    club_putters: 'Putter',
     club_rescue: 'Rescue',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
@@ -196,6 +219,17 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
     product_rescue_desc: 'Tự tin phóng bóng từ mọi địa hình.',
     product_rescue_price: 'Giá liên hệ.',
     product_rescue_details: 'Thiết kế mặt nông, lie trung tính cùng mặt gậy thép nhạy giúp bóng vọt lên dễ dàng và điều bóng linh hoạt dù ở fairway hay rough.',
+    prod_card_driver_alt: 'Hình minh họa gậy driver Kentack',
+    prod_card_driver_blurb: 'Đầu titanium phóng cao, sơn nhiều lớp và dát vàng 24K cho khoảng cách nhẹ nhàng.',
+    prod_card_irons_alt: 'Hình minh họa bộ gậy sắt Kentack',
+    prod_card_irons_tagline: 'Rèn chuẩn xác',
+    prod_card_irons_blurb: 'Mặt rỗng rèn, soi bóng gân và điểm xuyết vàng 24K cho quï đạo điêu khắc.',
+    prod_card_putter_alt: 'Hình minh họa gậy putter Kentack',
+    prod_card_putter_blurb: 'Khối SUS303 phay sâu, cân bằng cho cú lăn mượt, kèm huy hiệu khắc tay.',
+    prod_card_rescue_alt: 'Hình minh họa gậy rescue Kentack',
+    prod_card_rescue_tagline: 'Đa dụng, dễ bứt khỏi cỏ.',
+    prod_card_rescue_blurb: 'Mặt nông, lie trung tính và mặt đáp ứng giúp tự tin đánh từ mọi vị trí.',
+    products_note_text: 'Cần ghép shaft riêng hoặc fitting kín? Liên hệ qua <a href="contact.html">trang liên hệ</a> để chúng tôi lắp phù hợp với swing của bạn.',
   },
   ja: {
     nav_home: 'ホーム',
@@ -212,6 +246,12 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
       story_title: '唐川ケンからのメッセージ',
     story_message: `「ゴルフ本間」という名前は、長年にわたり日本最高峰の職人技の象徴として、世界中のゴルファーに愛されてきました。私たちのKENTACKブランドは、この誇り高い伝統と優れた技術を受け継いでいます。KENTACKは本間ゴルフの共同創業者、本間幸宏によって2007年に設立され、ブランドが外国資本となった後も本来の本間の精神とアイデンティティを守るために生まれました。\n\n名匠である本間幸宏は、かつてHIRO HONMAの名で最高級のクラブを作り上げ、50年以上の経験で性能と美を融合させました。KENTACKによって彼はその真の伝統を復活させました。現在は第一線を退いていますが、彼の技術と理念は今も私たちの中心にあります。\n\n今日のKENTACKは、緻密な日本の職人技でエレガントで精密、そして高性能なクラブを作り続けています。私たちは遺産を尊重しつつ技術を進化させ、世界中の目の肥えたゴルファーに価値ある最高品質のクラブを提供し続けます。`,
     products_title: '製品一覧',
+    back_to_products: '製品一覧に戻る',
+    category_intro: '選択したクラブタイプを下からご覧ください。',
+    hero_alt_drivers: 'ケンタック ドライバーのヒーロー画像',
+    hero_alt_irons: 'ケンタック アイアンのヒーロー画像',
+    hero_alt_putters: 'ケンタック パターのヒーロー画像',
+    hero_alt_rescue: 'ケンタック レスキューのヒーロー画像',
     category_clubs: 'クラブ',
     category_bags: 'バッグ',
     category_balls: 'ボール',
@@ -266,10 +306,21 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
     product_rescue_desc: 'どんなライからも高弾道で攻める。',
     product_rescue_price: '価格はお問い合わせください。',
     product_rescue_details: '浅めのフェースとニュートラルライ設計、反応の良いスチールフェースで、フェアウェイでもラフでも安定した打ち出しと操作性を実現します。',
+    prod_card_driver_alt: 'ケンタック ドライバーのイラスト',
+    prod_card_driver_blurb: '高打ち出しのチタンヘッドに多層ラッカーと金箔仕上げで、やさしく飛ばせます。',
+    prod_card_irons_alt: 'ケンタック アイアンのイラスト',
+    prod_card_irons_tagline: '鍛造プレシジョン',
+    prod_card_irons_blurb: '中空フェースと24Kゴールドのアクセントで軌道を自在に描きます。',
+    prod_card_putter_alt: 'ケンタック パターのイラスト',
+    prod_card_putter_blurb: 'SUS303ブロックを深いミーリングで仕上げ、手彫りエンブレムを添えています。',
+    prod_card_rescue_alt: 'ケンタック レスキューのイラスト',
+    prod_card_rescue_tagline: '高弾道で芝を切る多用途クラブ。',
+    prod_card_rescue_blurb: '浅めのフェースとニュートラルなライで、どこからでも安心のショット。',
+    products_note_text: 'シャフトの組み合わせやプライベートフィッティングは<a href="contact.html">お問い合わせページ</a>からご相談ください。'
   }
 };
 
-const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price', 'product_white_oyster_price', 'product_kh888_putter_price'];
+const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price', 'product_white_oyster_price', 'product_kh888_putter_price', 'products_note_text'];
 
 let carouselInterval;
 let currentDevice;
@@ -293,6 +344,14 @@ function setLanguage(lang) {
       el.setAttribute('alt', translations[lang][key]);
     }
   });
+  const params = new URLSearchParams(window.location.search);
+  const filter = {};
+  const category = params.get('category');
+  const type = params.get('type');
+  if (category) filter.category = category;
+  if (type) filter.type = type;
+  updateProductHeading(filter);
+  toggleCategoryHero(type);
 }
 
 function initLanguage() {
@@ -900,19 +959,31 @@ function toggleCategoryHero(type) {
   const heading = document.getElementById('product-heading');
   if (!hero || !label || !img) return;
 
+  const lang = document.documentElement.lang || 'en';
+  const t = translations[lang] || translations['en'];
+
   const heroData = {
-    drivers: { text: 'DRIVERS', src: 'products/unnamed.png', alt: 'Kentack driver hero' },
-    irons: { text: 'IRONS', src: 'products/IMG_0260.png', alt: 'Kentack irons hero' },
-    putters: { text: 'PUTTERS', src: 'products/IMG_0261.png', alt: 'Kentack putter hero' },
-    rescue: { text: 'RESCUE', src: 'products/IMG_0259.png', alt: 'Kentack rescue hero' }
+    drivers: { textKey: 'club_drivers', src: 'products/unnamed.png', altKey: 'hero_alt_drivers', fallbackText: 'DRIVERS', fallbackAlt: 'Kentack driver hero' },
+    irons: { textKey: 'club_irons', src: 'products/IMG_0260.png', altKey: 'hero_alt_irons', fallbackText: 'IRONS', fallbackAlt: 'Kentack irons hero' },
+    putters: { textKey: 'club_putters', src: 'products/IMG_0261.png', altKey: 'hero_alt_putters', fallbackText: 'PUTTERS', fallbackAlt: 'Kentack putter hero' },
+    rescue: { textKey: 'club_rescue', src: 'products/IMG_0259.png', altKey: 'hero_alt_rescue', fallbackText: 'RESCUE', fallbackAlt: 'Kentack rescue hero' }
   };
 
   const data = heroData[type];
 
   if (data) {
-    label.textContent = data.text;
+    const text = (data.textKey && t[data.textKey]) || data.fallbackText || data.text;
+    const alt = (data.altKey && t[data.altKey]) || data.fallbackAlt || data.alt;
+
+    label.textContent = text;
+    if (data.textKey) {
+      label.setAttribute('data-i18n', data.textKey);
+    }
     img.src = data.src;
-    img.alt = data.alt;
+    img.alt = alt;
+    if (data.altKey) {
+      img.setAttribute('data-i18n-alt', data.altKey);
+    }
     hero.classList.remove('hidden');
     if (heading) heading.classList.add('hidden');
   } else {
