@@ -430,7 +430,7 @@ main {
 }
 
 .collection-overview p {
-  font-size: 1.6rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
   display: inline-block;
   position: relative;
 }
