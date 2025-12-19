@@ -429,6 +429,21 @@ main {
   line-height: 1.7;
 }
 
+.collection-overview p {
+  font-size: 1.6rem;
+  display: inline-block;
+  position: relative;
+}
+
+.collection-overview p::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 0.05rem auto 0;
+  background: var(--accent-color);
+}
+
 .collection-overview p + p,
 .products-note p + p {
   margin-top: 1rem;
@@ -442,6 +457,52 @@ main {
   color: inherit;
   font-weight: 700;
   text-decoration: underline;
+}
+
+.category-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0;
+  position: relative;
+  max-width: 960px;
+  padding: 0 1rem;
+}
+
+.category-hero.hidden {
+  display: none;
+}
+
+.category-hero-inner {
+  position: relative;
+  width: min(92vw, 920px);
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.hero-circle {
+  display: none;
+}
+
+.hero-label {
+  font-family: var(--heading-font);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw + 0.5rem, 4.6rem);
+  letter-spacing: 0.25rem;
+  color: #ffffff;
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(2);
+  z-index: 1;
+  text-transform: uppercase;
+  text-shadow: 0 0 22px rgba(0, 0, 0, 0.45);
+}
+
+.hero-club-img {
+  display: none;
 }
 
 .back-link-wrapper {

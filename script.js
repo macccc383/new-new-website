@@ -893,6 +893,34 @@ function updateProductHeading(filter) {
   heading.textContent = text;
 }
 
+function toggleCategoryHero(type) {
+  const hero = document.querySelector('.category-hero');
+  const label = document.querySelector('.category-hero .hero-label');
+  const img = document.querySelector('.category-hero .hero-club-img');
+  const heading = document.getElementById('product-heading');
+  if (!hero || !label || !img) return;
+
+  const heroData = {
+    drivers: { text: 'DRIVERS', src: 'products/unnamed.png', alt: 'Kentack driver hero' },
+    irons: { text: 'IRONS', src: 'products/IMG_0260.png', alt: 'Kentack irons hero' },
+    putters: { text: 'PUTTERS', src: 'products/IMG_0261.png', alt: 'Kentack putter hero' },
+    rescue: { text: 'RESCUE', src: 'products/IMG_0259.png', alt: 'Kentack rescue hero' }
+  };
+
+  const data = heroData[type];
+
+  if (data) {
+    label.textContent = data.text;
+    img.src = data.src;
+    img.alt = data.alt;
+    hero.classList.remove('hidden');
+    if (heading) heading.classList.add('hidden');
+  } else {
+    hero.classList.add('hidden');
+    if (heading) heading.classList.remove('hidden');
+  }
+}
+
 function initProducts() {
   const grid = document.getElementById('product-grid');
   if (!grid) return;
@@ -903,6 +931,7 @@ function initProducts() {
   if (category) initialFilter.category = category;
   if (type) initialFilter.type = type;
   renderProducts(initialFilter);
+  toggleCategoryHero(type);
 }
 
 function initCategoryCardFilters() {
