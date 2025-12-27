@@ -32,6 +32,10 @@ const translations = {
     club_wedges: 'Wedges',
     club_putters: 'Putters',
     club_rescue: 'Rescue',
+
+    club_accessories: 'Accessories',
+    hero_alt_accessories: 'Kentack accessories hero',
+    prod_card_accessories_blurb: 'Tour caps, premium grips, Boston bags, and caddy bags to round out your setup.',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
     no_products: 'No products available.',
@@ -39,11 +43,11 @@ const translations = {
     contact_phone: 'Phone: 0899033692',
     contact_location_title: 'Location',
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
-    product_kh888_name: 'KH888 Driver',
+    product_kh888_name: 'KH888',
     product_kh888_desc: 'High-performance driver.',
     product_kh888_price: 'Starting from $1,110',
-      product_kh888_details: `The KH888 builds on the iconic golfing technology developed by legendary Japanese golf master Honma Hiro. During his time as Vice President of Honma Golf, Hiro specialized in developing clubs that were able to increase flight distance with ease for both professionals and novices alike. This beautiful red lacquer finished driver has all of the Honma Hiro trademarks of elite performance and sophisticated design. The head and shaft have been painted by a Japanese traditional technique known as Maki-e. This artistic method involves craftsmen carefully applying multiple layers of lacquer. The product is then finished by hand with a sprinkle of 24k gold leaf. The result is a stunningly opulent club with incredibly high performance.`,
-      product_kh888_specs: `
+    product_kh888_details: `The KH888 builds on the iconic golfing technology developed by legendary Japanese golf master Honma Hiro. During his time as Vice President of Honma Golf, Hiro specialized in developing clubs that were able to increase flight distance with ease for both professionals and novices alike. This beautiful red lacquer finished driver has all of the Honma Hiro trademarks of elite performance and sophisticated design. The head and shaft have been painted by a Japanese traditional technique known as Maki-e. This artistic method involves craftsmen carefully applying multiple layers of lacquer. The product is then finished by hand with a sprinkle of 24k gold leaf. The result is a stunningly opulent club with incredibly high performance.`,
+    product_kh888_specs: `
 <table class="spec-table">
   <tr><th colspan="2">KH888 DRIVER</th></tr>
   <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
@@ -60,7 +64,7 @@ const translations = {
   <tr><td>CT(Characteristic time)</td><td>290</td></tr>
 </table>
 `,
-    product_kh888_putter_name: 'KH888 Putter',
+    product_kh888_putter_name: 'KH888',
     product_kh888_putter_desc: 'Limited-edition Japanese-crafted precision putter.',
     product_kh888_putter_price: 'From $1,080.00',
     product_kh888_putter_details: `The Kentack KH888 is more than a putter—it is Japanese craftsmanship at its finest. Forged from premium SUS303 stainless steel, it delivers exceptional balance, stability, and feel.
@@ -78,7 +82,7 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
   <tr><td>Origin</td><td>100% Made in Japan</td></tr>
 </table>
 `,
-    product_kh555_name: 'KH555 Driver',
+    product_kh555_name: 'KH555',
     product_kh555_desc: 'Forged precision driver.',
     product_kh555_price: 'Starting from $1,400',
     product_kh555_details: 'The Kentack KH555 Driver fuses forged titanium power with refined precision, delivering effortless distance and unwavering stability. Crafted with a premium carbon shaft and tour-inspired balance, it embodies the harmony of performance and elegance for the discerning golfer.',
@@ -101,7 +105,26 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
   <tr><td>CT(Characteristic time)</td><td>290~302</td></tr>
 </table>
 `,
-    product_white_oyster_name: 'White Pearl / 24K Gold Hollow Forged Irons',
+    product_kh460_name: 'KH460',
+    product_kh460_desc: 'Refined power with exceptional feel.',
+    product_kh460_price: 'Price upon request.',
+    product_kh460_details: `Crafted in Japan for golfers who value precision and elegance, the KENTACK JAPAN DRIVER KH460 delivers refined power with exceptional feel. Its forged 6-4 titanium head is paired with a DAT55 titanium face, producing a crisp, responsive impact and consistent ball speed.\n\nThe classic 460cc profile and neutral face angle offer confident address and effortless shot shaping, while a carefully engineered center of gravity promotes a balanced, penetrating launch. Every detail of the KH460 reflects understated performance and Japanese craftsmanship—designed for players who demand quality without compromise.`,
+    product_kh460_specs: `
+<table class="spec-table">
+  <tr><th colspan="2">KENTACK JAPAN DRIVER KH460</th></tr>
+  <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
+  <tr><td>FACE material</td><td>DAT55</td></tr>
+  <tr><td>LOFT(deg)</td><td>9.5 / 10.5</td></tr>
+  <tr><td>FA (Face angle)</td><td>+-0</td></tr>
+  <tr><td>Lie angle(deg)</td><td>58</td></tr>
+  <tr><td>HEAD weight(g)</td><td>199</td></tr>
+  <tr><td>Distance to center of gravity(mm)</td><td>42.4</td></tr>
+  <tr><td>Depth to center of gravity(mm)</td><td>34.2</td></tr>
+  <tr><td>Degree of gravity</td><td>13</td></tr>
+  <tr><td>CT (Characteristic time)</td><td>-</td></tr>
+</table>
+`,
+    product_white_oyster_name: 'White Pearl / 24K Gold',
     product_white_oyster_desc: 'Precision. Elegance. Unrivaled Performance.',
     product_white_oyster_price: 'Price upon request.',
     product_white_oyster_details: `Elevate your game with the White Pearl / 24K Gold Hollow-Forged Irons — a stunning blend of art and performance that redefines what it means to swing in style. From their exquisite gold accents and luminous White Pearl finish to the silky NS950 Gold shafts, every detail communicates refinement. These irons deliver impressive feel, forgiving launch, and an unmistakable presence at address: power with poise, forged for those who demand the best in both aesthetics and functionality.`,
@@ -128,7 +151,7 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
   <tr><td>Kick point</td><td>Low Mid</td></tr>
 </table>
 `,
-    product_rescue_name: 'Kentack Platinum Rescue',
+    product_rescue_name: 'Kentack Platinum',
     product_rescue_desc: 'Confident launch from any lie.',
     product_rescue_price: 'Price upon request.',
     product_rescue_details: 'Shallow-faced construction with a neutral lie angle and responsive steel face for easy launch and workable trajectories from the fairway or rough.',
@@ -177,6 +200,10 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
     club_wedges: 'Wedge',
     club_putters: 'Putter',
     club_rescue: 'Rescue',
+
+    club_accessories: 'Phu kien',
+    hero_alt_accessories: 'Anh hero phu kien Kentack',
+    prod_card_accessories_blurb: 'Mu tour, grip cao cap, tui Boston va tui caddie hoan thien bo gay cua ban.',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
     no_products: 'Không có sản phẩm.',
@@ -184,15 +211,36 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
     contact_phone: 'Điện thoại: 0899033692',
     contact_location_title: 'Địa chỉ',
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
-    product_kh888_name: 'Driver KH888',
+    product_kh888_name: 'KH888',
     product_kh888_desc: 'Gậy driver hiệu suất cao.',
     product_kh888_price: 'Giá khởi điểm từ <em>29.000.000₫</em>',
         product_kh888_details: `KH888 kế thừa công nghệ golf mang tính biểu tượng do huyền thoại Nhật Bản Honma Hiro phát triển. Trong thời gian giữ chức Phó Chủ tịch Honma Golf, Hiro chuyên nghiên cứu những cây gậy có thể dễ dàng tăng khoảng cách bay cho cả golfer chuyên nghiệp lẫn người mới chơi. Chiếc driver hoàn thiện bằng sơn mài đỏ tuyệt đẹp này mang đầy đủ dấu ấn Honma Hiro về hiệu suất đỉnh cao và thiết kế tinh tế. Phần đầu và thân gậy được sơn bằng kỹ thuật truyền thống của Nhật Bản gọi là Maki-e. Phương pháp nghệ thuật này đòi hỏi nghệ nhân tỉ mỉ phủ nhiều lớp sơn mài. Sản phẩm sau đó được hoàn thiện thủ công với một lớp rắc lá vàng 24k. Kết quả là một cây gậy xa hoa lộng lẫy với hiệu suất cực kỳ cao.`,
-    product_kh555_name: 'Driver KH555',
+    product_kh555_name: 'KH555',
     product_kh555_desc: 'Gậy driver rèn chính xác.',
     product_kh555_price: 'Giá khởi điểm từ <em>36.000.000₫</em>',
     product_kh555_details: 'Driver Kentack KH555 với thiết kế mặt gậy bằng chất liệu Titanium với độ chính xác cao, +20 Yard so với dòng gậy thông thường. Với tiếp xúc đa điểm mang lại sự ổn định đồng thời  luôn đẩy bóng bề tiêu cự tốt nhất có thể. Cán gậy được làm bằng sợi Nano (mảnh và nhỏ như hạt vải) giúp xa và mang lại sự cân bằng tốt nhất, KH555 là sự thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer yêu thích sự bứt phá, ổn định.',
-    product_kh888_putter_name: 'Putter KH888',
+    product_kh460_name: 'KH460',
+    product_kh460_desc: 'Suc manh tinh te, cam giac tuyet voi.',
+    product_kh460_price: 'Gia lien he.',
+    product_kh460_details: `Duoc che tac tai Nhat cho nguoi yeu do chinh xac va su thanh lich, KH460 mang lai suc manh can bang cung cam giac danh chac gon. Dau titan 6-4 ren ket hop mat DAT55 tao am thanh sac net va toc do bong on dinh.
+
+Kieu dang 460cc co dien, mat trung tinh giup tu tin vao bong va dieu khien quy dao de dang; trong tam duoc tinh toan cho duong bay xuyen gio nhung van em. Moi chi tiet cua KH460 deu the hien su tinh xao dung chat Nhat cho nguoi choi yeu chat luong khong thoa hiep.`,
+    product_kh460_specs: `
+<table class="spec-table">
+  <tr><th colspan="2">DRIVER KH460</th></tr>
+  <tr><td>Vat lieu dau / Quy trinh</td><td>6-4 TITANIUM / Forged</td></tr>
+  <tr><td>Vat lieu mat</td><td>DAT55</td></tr>
+  <tr><td>Loft (do)</td><td>9.5 / 10.5</td></tr>
+  <tr><td>Goc face (FA)</td><td>+-0</td></tr>
+  <tr><td>Lie (do)</td><td>58</td></tr>
+  <tr><td>Trong luong dau (g)</td><td>199</td></tr>
+  <tr><td>Khoang cach CG (mm)</td><td>42.4</td></tr>
+  <tr><td>Do sau CG (mm)</td><td>34.2</td></tr>
+  <tr><td>Do cao CG (mm)</td><td>13</td></tr>
+  <tr><td>CT</td><td>-</td></tr>
+</table>
+`,
+    product_kh888_putter_name: 'KH888',
     product_kh888_putter_desc: 'Putter chuẩn xác phiên bản giới hạn chế tác tại Nhật Bản.',
     product_kh888_putter_price: 'Giá từ <em>29.000.000₫</em>',
         product_kh888_putter_details: `Kentack KH888 không chỉ là một cây putter — đó là tinh hoa của nghề thủ công Nhật Bản. Được rèn từ thép không gỉ SUS303 cao cấp, gậy mang đến sự cân bằng, ổn định và cảm giác vượt trội.
@@ -211,11 +259,11 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
   <tr><td>Xuất xứ</td><td>100% Made in Japan</td></tr>
 </table>
 `,
-    product_white_oyster_name: 'Gậy sắt rèn rỗng White Pearl / vàng 24K',
+    product_white_oyster_name: 'White Pearl / 24K Gold',
     product_white_oyster_desc: 'Chính xác. Thanh lịch. Hiệu suất vô song.',
     product_white_oyster_price: 'Giá liên hệ.',
     product_white_oyster_details: `Bộ gậy sắt Hollow Forged White Pearl / 24K Gold này là sự kết hợp tuyệt vời giữa phong cách và hiệu suất, khiến mỗi cú swing đều toát lên vẻ sang trọng. Các chi tiết mạ vàng tinh xảo và lớp hoàn thiện White Pearl lấp lánh thu hút ánh nhìn, cùng với shaft NS950 Gold mềm mại mang lại cảm giác cao cấp. Cảm giác khi đánh là sự mượt mà, tha thứ cho sai sót, và sự hiện diện đẳng cấp ngay từ lúc đứng chuẩn bị (address). Đầy uy lực nhưng vẫn giữ nét tao nhã — đây là bộ iron dành cho những ai coi golf là phong cách, không chỉ là trò chơi.`,
-    product_rescue_name: 'Kentack Platinum Rescue',
+    product_rescue_name: 'Kentack Platinum',
     product_rescue_desc: 'Tự tin phóng bóng từ mọi địa hình.',
     product_rescue_price: 'Giá liên hệ.',
     product_rescue_details: 'Thiết kế mặt nông, lie trung tính cùng mặt gậy thép nhạy giúp bóng vọt lên dễ dàng và điều bóng linh hoạt dù ở fairway hay rough.',
@@ -264,6 +312,9 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
     club_wedges: 'ウェッジ',
     club_putters: 'パター',
     club_rescue: 'レスキュー',
+    club_accessories: 'アクセサリー',
+    hero_alt_accessories: 'ケンタック アクセサリー ヒーロー',
+    prod_card_accessories_blurb: 'ツアーキャップ、プレミアムグリップ、ボストン＆キャディバッグで装備を仕上げます。',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
     no_products: '商品がありません。',
@@ -271,15 +322,36 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
     contact_phone: '電話: 0899033692',
     contact_location_title: '住所',
     contact_location: 'Phố Tân Mỹ, Phương Quan, Nam Từ Liêm, Hà Nội, Vietnam',
-    product_kh888_name: 'KH888ドライバー',
+    product_kh460_name: 'KH460',
+    product_kh460_desc: 'Refined power with exceptional feel.',
+    product_kh460_price: 'Price upon request.',
+    product_kh460_details: `Crafted in Japan for golfers who value precision and elegance, the KENTACK JAPAN DRIVER KH460 delivers refined power with exceptional feel. Its forged 6-4 titanium head is paired with a DAT55 titanium face, producing a crisp, responsive impact and consistent ball speed.
+
+The classic 460cc profile and neutral face angle offer confident address and effortless shot shaping, while a carefully engineered center of gravity promotes a balanced, penetrating launch. Every detail of the KH460 reflects understated performance and Japanese craftsmanship--designed for players who demand quality without compromise.`,
+    product_kh460_specs: `
+<table class="spec-table">
+  <tr><th colspan="2">KENTACK JAPAN DRIVER KH460</th></tr>
+  <tr><td>HEAD material / Manufacturing process</td><td>6-4 TITANIUM / Forged</td></tr>
+  <tr><td>FACE material</td><td>DAT55</td></tr>
+  <tr><td>LOFT(deg)</td><td>9.5 / 10.5</td></tr>
+  <tr><td>FA (Face angle)</td><td>+-0</td></tr>
+  <tr><td>Lie angle(deg)</td><td>58</td></tr>
+  <tr><td>HEAD weight(g)</td><td>199</td></tr>
+  <tr><td>Distance to center of gravity(mm)</td><td>42.4</td></tr>
+  <tr><td>Depth to center of gravity(mm)</td><td>34.2</td></tr>
+  <tr><td>Degree of gravity</td><td>13</td></tr>
+  <tr><td>CT (Characteristic time)</td><td>-</td></tr>
+</table>
+`,
+    product_kh888_name: 'KH888',
     product_kh888_desc: '高性能ドライバー。',
     product_kh888_price: '163,500円から',
         product_kh888_details: `KH888は、日本の伝説的なゴルフマスター本間弘が開発した象徴的なゴルフ技術を基に作られています。本間ゴルフの副社長を務めていた時期、弘氏はプロから初心者まで誰もが簡単に飛距離を伸ばせるクラブの開発に専念しました。この美しい赤い漆仕上げのドライバーには、本間弘ならではの卓越した性能と洗練されたデザインがすべて備わっています。ヘッドとシャフトには「蒔絵」と呼ばれる日本の伝統技法が施されています。この芸術的な手法では、職人が何層もの漆を丁寧に重ねていきます。そして製品は24Kの金箔を散らして手作業で仕上げられます。その結果、驚くほど高い性能を持つ豪華絢爛なクラブが完成します。`,
-    product_kh555_name: 'KH555ドライバー',
+    product_kh555_name: 'KH555',
     product_kh555_desc: '精密鍛造ドライバー。',
     product_kh555_price: '198,000円から',
     product_kh555_details: 'ケンタック KH555 ドライバーは鍛造チタンのパワーと洗練された精度を融合し、楽に飛距離を伸ばし揺るぎない安定性をもたらします。プレミアムカーボンシャフトとツアーインスパイアのバランスで仕上げられ、性能とエレガンスの調和を求める目の肥えたゴルファーのための一本です。',
-    product_kh888_putter_name: 'KH888パター',
+    product_kh888_putter_name: 'KH888',
     product_kh888_putter_desc: '日本で鍛えられた限定プレシジョンパター。',
     product_kh888_putter_price: '159,059円から',
         product_kh888_putter_details: `Kentack KH888は単なるパターではなく、日本のクラフトマンシップの粋を集めた一本です。高級SUS303ステンレススチールから鍛造され、卓越したバランス、安定性、打感をもたらします。
@@ -298,11 +370,11 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
   <tr><td>原産国</td><td>日本製</td></tr>
 </table>
 `,
-    product_white_oyster_name: 'ホワイトパール／24Kゴールド中空鍛造アイアン',
+    product_white_oyster_name: 'White Pearl / 24K Gold',
     product_white_oyster_desc: '精度。優雅さ。比類なきパフォーマンス。',
     product_white_oyster_price: '価格はお問い合わせください。',
     product_white_oyster_details: `ホワイトパールと24Kゴールドで仕上げられたホローフォージド・アイアンセットは、スタイルと性能を見事に融合させ、スイングひとつで品格を物語ります。洗練されたゴールドのアクセントと輝くホワイトパールのフィニッシュが目を引き、滑らかなNS950ゴールドシャフトが手にする喜びを与える。打感は上質で寛容さもあり、あなたの姿勢（アドレス時）で威厳を放つ一振り。力強さを備えながらも、優雅さを失わないアイアンです。`,
-    product_rescue_name: 'Kentack プラチナレスキュー',
+    product_rescue_name: 'Kentack Platinum',
     product_rescue_desc: 'どんなライからも高弾道で攻める。',
     product_rescue_price: '価格はお問い合わせください。',
     product_rescue_details: '浅めのフェースとニュートラルライ設計、反応の良いスチールフェースで、フェアウェイでもラフでも安定した打ち出しと操作性を実現します。',
@@ -711,6 +783,25 @@ const productData = [
     type: 'drivers'
   },
   {
+    id: 'kh460',
+    nameKey: 'product_kh460_name',
+    descKey: 'product_kh460_desc',
+    priceKey: 'product_kh460_price',
+    detailsKey: 'product_kh460_details',
+    specsKey: 'product_kh460_specs',
+    image: 'KH460/coverKH460.jpg',
+    images: [
+      'KH460/coverKH460.jpg',
+      'KH460/s-l1600.png',
+      'KH460/s3214.png',
+      'KH460/coverKH460.jpg',
+      'KH460/sasdad.jpg',
+      'KH460/dadad.jpg'
+    ],
+    category: 'clubs',
+    type: 'drivers'
+  },
+  {
     id: 'white_oyster_irons',
     nameKey: 'product_white_oyster_name',
     descKey: 'product_white_oyster_desc',
@@ -966,7 +1057,8 @@ function toggleCategoryHero(type) {
     drivers: { textKey: 'club_drivers', src: 'products/unnamed.png', altKey: 'hero_alt_drivers', fallbackText: 'DRIVERS', fallbackAlt: 'Kentack driver hero' },
     irons: { textKey: 'club_irons', src: 'products/IMG_0260.png', altKey: 'hero_alt_irons', fallbackText: 'IRONS', fallbackAlt: 'Kentack irons hero' },
     putters: { textKey: 'club_putters', src: 'products/IMG_0261.png', altKey: 'hero_alt_putters', fallbackText: 'PUTTERS', fallbackAlt: 'Kentack putter hero' },
-    rescue: { textKey: 'club_rescue', src: 'products/IMG_0259.png', altKey: 'hero_alt_rescue', fallbackText: 'RESCUE', fallbackAlt: 'Kentack rescue hero' }
+    rescue: { textKey: 'club_rescue', src: 'products/IMG_0259.png', altKey: 'hero_alt_rescue', fallbackText: 'RESCUE', fallbackAlt: 'Kentack rescue hero' },
+    accessories: { textKey: 'club_accessories', src: 'ACCESSORY/hat.png', altKey: 'hero_alt_accessories', fallbackText: 'ACCESSORIES', fallbackAlt: 'Kentack accessories hero' }
   };
 
   const data = heroData[type];

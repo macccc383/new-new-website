@@ -100,7 +100,7 @@ nav.nav-hidden {
 
 nav a {
   color: var(--text-color);
-  margin-right: 1rem;
+  margin-right: 0;
   text-decoration: none;
   font-weight: 700;
   position: relative;
@@ -136,7 +136,10 @@ nav a:hover::after {
 
 .nav-links {
   flex: 1;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.75rem;
 }
 
 .language-dropdown {
@@ -346,6 +349,58 @@ main {
   max-width: clamp(200px, 20vw, 360px);
 }
 
+.club-card[data-type="accessories"] .club-visual {
+  min-height: clamp(300px, 28vw, 460px);
+  overflow: visible;
+}
+
+.accessory-visual {
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.accessory-cluster {
+  position: relative;
+  width: min(360px, 90%);
+  height: min(320px, 82vw);
+  display: grid;
+  place-items: center;
+  transform: translate(20%, 15%);
+}
+
+.accessory-img {
+  position: absolute;
+  width: clamp(120px, 24vw, 200px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.25));
+  z-index: 3;
+}
+
+.accessory-hat { top: -40%; left: -20%; transform: rotate(-6deg); transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease; }
+.accessory-grip { bottom: 40%; left: -16%; transform: rotate(14deg); width: clamp(80px, 18vw, 140px); transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease; }
+.accessory-boston { top: -190%; right: -150%; transform: rotate(-8deg); transition: transform 0.6s ease, top 0.6s ease, right 0.6s ease; }
+.accessory-grip { bottom: 40%; left: -16%; transform: rotate(14deg); width: clamp(80px, 18vw, 140px); }
+.accessory-caddy { bottom: 165%; right: -80%; transform: rotate(4deg); width: clamp(160px, 28vw, 240px); transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease; }
+
+.accessories-card .club-label {
+  left: 92%;
+  top: 55%;
+  max-width: 100%;
+  transform: translate(-50%, -50%) scaleY(2.1);
+}
+
+.accessories-card .club-visual::after {
+  left: 105%;
+  top: 75%;
+}
+
+.accessories-card .club-info {
+  align-items: center;
+  text-align: center;
+  transform: translateX(75%);
+  margin-top: 11rem;
+}
+
 
 .club-card:hover img,
 .club-card:focus-within img {
@@ -364,6 +419,175 @@ main {
 .club-card:hover .club-visual::after {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+}
+
+.accessories-card img,
+.accessories-card:hover img,
+.accessories-card:focus-within img {
+  clip-path: inset(0 0 0 0) !important;
+}
+
+.accessories-card:hover .accessory-hat,
+.accessories-card:focus-within .accessory-hat {
+  transform: translate(-80%, -80%) rotate(-6deg);
+  top: -110%;
+  left: -30%;
+  transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease;
+}
+
+.accessories-card:hover .accessory-grip,
+.accessories-card:focus-within .accessory-grip {
+  transform: translate(-40%, 30%) rotate(14deg);
+  top: -80%;
+  left: -10%;
+  transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease;
+}
+
+.accessories-card:hover .accessory-boston,
+.accessories-card:focus-within .accessory-boston {
+  transform: translate(40%, -40%) rotate(-8deg);
+  top: -240%;
+  right: -190%;
+  transition: transform 0.6s ease, top 0.6s ease, right 0.6s ease;
+}
+
+.accessories-card:hover .accessory-caddy,
+.accessories-card:focus-within .accessory-caddy {
+  transform: translate(40%, 40%) rotate(4deg);
+  bottom: 180%;
+  right: -120%;
+  transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease;
+}
+
+@media (max-width: 900px) {
+  .accessories-card .club-visual {
+    min-height: clamp(180px, 52vw, 300px);
+  }
+  .accessory-cluster {
+    transform: translate(-15%, 0);
+    width: min(220px, 68%);
+    height: min(200px, 55vw);
+  }
+  .accessory-img {
+    width: clamp(80px, 18vw, 140px);
+  }
+  .accessory-boston {
+    width: clamp(40px, 11vw, 100px);
+  }
+  .accessories-card .club-label {
+    left: 45%;
+    top: 72%;
+    font-size: clamp(2.4rem, 11vw, 3.6rem);
+    letter-spacing: 0.2rem;
+    transform: translate(-50%, -50%) scaleY(2.6);
+  }
+  .accessories-card .club-visual::after {
+    left: 45%;
+    top: 72%;
+  }
+  .accessories-card .club-info {
+    transform: translateX(0);
+    margin-top: 4rem;
+  }
+  .accessory-hat {
+    top: 22%;
+    left: -60%;
+    transform: rotate(-6deg);
+  }
+  .accessory-grip {
+    bottom: -55%;
+    left: -16%;
+    transform: rotate(14deg);
+  }
+  .accessory-boston {
+    top: -152%;
+    left: 20%;
+    right: auto;
+    transform: rotate(-8deg);
+  }
+  .accessory-caddy {
+    bottom: 160%;
+    right: -90%;
+    transform: rotate(4deg);
+  }
+
+  /* Disable accessories hover animation on mobile (keep base placement) */
+  .accessories-card:hover,
+  .accessories-card:focus-within {
+    transform: none !important;
+    --hover-drop: 0 !important;
+  }
+  .accessories-card:hover .club-visual,
+  .accessories-card:focus-within .club-visual {
+    transform: none !important;
+  }
+  .accessories-card:hover .club-visual::after,
+  .accessories-card:focus-within .club-visual::after {
+    transform: translate(-50%, -50%) scale(0) !important;
+    opacity: 0 !important;
+  }
+  .accessories-card:hover .accessory-cluster,
+  .accessories-card:focus-within .accessory-cluster {
+    transform: translate(-15%, 0) !important;
+  }
+  .accessories-card:hover .accessory-img,
+  .accessories-card:focus-within .accessory-img,
+  .accessories-card:hover img,
+  .accessories-card:focus-within img {
+    clip-path: inset(0 0 0 0) !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .accessories-card:hover .accessory-hat,
+  .accessories-card:focus-within .accessory-hat {
+    top: 22% !important;
+    left: -60% !important;
+    transform: rotate(0deg) !important;
+  }
+  .accessories-card:hover .accessory-grip,
+  .accessories-card:focus-within .accessory-grip {
+    bottom: -55% !important;
+    left: -16% !important;
+    right: auto !important;
+    top: auto !important;
+    transform: translate(0, 0) rotate(0deg) !important;
+  }
+  .accessories-card:hover .accessory-boston,
+  .accessories-card:focus-within .accessory-boston {
+    top: -152% !important;
+    left: 20% !important;
+    right: auto !important;
+    transform: rotate(0deg) !important;
+  }
+  .accessories-card:hover .accessory-caddy,
+  .accessories-card:focus-within .accessory-caddy {
+    bottom: 160% !important;
+    right: -90% !important;
+    transform: rotate(0deg) !important;
+  }
+  .accessories-card,
+  .accessories-card * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Light mode: force white text to render black */
+body:not(.dark-theme) {
+  color: #000000;
+}
+body:not(.dark-theme) * {
+  color: #000000 !important;
+}
+/* Light mode: strip shadows/drop-shadows */
+body:not(.dark-theme) *,
+body:not(.dark-theme) *::before,
+body:not(.dark-theme) *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
 }
 
 .club-label {
@@ -627,25 +851,61 @@ main {
 .story-content {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 28px;
+  background: rgba(255, 215, 0, 0.08);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+}
+
+.story-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .story-content .ken-portrait {
-  width: 150px;
+  width: clamp(260px, 32vw, 400px);
   height: auto;
   flex-shrink: 0;
+  border-radius: 16px;
+}
+
+.story-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.story-text p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.8;
 }
 
 @media (max-width: 600px) {
   .story-content {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+  .story-text {
+    align-items: center;
+    justify-content: center;
   }
 }
 
 h1, h2 {
   font-family: var(--heading-font);
   color: var(--text-color);
+}
+
+.story-title {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  letter-spacing: 0.02em;
 }
 
 .overlay h2 {
@@ -866,9 +1126,10 @@ h1, h2 {
     display: none;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
     width: 250px;
     height: 100%;
-    padding: 2rem 1rem;
+    padding: 0.25rem 0.85rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -886,16 +1147,28 @@ h1, h2 {
   }
 
   .nav-links {
+    order: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-    margin-top: 0.5rem;
+    gap: 1.4rem;
+    margin-top: 0.6rem;
     width: 100%;
   }
 
+  .logo {
+    order: 0;
+    margin-top: 1rem;
+  }
+
+  #menu-toggle {
+    order: 0;
+    display: flex;
+  }
+
   .controls {
-    margin-top: 0.5rem;
+    order: 3;
+    margin-top: 0;
   }
 
   #language-select {
