@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Kentack's collection of premium golf clubs and accessories.">
+  <title>Kentack - Products</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="menu-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="animate">
+    <a class="logo" href="index.html">KENTACK</a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="products.html" data-i18n="nav_products">Products</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="controls">
+      <div class="language-dropdown">
+        <button id="language-toggle" aria-label="Language">🌐</button>
+        <select id="language-select" class="hidden">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+    </div>
+  </nav>
+  <div id="nav-overlay"></div>
+
+  <main class="products-main">
+    <section class="club-gallery animate" aria-label="Kentack product categories">
+      <article class="club-card" data-category-card data-category="clubs" data-type="drivers" role="button" tabindex="0">
+        <div class="club-visual">
+          <img src="products/unnamed.png" alt="Kentack driver illustration" loading="lazy" data-i18n-alt="prod_card_driver_alt">
+          <span class="club-label" data-i18n="club_drivers">Drivers</span>
+        </div>
+        <div class="club-info">
+          <p class="club-type" data-i18n="product_kh888_desc">High-performance driver.</p>
+          <h2 data-i18n="product_kh888_name">Driver KH888</h2>
+          <p data-i18n="prod_card_driver_blurb">High-launch titanium heads finished with layered lacquer and gold leaf for effortless distance.</p>
+        </div>
+      </article>
+
+      <article class="club-card" data-category-card data-category="clubs" data-type="irons" role="button" tabindex="0">
+        <div class="club-visual">
+          <img src="products/IMG_0260.png" alt="Kentack irons illustration" loading="lazy" data-i18n-alt="prod_card_irons_alt">
+          <span class="club-label" data-i18n="club_irons">Irons</span>
+        </div>
+        <div class="club-info">
+          <p class="club-type" data-i18n="prod_card_irons_tagline">Forged Precision</p>
+          <h2 data-i18n="product_white_oyster_name">White Pearl Studio</h2>
+          <p data-i18n="prod_card_irons_blurb">Hollow-forged faces with mirror-polished fluting and 24K gold accents for sculpted trajectories.</p>
+        </div>
+      </article>
+
+      <article class="club-card" data-category-card data-category="clubs" data-type="putters" role="button" tabindex="0">
+        <div class="club-visual">
+          <img src="products/IMG_0261.png" alt="Kentack putter illustration" loading="lazy" data-i18n-alt="prod_card_putter_alt">
+          <span class="club-label" data-i18n="club_putters">Putters</span>
+        </div>
+        <div class="club-info">
+          <p class="club-type" data-i18n="product_kh888_putter_desc">Limited-edition Japanese-crafted precision putter.</p>
+          <h2 data-i18n="product_kh888_putter_name">KH888 Putter</h2>
+          <p data-i18n="prod_card_putter_blurb">Deep-milled SUS303 blocks balanced for a satin roll, complete with hand-engraved emblems.</p>
+        </div>
+      </article>
+
+      <article class="club-card" data-category-card data-category="clubs" data-type="rescue" role="button" tabindex="0">
+        <div class="club-visual">
+          <img src="products/IMG_0259.png" alt="Kentack rescue club illustration" loading="lazy" data-i18n-alt="prod_card_rescue_alt">
+          <span class="club-label" data-i18n="club_rescue">Rescue</span>
+        </div>
+        <div class="club-info">
+          <p class="club-type" data-i18n="prod_card_rescue_tagline">High-launch, turf-cutting versatility.</p>
+          <h2 data-i18n="product_rescue_name">Kentack Platinum Rescue</h2>
+          <p data-i18n="prod_card_rescue_blurb">Shallow-faced profile with a neutral lie and responsive face for confident shots from any lie.</p>
+        </div>
+      </article>
+
+      <article class="club-card accessories-card" data-category-card data-category="accessories" data-type="accessories" role="button" tabindex="0">
+        <div class="club-visual accessory-visual">
+          <div class="accessory-cluster">
+            <img src="ACCESSORY/hat.png" class="accessory-img accessory-hat" alt="Kentack hat accessory">
+            <img src="ACCESSORY/grip.png" class="accessory-img accessory-grip" alt="Kentack grip accessory">
+            <img src="ACCESSORY/boston.png" class="accessory-img accessory-boston" alt="Kentack Boston bag accessory">
+            <img src="ACCESSORY/caddy.png" class="accessory-img accessory-caddy" alt="Kentack caddy bag accessory">
+          </div>
+          <span class="club-label" data-i18n="club_accessories">Accessories</span>
+        </div>
+        <div class="club-info">
+          <p class="club-type" data-i18n="category_accessories">Accessories</p>
+          <h2 data-i18n="category_accessories">Accessories</h2>
+          <p data-i18n="prod_card_accessories_blurb">Tour caps, premium grips, Boston bags, and caddy bags to round out your setup.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="products-note animate">
+      <p data-i18n="products_note_text">Looking for a bespoke shaft pairing or a private fitting? Reach out through the <a href="contact.html">contact page</a> and we will tailor the build to your swing.</p>
+    </section>
+  </main>
+  <div id="product-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-image-container">
+        <img class="modal-image" src="" alt="">
+        <button class="prev" aria-label="Previous">&#10094;</button>
+        <button class="next" aria-label="Next">&#10095;</button>
+      </div>
+      <div class="modal-info">
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <p class="modal-price"></p>
+        <p class="modal-details"></p>
+        <div class="modal-specs hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
