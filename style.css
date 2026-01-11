@@ -884,6 +884,11 @@ body:not(.dark-theme) *::after {
   line-height: 1.8;
 }
 
+.kentack-highlight {
+  color: #ffd700;
+  font-weight: 400;
+}
+
 @media (max-width: 600px) {
   .story-content {
     flex-direction: column;

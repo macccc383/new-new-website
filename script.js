@@ -393,6 +393,11 @@ The classic 460cc profile and neutral face angle offer confident address and eff
 };
 
 const htmlI18nKeys = ['product_kh888_price', 'product_kh555_price', 'product_white_oyster_price', 'product_kh888_putter_price', 'products_note_text'];
+const storyHighlightKeys = ['story_message'];
+
+function highlightKentack(text = '') {
+  return text.replace(/KENTACK/g, '<span class="kentack-highlight">KENTACK</span>');
+}
 
 let carouselInterval;
 let currentDevice;
@@ -403,10 +408,13 @@ function setLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
-      if (htmlI18nKeys.includes(key)) {
-        el.innerHTML = translations[lang][key];
+      const value = translations[lang][key];
+      if (storyHighlightKeys.includes(key)) {
+        el.innerHTML = highlightKentack(value);
+      } else if (htmlI18nKeys.includes(key)) {
+        el.innerHTML = value;
       } else {
-        el.textContent = translations[lang][key];
+        el.textContent = value;
       }
     }
   });
