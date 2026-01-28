@@ -1320,6 +1320,11 @@ h1, h2 {
     white-space: nowrap;
     font-size: 0.9rem;
   }
+
+  /* Ensure the video subtitle stays white on small screens */
+  .video-subtitle {
+    color: #ffffff !important;
+  }
 }
 
 body.device-phone .image-wrapper {
