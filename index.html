@@ -26,14 +26,16 @@
     </div>
     <div class="controls">
       <div class="language-dropdown">
-        <button id="language-toggle" aria-label="Language">🌐</button>
+        <button id="language-toggle" aria-label="Language">
+          <img src="global.png" alt="Change language">
+        </button>
         <select id="language-select" class="hidden">
           <option value="en">English</option>
           <option value="vi">Tiếng Việt</option>
           <option value="ja">日本語</option>
         </select>
       </div>
-      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+      <button id="theme-toggle" aria-label="Toggle Theme" data-sun-icon="sun.png" data-moon-icon="moon.png">🌙</button>
     </div>
   </nav>
   <div id="nav-overlay"></div>
@@ -63,7 +65,20 @@
           <p data-i18n="crafted_limited_timeless">Crafted. Limited. Timeless.</p>
           <button class="intro-btn" data-i18n="find_out_more">Find out more</button>
         </div>
-      </section>
+    </section>
+
+    <section class="product-video animate" aria-label="KH888 demo video">
+      <div class="video-frame">
+        <div class="video-overlay">
+          <div class="video-title">KENTACK</div>
+          <div class="video-subtitle">DEMO DAY</div>
+        </div>
+        <video class="demo-video" preload="auto" muted autoplay loop playsinline controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture tabindex="-1">
+          <source src="DEMO.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
 
     <section class="story animate">
       <h2 class="story-title" data-i18n="story_title">Message from Ken Karahawa</h2>

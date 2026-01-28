@@ -167,6 +167,27 @@ nav a:hover::after {
   color: var(--text-color);
 }
 
+#language-toggle img {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+  pointer-events: none;
+  filter: invert(1) brightness(1.6) contrast(1.1);
+}
+
+#theme-toggle img {
+  width: 1.05rem;  /* moon (light mode) */
+  height: 1.05rem;
+  display: block;
+  pointer-events: none;
+  filter: invert(1) brightness(1.6) contrast(1.05);
+}
+
+body.dark-theme #theme-toggle img {
+  width: 1.6rem;  /* sun (dark mode) */
+  height: 1.6rem;
+}
+
 .hidden {
   display: none;
 }
@@ -1047,6 +1068,27 @@ h1, h2 {
 #putter-intro .intro-content {
   bottom: 20%;
   left: 49%;
+}
+
+.product-video {
+  width: 100%;
+  margin: 5rem 0 4rem;
+  padding: 0;
+}
+
+.video-frame {
+  background: #000;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  clip-path: polygon(0 8vw, 100% 0, 100% calc(100% - 8vw), 0 100%);
+}
+
+.product-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
 }
 
 @media (max-width: 600px) {

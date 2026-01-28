@@ -203,7 +203,7 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
 
     club_accessories: 'Phu kien',
     hero_alt_accessories: 'Anh hero phu kien Kentack',
-    prod_card_accessories_blurb: 'Mu tour, grip cao cap, tui Boston va tui caddie hoan thien bo gay cua ban.',
+    prod_card_accessories_blurb: 'Mũ tour, grip cao cấp, túi Boston và túi caddie hoàn thiện bộ gậy của bạn.',
     view_4x4: '4 x 4',
     view_5x5: '5 x 5',
     no_products: 'Không có sản phẩm.',
@@ -464,8 +464,15 @@ function initTheme() {
   }
   const toggle = document.getElementById('theme-toggle');
   if (toggle) {
+    const sunIcon = toggle.getAttribute('data-sun-icon') || 'sun.png';
+    const moonIcon = toggle.getAttribute('data-moon-icon') || 'moon.png';
     const updateIcon = () => {
-      toggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+      const isDark = document.body.classList.contains('dark-theme');
+      if (isDark) {
+        toggle.innerHTML = `<img src="${sunIcon}" alt="Switch to light mode">`;
+      } else {
+        toggle.innerHTML = `<img src="${moonIcon}" alt="Switch to dark mode">`;
+      }
     };
     updateIcon();
     toggle.addEventListener('click', () => {
@@ -843,7 +850,7 @@ const productData = [
 ];
 
 let modal, modalImg, modalPrev, modalNext, modalClose;
-let modalTitle, modalDesc, modalPrice, modalDetails, modalSpecs;
+let modalTitle, modalDesc, modalDetails, modalSpecs;
 let modalImages = [];
 let modalIndex = 0;
 let modalTimer;
@@ -862,10 +869,6 @@ function openProductModal(product) {
     }
   }
   if (modalDesc) modalDesc.textContent = translations[lang][product.descKey];
-  if (modalPrice) {
-    modalPrice.innerHTML = translations[lang][product.priceKey];
-    modalPrice.setAttribute('data-i18n', product.priceKey);
-  }
   if (modalDetails && product.detailsKey) {
     modalDetails.textContent = translations[lang][product.detailsKey];
   }
@@ -932,7 +935,6 @@ function initProductModal() {
   modalClose = modal.querySelector('.close');
   modalTitle = modal.querySelector('.modal-title');
   modalDesc = modal.querySelector('.modal-desc');
-  modalPrice = modal.querySelector('.modal-price');
   modalDetails = modal.querySelector('.modal-details');
   modalSpecs = modal.querySelector('.modal-specs');
   if (modalImg) {
@@ -970,7 +972,6 @@ function renderProducts(filter = {}) {
       <img src="${p.image}" alt="${name}" data-i18n-alt="${p.nameKey}" class="product-image" loading="lazy">
       <h2 data-i18n="${p.nameKey}">${name}</h2>
       <p data-i18n="${p.descKey}">${translations[lang][p.descKey]}</p>
-      <p class="price" data-i18n="${p.priceKey}">${translations[lang][p.priceKey]}</p>
     `;
     div.addEventListener('click', () => openProductModal(p));
     grid.appendChild(div);

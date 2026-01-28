@@ -167,6 +167,27 @@ nav a:hover::after {
   color: var(--text-color);
 }
 
+#language-toggle img {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+  pointer-events: none;
+  filter: invert(1) brightness(1.6) contrast(1.1);
+}
+
+#theme-toggle img {
+  width: 1.05rem;  /* moon (light mode) */
+  height: 1.05rem;
+  display: block;
+  pointer-events: none;
+  filter: invert(1) brightness(1.6) contrast(1.05);
+}
+
+body.dark-theme #theme-toggle img {
+  width: 1.6rem;  /* sun (dark mode) */
+  height: 1.6rem;
+}
+
 .hidden {
   display: none;
 }
@@ -227,8 +248,8 @@ main {
 }
 
 .products-main {
-  padding: 1rem 1.25rem;
-  margin-top: 40px;
+  padding: 0.5rem 1.25rem;
+  margin-top: 4px;
 }
 
 .product-grid {
@@ -241,7 +262,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, minmax(230px, 1fr));
   gap: 2.5rem;
-  margin: 2rem auto 10rem;
+  margin: 0.5rem auto 10rem;
   justify-items: center;
   align-items: flex-start;
 }
@@ -383,10 +404,35 @@ main {
 .accessory-caddy { bottom: 165%; right: -80%; transform: rotate(4deg); width: clamp(160px, 28vw, 240px); transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease; }
 
 .accessories-card .club-label {
-  left: 92%;
+  left: 100%;
   top: 55%;
   max-width: 100%;
   transform: translate(-50%, -50%) scaleY(2.1);
+}
+
+/* Ensure the accessories label shift applies regardless of language or other overrides */
+.accessories-card .club-label[data-i18n="club_accessories"] {
+  left: 100% !important;
+}
+
+/* English-only: nudge the Accessories label slightly left */
+html[lang="en"] .accessories-card .club-label[data-i18n="club_accessories"] {
+  left: 92% !important;
+}
+
+@media (max-width: 900px) {
+  html[lang="en"] .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 55% !important;
+  }
+  html[lang="en"] .accessories-card .club-visual::after {
+    left: 55% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  html[lang="en"] .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 50% !important;
+  }
 }
 
 .accessories-card .club-visual::after {
@@ -475,14 +521,17 @@ main {
     width: clamp(40px, 11vw, 100px);
   }
   .accessories-card .club-label {
-    left: 45%;
+    left: 65% !important;
     top: 72%;
     font-size: clamp(2.4rem, 11vw, 3.6rem);
     letter-spacing: 0.2rem;
     transform: translate(-50%, -50%) scaleY(2.6);
   }
+  .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 65% !important;
+  }
   .accessories-card .club-visual::after {
-    left: 45%;
+    left: 65%;
     top: 72%;
   }
   .accessories-card .club-info {
@@ -577,7 +626,9 @@ main {
 body:not(.dark-theme) {
   color: #000000;
 }
-body:not(.dark-theme) * {
+/* Keep most elements forced to black in light mode, but allow the video subtitle
+   to be styled dynamically by inline JS (exclude it from the !important rule). */
+body:not(.dark-theme) *:not(.video-subtitle) {
   color: #000000 !important;
 }
 /* Light mode: strip shadows/drop-shadows */
@@ -588,6 +639,11 @@ body:not(.dark-theme) *::after {
   text-shadow: none !important;
   filter: none !important;
   backdrop-filter: none !important;
+}
+
+/* Keep prominent overlay titles in their accent/gold color even in light mode */
+body:not(.dark-theme) .video-title {
+  color: #d4ad00 !important;
 }
 
 .club-label {
@@ -812,9 +868,16 @@ body:not(.dark-theme) *::after {
     top: 42%;
   }
   .club-label {
+    left: 46%;
     font-size: clamp(3.6rem, 14vw, 7.4rem);
     transform: translate(-50%, -60%) scale(0.9, 3.2);
     letter-spacing: clamp(0.22rem, 0.75vw, 0.35rem);
+  }
+  .accessories-card .club-label {
+    left: 60% !important;
+  }
+  .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 60% !important;
   }
   .club-card:hover img,
   .club-card:focus-within img {
@@ -1047,6 +1110,77 @@ h1, h2 {
 #putter-intro .intro-content {
   bottom: 20%;
   left: 49%;
+}
+
+.product-video {
+  width: 100%;
+  margin: 5rem 0 4rem;
+  padding: 0;
+}
+
+.video-frame {
+  position: relative;
+  background: #000;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  clip-path: polygon(0 8vw, 100% 0, 100% calc(100% - 8vw), 0 100%);
+}
+
+.product-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 20%;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.video-title {
+  font-family: var(--heading-font);
+  font-size: clamp(3.4rem, 6vw, 5.2rem);
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  color: #d4ad00;
+  line-height: 1;
+  position: relative;
+}
+
+.video-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.08em;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.video-title:hover::after {
+  transform: scaleX(1);
+}
+
+.video-subtitle {
+  margin-top: 0.5rem;
+  font-family: var(--font-family);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: #000;
+  line-height: 1.2;
+  letter-spacing: 0.25em;
 }
 
 @media (max-width: 600px) {

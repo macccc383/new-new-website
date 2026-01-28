@@ -26,14 +26,16 @@
     </div>
     <div class="controls">
       <div class="language-dropdown">
-        <button id="language-toggle" aria-label="Language">&#127760;</button>
+        <button id="language-toggle" aria-label="Language">
+          <img src="global.png" alt="Change language">
+        </button>
         <select id="language-select" class="hidden">
           <option value="en">English</option>
           <option value="vi">Tiếng Việt</option>
           <option value="ja">日本語</option>
         </select>
       </div>
-      <button id="theme-toggle" aria-label="Toggle Theme">dYOT</button>
+      <button id="theme-toggle" aria-label="Toggle Theme" data-sun-icon="sun.png" data-moon-icon="moon.png">dYOT</button>
     </div>
   </nav>
   <div id="nav-overlay"></div>
@@ -74,7 +76,6 @@
       <div class="modal-info">
         <h2 class="modal-title"></h2>
         <p class="modal-desc"></p>
-        <p class="modal-price"></p>
         <p class="modal-details"></p>
         <div class="modal-specs hidden"></div>
       </div>
