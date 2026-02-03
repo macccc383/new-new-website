@@ -13,6 +13,8 @@ const translations = {
       find_out_more: 'Find out more',
       story_title: 'Message from Ken Karahawa',
     story_message: `The name Golf Honma has long symbolized top-class Japanese craftsmanship, admired by golfers worldwide. Our KENTACK brand carries forward this proud tradition and superior techniques. Founded in 2007 by Yukihiro Honma, co-founder of Honma Golf, KENTACK was created to preserve the spirit and identity of the original Honma legacy after the brand became foreign-owned.\n\nYukihiro Honma, a master craftsman, once produced the finest clubs under the name HIRO HONMA, blending performance and beauty with over 50 years of expertise. With KENTACK, he revived that genuine tradition. Though he has since stepped back, his techniques and philosophy remain at the heart of our work.\n\nToday, KENTACK continues to craft elegant, precise, and high-performing clubs through meticulous Japanese artistry. We are committed to honoring our heritage while advancing technology, delivering top-quality clubs that add value for discerning golfers worldwide.`,
+    distributor_title: 'KENTACK',
+    distributor_line: 'The official distributor of KENTACK in Vietnam.',
     products_title: 'Our Products',
     back_to_products: 'Back to Products',
     category_intro: 'Browse the selected club type below.',
@@ -181,6 +183,8 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
       find_out_more: 'Tìm hiểu thêm',
       story_title: 'Thông điệp từ Ken Karahawa',
     story_message: `Tên Golf Honma từ lâu đã tượng trưng cho tay nghề Nhật Bản đẳng cấp, được các golfer trên toàn thế giới ngưỡng mộ. Thương hiệu KENTACK của chúng tôi tiếp nối truyền thống đáng tự hào và kỹ thuật ưu việt đó. Được thành lập năm 2007 bởi ông Yukihiro Honma, đồng sáng lập Honma Golf, KENTACK ra đời để gìn giữ tinh thần và bản sắc di sản Honma nguyên bản sau khi thương hiệu trở thành sở hữu nước ngoài.\n\nYukihiro Honma, một bậc thầy chế tác, từng tạo ra những cây gậy hoàn hảo nhất dưới tên HIRO HONMA, kết hợp hiệu suất và vẻ đẹp với hơn 50 năm kinh nghiệm. Với KENTACK, ông đã hồi sinh truyền thống chân chính đó. Dù nay ông đã lui về, kỹ thuật và triết lý của ông vẫn là cốt lõi trong công việc của chúng tôi.\n\nNgày nay, KENTACK tiếp tục chế tác những cây gậy thanh lịch, chính xác và hiệu suất cao bằng nghệ thuật Nhật Bản tỉ mỉ. Chúng tôi cam kết tôn vinh di sản đồng thời phát triển công nghệ, mang đến những cây gậy chất lượng hàng đầu tạo giá trị cho các golfer sành điệu trên toàn thế giới.`,
+    distributor_title: 'KENTACK',
+    distributor_line: 'Nhà phân phối chính thức của KENTACK tại Việt Nam.',
     products_title: 'Sản phẩm của chúng tôi',
     back_to_products: 'Quay lại Sản phẩm',
     category_intro: 'Xem loại gậy đã chọn bên dưới.',
@@ -220,23 +224,23 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
     product_kh555_price: 'Giá khởi điểm từ <em>36.000.000₫</em>',
     product_kh555_details: 'Driver Kentack KH555 với thiết kế mặt gậy bằng chất liệu Titanium với độ chính xác cao, +20 Yard so với dòng gậy thông thường. Với tiếp xúc đa điểm mang lại sự ổn định đồng thời  luôn đẩy bóng bề tiêu cự tốt nhất có thể. Cán gậy được làm bằng sợi Nano (mảnh và nhỏ như hạt vải) giúp xa và mang lại sự cân bằng tốt nhất, KH555 là sự thể hiện sự hòa quyện giữa hiệu suất và vẻ thanh lịch dành cho golfer yêu thích sự bứt phá, ổn định.',
     product_kh460_name: 'KH460',
-    product_kh460_desc: 'Suc manh tinh te, cam giac tuyet voi.',
-    product_kh460_price: 'Gia lien he.',
-    product_kh460_details: `Duoc che tac tai Nhat cho nguoi yeu do chinh xac va su thanh lich, KH460 mang lai suc manh can bang cung cam giac danh chac gon. Dau titan 6-4 ren ket hop mat DAT55 tao am thanh sac net va toc do bong on dinh.
+    product_kh460_desc: 'Sức mạnh tinh tế, cảm giác tuyệt vời.',
+    product_kh460_price: 'Giá liên hệ.',
+    product_kh460_details: `Được chế tác tại Nhật cho người yêu độ chính xác và sự thanh lịch, KH460 mang lại sức mạnh cân bằng cùng cảm giác đánh chắc gọn. Đầu titan 6-4 rèn kết hợp mặt DAT55 tạo âm thanh sắc nét và tốc độ bóng ổn định.
 
-Kieu dang 460cc co dien, mat trung tinh giup tu tin vao bong va dieu khien quy dao de dang; trong tam duoc tinh toan cho duong bay xuyen gio nhung van em. Moi chi tiet cua KH460 deu the hien su tinh xao dung chat Nhat cho nguoi choi yeu chat luong khong thoa hiep.`,
+Kiểu dáng 460cc cổ điển, mặt trung tính giúp tự tin vào bóng và điều khiển quỹ đạo dễ dàng; trọng tâm được tính toán cho đường bay xuyên gió nhưng vẫn êm. Mỗi chi tiết của KH460 đều thể hiện sự tinh xảo đúng chất Nhật cho người chơi yêu chất lượng không thỏa hiệp.`,
     product_kh460_specs: `
 <table class="spec-table">
   <tr><th colspan="2">DRIVER KH460</th></tr>
-  <tr><td>Vat lieu dau / Quy trinh</td><td>6-4 TITANIUM / Forged</td></tr>
-  <tr><td>Vat lieu mat</td><td>DAT55</td></tr>
-  <tr><td>Loft (do)</td><td>9.5 / 10.5</td></tr>
-  <tr><td>Goc face (FA)</td><td>+-0</td></tr>
-  <tr><td>Lie (do)</td><td>58</td></tr>
-  <tr><td>Trong luong dau (g)</td><td>199</td></tr>
-  <tr><td>Khoang cach CG (mm)</td><td>42.4</td></tr>
-  <tr><td>Do sau CG (mm)</td><td>34.2</td></tr>
-  <tr><td>Do cao CG (mm)</td><td>13</td></tr>
+  <tr><td>Vật liệu đầu / Quy trình</td><td>6-4 TITANIUM / Forged</td></tr>
+  <tr><td>Vật liệu mặt</td><td>DAT55</td></tr>
+  <tr><td>Loft (độ)</td><td>9.5 / 10.5</td></tr>
+  <tr><td>Góc face (FA)</td><td>+-0</td></tr>
+  <tr><td>Lie (độ)</td><td>58</td></tr>
+  <tr><td>Trọng lượng đầu (g)</td><td>199</td></tr>
+  <tr><td>Khoảng cách CG (mm)</td><td>42.4</td></tr>
+  <tr><td>Độ sâu CG (mm)</td><td>34.2</td></tr>
+  <tr><td>Độ cao CG (mm)</td><td>13</td></tr>
   <tr><td>CT</td><td>-</td></tr>
 </table>
 `,
@@ -293,6 +297,8 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
       find_out_more: '詳しく見る',
       story_title: '唐川ケンからのメッセージ',
     story_message: `「ゴルフ本間」という名前は、長年にわたり日本最高峰の職人技の象徴として、世界中のゴルファーに愛されてきました。私たちのKENTACKブランドは、この誇り高い伝統と優れた技術を受け継いでいます。KENTACKは本間ゴルフの共同創業者、本間幸宏によって2007年に設立され、ブランドが外国資本となった後も本来の本間の精神とアイデンティティを守るために生まれました。\n\n名匠である本間幸宏は、かつてHIRO HONMAの名で最高級のクラブを作り上げ、50年以上の経験で性能と美を融合させました。KENTACKによって彼はその真の伝統を復活させました。現在は第一線を退いていますが、彼の技術と理念は今も私たちの中心にあります。\n\n今日のKENTACKは、緻密な日本の職人技でエレガントで精密、そして高性能なクラブを作り続けています。私たちは遺産を尊重しつつ技術を進化させ、世界中の目の肥えたゴルファーに価値ある最高品質のクラブを提供し続けます。`,
+    distributor_title: 'KENTACK',
+    distributor_line: 'KENTACKのベトナム正規代理店です。',
     products_title: '製品一覧',
     back_to_products: '製品一覧に戻る',
     category_intro: '選択したクラブタイプを下からご覧ください。',

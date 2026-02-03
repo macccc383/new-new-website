@@ -225,6 +225,14 @@ body.dark-theme #theme-toggle img {
   background-color: var(--bg-color);
 }
 
+.product h2 {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+}
+
+.product p {
+  font-weight: 700;
+}
+
 .product-image {
   width: 100%;
   height: 300px;
@@ -331,6 +339,10 @@ main {
   animation: club-rise-in 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.driver-illustration {
+  left: -12px;
 }
 
 .club-card:nth-child(1) img { animation-delay: 0.05s; }
@@ -922,6 +934,40 @@ body:not(.dark-theme) .video-title {
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
 }
 
+.story-simple {
+  text-align: center;
+}
+
+.story-simple .story-content {
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.story-simple .story-title {
+  color: var(--accent-color);
+  margin-bottom: 0.05rem;
+  font-size: clamp(4.6rem, 9vw, 7rem);
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+
+body:not(.dark-theme) .story-simple .story-title {
+  color: var(--accent-color) !important;
+}
+
+.story-simple .story-text {
+  justify-content: center;
+}
+
+.story-simple .story-text p {
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+}
+
 .story-portrait {
   display: flex;
   flex-direction: column;
@@ -1184,6 +1230,14 @@ h1, h2 {
 }
 
 @media (max-width: 600px) {
+  .video-title {
+    color: #f28c1b;
+  }
+
+  body:not(.dark-theme) .video-title {
+    color: #f28c1b !important;
+  }
+
   #putter-intro .intro-content {
     top: 18%;
     bottom: auto;
