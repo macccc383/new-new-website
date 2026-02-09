@@ -70,7 +70,7 @@ const translations = {
     product_kh888_putter_desc: 'Limited-edition Japanese-crafted precision putter.',
     product_kh888_putter_price: 'From $1,080.00',
     product_kh888_putter_details: `The Kentack KH888 is more than a putter—it is Japanese craftsmanship at its finest. Forged from premium SUS303 stainless steel, it delivers exceptional balance, stability, and feel.
-Its refined metallic finish and deep-milled face ensure consistent roll and precision, while the steel shaft provides durability and smooth energy transfer.
+Its refined metallic finish and deep-milled face ensure consistent roll and precision, while thse steel shaft provides durability and smooth energy transfer.
 Each emblem and engraving reflects authentic artistry, proudly marked “Made in Japan.” With only 150 numbered pieces worldwide, the KH888 is both a performance instrument and a collector’s treasure—crafted for golfers who demand perfection and distinction.`,
       product_kh888_putter_specs: `
 <table class="spec-table">

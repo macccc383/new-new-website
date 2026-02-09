@@ -1150,7 +1150,19 @@ h1, h2 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
+  #menu-toggle::after {
+    content: '';
+    width: 62%;
+    height: 62%;
+    background: center / contain no-repeat url('../menu.png');
+  }
+
+  body.dark-theme #menu-toggle::after {
+    filter: invert(1);
+  }
+
   #menu-toggle span {
+    display: none;
     width: 60%;
     height: 3px;
     margin: 4px auto;
@@ -1162,6 +1174,10 @@ h1, h2 {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+  }
+
+  #menu-toggle.open::after {
+    display: none;
   }
 
   #menu-toggle.open span {

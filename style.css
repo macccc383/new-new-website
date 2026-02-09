@@ -432,9 +432,17 @@ html[lang="en"] .accessories-card .club-label[data-i18n="club_accessories"] {
   left: 92% !important;
 }
 
+/* Vietnamese-only: nudge "Phu kien" slightly left */
+html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
+  left: 98% !important;
+}
+
 @media (max-width: 900px) {
   html[lang="en"] .accessories-card .club-label[data-i18n="club_accessories"] {
     left: 55% !important;
+  }
+  html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 56% !important;
   }
   html[lang="en"] .accessories-card .club-visual::after {
     left: 55% !important;
@@ -443,7 +451,10 @@ html[lang="en"] .accessories-card .club-label[data-i18n="club_accessories"] {
 
 @media (max-width: 700px) {
   html[lang="en"] .accessories-card .club-label[data-i18n="club_accessories"] {
-    left: 50% !important;
+    left: 45% !important;
+  }
+  html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 47% !important;
   }
 }
 
@@ -1230,12 +1241,33 @@ h1, h2 {
 }
 
 @media (max-width: 600px) {
+  .video-frame {
+    aspect-ratio: 9 / 16;
+  }
+
+  .video-overlay {
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .product-video video {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .video-title {
-    color: #f28c1b;
+    font-size: clamp(4.2rem, 15vw, 6rem);
+    color: #ffd700;
+  }
+
+  .video-subtitle {
+    margin-top: 0.8rem;
+    font-size: clamp(1.2rem, 5vw, 2rem);
   }
 
   body:not(.dark-theme) .video-title {
-    color: #f28c1b !important;
+    color: #ffd700 !important;
   }
 
   #putter-intro .intro-content {
@@ -1290,12 +1322,24 @@ h1, h2 {
     height: 44px;
     padding: 0;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.65);
-    border: none;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
+  #menu-toggle::after {
+    content: '';
+    width: 62%;
+    height: 62%;
+    background: center / contain no-repeat url('menu.png');
+  }
+
+  body.dark-theme #menu-toggle::after {
+    filter: invert(1);
+  }
+
   #menu-toggle span {
+    display: none;
     width: 60%;
     height: 3px;
     margin: 4px auto;
@@ -1304,9 +1348,23 @@ h1, h2 {
   }
 
   #menu-toggle.open {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.92);
+  }
+
+  #menu-toggle.open::before {
+    content: 'x';
+    position: absolute;
+    color: #ffffff;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  #menu-toggle.open::after {
+    display: none;
   }
 
   #menu-toggle.open span {
@@ -1315,43 +1373,75 @@ h1, h2 {
     transform: scaleX(0);
   }
 
+  body:not(.dark-theme) #menu-toggle {
+    background-color: rgba(255, 255, 255, 0.92);
+    border-color: rgba(0, 0, 0, 0.24);
+  }
+
+  body:not(.dark-theme) #menu-toggle span {
+    background-color: #000000;
+  }
+
+  body:not(.dark-theme) #menu-toggle.open {
+    background-color: rgba(255, 255, 255, 0.96);
+  }
+
+  body:not(.dark-theme) #menu-toggle.open::before {
+    color: #000000;
+  }
+
   nav {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
-    width: 250px;
-    height: 100%;
-    padding: 0.25rem 0.85rem;
+    width: 100%;
+    height: 100vh;
+    padding: 5.5rem 1.5rem 2rem;
     position: fixed;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    transition: transform 0.3s;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+    border-bottom: 0;
+    backdrop-filter: none;
+    transform: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
   }
 
   nav.open {
     display: flex;
-    transform: translateX(0);
+    opacity: 1;
+  }
+
+  body:not(.dark-theme) nav {
+    background: rgba(255, 255, 255, 0.97);
   }
 
   nav.nav-hidden {
-    transform: translateX(-100%);
+    transform: none;
   }
 
   .nav-links {
     order: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.4rem;
-    margin-top: 0.6rem;
+    align-items: center;
+    gap: 3.6rem;
+    margin: 0;
     width: 100%;
   }
 
   .logo {
     order: 0;
-    margin-top: 1rem;
+    margin: 0 0 2rem;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(2.6rem, 12vw, 4rem);
+    color: var(--accent-color);
+  }
+
+  .logo::after {
+    display: none;
   }
 
   #menu-toggle {
@@ -1359,20 +1449,82 @@ h1, h2 {
     display: flex;
   }
 
+  .nav-links a {
+    margin: 0;
+    color: var(--text-color);
+    font-size: clamp(1.35rem, 6vw, 1.9rem);
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
   .controls {
-    order: 3;
-    margin-top: 0;
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: min(420px, 92vw);
+    gap: 0;
+    margin-top: 2.2rem;
+  }
+
+  .language-dropdown {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #theme-toggle {
+    order: 0;
   }
 
   #language-select {
     position: static;
-    width: 100%;
-    margin-top: 0.5rem;
+    width: auto;
+    margin-top: 0.6rem;
+    text-align: center;
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+  }
+
+  #language-toggle,
+  #theme-toggle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    background: rgba(255, 255, 255, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+  body:not(.dark-theme) nav #language-toggle,
+  body:not(.dark-theme) nav #theme-toggle {
+    border-color: rgba(0, 0, 0, 0.22);
+    background: rgba(0, 0, 0, 0.06);
+    color: #000000 !important;
   }
 
   .overlay-link {
     white-space: nowrap;
     font-size: 0.9rem;
+  }
+
+  #nav-overlay.active {
+    background-color: rgba(0, 0, 0, 0.96);
+  }
+
+  body:not(.dark-theme) #nav-overlay.active {
+    background-color: rgba(255, 255, 255, 0.92);
+  }
+
+  body:not(.dark-theme) nav .logo {
+    color: #000000 !important;
   }
 
   /* Ensure the video subtitle stays white on small screens */
