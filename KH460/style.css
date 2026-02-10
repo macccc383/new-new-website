@@ -1222,7 +1222,9 @@ h1, h2 {
 
   .logo {
     order: 0;
-    margin-top: 1rem;
+    margin-top: 2.4rem;
+    font-size: clamp(3.5rem, 15vw, 5rem);
+    margin-left: 0.05rem;
   }
 
   #menu-toggle {

@@ -1248,6 +1248,8 @@ h1, h2 {
   .video-overlay {
     justify-content: center;
     padding-top: 0;
+    font-size: clamp(2.7rem, 10.5vw, 3.8rem);
+    gap: 0.28em;
   }
 
   .product-video video {
@@ -1257,13 +1259,16 @@ h1, h2 {
   }
 
   .video-title {
-    font-size: clamp(4.2rem, 15vw, 6rem);
+    font-size: 1em;
+    line-height: 0.95;
     color: #ffd700;
   }
 
   .video-subtitle {
-    margin-top: 0.8rem;
-    font-size: clamp(1.2rem, 5vw, 2rem);
+    margin-top: 0;
+    font-size: 0.34em;
+    line-height: 1;
+    letter-spacing: 0.22em;
   }
 
   body:not(.dark-theme) .video-title {
@@ -1433,10 +1438,11 @@ h1, h2 {
 
   .logo {
     order: 0;
-    margin: 0 0 2rem;
+    margin: 1.4rem 0 2.2rem;
     width: 100%;
     text-align: center;
-    font-size: clamp(2.6rem, 12vw, 4rem);
+    font-size: clamp(4.2rem, 18.5vw, 6.3rem);
+    transform: translateX(-0.5%);
     color: var(--accent-color);
   }
 
