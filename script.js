@@ -499,7 +499,17 @@ function initAnimations() {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  document.querySelectorAll('.animate:not(nav)').forEach(el => observer.observe(el));
+}
+
+function initProductsIntroAnimation() {
+  if (!document.body.classList.contains('products-page')) return;
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.add('products-intro-ready');
+    });
+  });
 }
 
 function initCarousel() {
@@ -1199,6 +1209,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
   initAnimations();
+  initProductsIntroAnimation();
   initDeviceDetection();
   initMobileMenu();
   initNavScroll();

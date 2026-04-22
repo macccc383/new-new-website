@@ -12,6 +12,17 @@ html {
   scroll-behavior: smooth;
 }
 
+html.products-root,
+body.products-page {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body.products-page {
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
 body {
   margin: 0;
   font-family: var(--font-family);
@@ -260,6 +271,43 @@ main {
   margin-top: 4px;
 }
 
+.js body.products-page .club-gallery.animate {
+  opacity: 1;
+  transform: none;
+}
+
+.js body.products-page .club-card,
+.js body.products-page .products-note {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+}
+
+.js body.products-page.products-intro-ready .club-card,
+.js body.products-page.products-intro-ready .products-note {
+  animation: products-pop-in 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.js body.products-page.products-intro-ready .club-card:nth-child(1) { animation-delay: 0.06s; }
+.js body.products-page.products-intro-ready .club-card:nth-child(2) { animation-delay: 0.12s; }
+.js body.products-page.products-intro-ready .club-card:nth-child(3) { animation-delay: 0.18s; }
+.js body.products-page.products-intro-ready .club-card:nth-child(4) { animation-delay: 0.24s; }
+.js body.products-page.products-intro-ready .club-card:nth-child(5) { animation-delay: 0.3s; }
+.js body.products-page.products-intro-ready .products-note { animation-delay: 0.4s; }
+
+@keyframes products-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -309,7 +357,7 @@ main {
 }
 
 .club-visual::after {
-  content: '';
+  content: none;
   position: absolute;
   width: 360px;
   height: 360px;
@@ -341,8 +389,29 @@ main {
   animation-fill-mode: forwards;
 }
 
-.driver-illustration {
-  left: -12px;
+.club-card .driver-illustration {
+  max-width: clamp(235px, 26vw, 420px);
+  left: 0px;
+  transform: translateY(125px) rotate(90deg);
+  transition: none;
+  animation: none;
+}
+
+.club-card[data-type="drivers"] .club-visual::after {
+  content: none;
+}
+
+.club-card[data-type="putters"] img {
+  transform: translateY(88px) rotate(4deg);
+  transition: none;
+  animation: none;
+}
+
+.club-card[data-type="irons"] img {
+  max-width: clamp(250px, 28vw, 460px);
+  transform: translateY(82px) rotate(4deg);
+  transition: none;
+  animation: none;
 }
 
 .club-card:nth-child(1) img { animation-delay: 0.05s; }
@@ -411,9 +480,10 @@ main {
 
 .accessory-hat { top: -40%; left: -20%; transform: rotate(-6deg); transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease; }
 .accessory-grip { bottom: 40%; left: -16%; transform: rotate(14deg); width: clamp(80px, 18vw, 140px); transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease; }
+.accessory-umb { top: -230%; left: 100%; transform: rotate(-2deg); width: clamp(110px, 20vw, 180px); z-index: 2; transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease; }
 .accessory-boston { top: -190%; right: -150%; transform: rotate(-8deg); transition: transform 0.6s ease, top 0.6s ease, right 0.6s ease; }
 .accessory-grip { bottom: 40%; left: -16%; transform: rotate(14deg); width: clamp(80px, 18vw, 140px); }
-.accessory-caddy { bottom: 165%; right: -80%; transform: rotate(4deg); width: clamp(160px, 28vw, 240px); transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease; }
+.accessory-caddy { bottom: 214%; right: -80%; transform: rotate(4deg); width: clamp(160px, 28vw, 240px); transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease; }
 
 .accessories-card .club-label {
   left: 100%;
@@ -470,6 +540,12 @@ html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
   margin-top: 11rem;
 }
 
+@media (min-width: 901px) {
+  .accessories-card .club-info {
+    display: none;
+  }
+}
+
 
 .club-card:hover img,
 .club-card:focus-within img {
@@ -483,6 +559,29 @@ html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
   clip-path: inset(0 0 16% 0);
   transform: translateY(var(--hover-drop));
   animation: club-hover-drop 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.club-card:hover .driver-illustration,
+.club-card:focus-within .driver-illustration,
+.club-card:nth-child(1):hover .driver-illustration,
+.club-card:nth-child(1):focus-within .driver-illustration {
+  clip-path: inset(0 0 0 0);
+  transform: translateY(125px) rotate(90deg);
+  animation: none;
+}
+
+.club-card[data-type="putters"]:hover img,
+.club-card[data-type="putters"]:focus-within img {
+  clip-path: inset(0 0 0 0);
+  transform: translateY(88px) rotate(4deg);
+  animation: none;
+}
+
+.club-card[data-type="irons"]:hover img,
+.club-card[data-type="irons"]:focus-within img {
+  clip-path: inset(0 0 0 0);
+  transform: translateY(82px) rotate(4deg);
+  animation: none;
 }
 
 .club-card:hover .club-visual::after {
@@ -512,6 +611,14 @@ html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
   transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease;
 }
 
+.accessories-card:hover .accessory-umb,
+.accessories-card:focus-within .accessory-umb {
+  transform: translate(12%, -48%) rotate(-4deg);
+  top: -262%;
+  left: 98%;
+  transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease;
+}
+
 .accessories-card:hover .accessory-boston,
 .accessories-card:focus-within .accessory-boston {
   transform: translate(40%, -40%) rotate(-8deg);
@@ -523,25 +630,30 @@ html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
 .accessories-card:hover .accessory-caddy,
 .accessories-card:focus-within .accessory-caddy {
   transform: translate(40%, 40%) rotate(4deg);
-  bottom: 180%;
+  bottom: 228%;
   right: -120%;
   transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease;
 }
 
 @media (max-width: 900px) {
   .accessories-card .club-visual {
-    min-height: clamp(180px, 52vw, 300px);
+    min-height: clamp(220px, 62vw, 360px);
   }
   .accessory-cluster {
     transform: translate(-15%, 0);
-    width: min(220px, 68%);
-    height: min(200px, 55vw);
+    width: min(280px, 82%);
+    height: min(250px, 68vw);
   }
   .accessory-img {
-    width: clamp(80px, 18vw, 140px);
+    width: clamp(105px, 24vw, 180px);
   }
   .accessory-boston {
-    width: clamp(40px, 11vw, 100px);
+    width: clamp(70px, 17vw, 140px);
+  }
+  .accessory-umb {
+    top: -72%;
+    left: -4%;
+    width: clamp(95px, 22vw, 155px);
   }
   .accessories-card .club-label {
     left: 65% !important;
@@ -578,7 +690,7 @@ html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
     transform: rotate(-8deg);
   }
   .accessory-caddy {
-    bottom: 160%;
+    bottom: 208%;
     right: -90%;
     transform: rotate(4deg);
   }
@@ -632,9 +744,16 @@ html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
     right: auto !important;
     transform: rotate(0deg) !important;
   }
+  .accessories-card:hover .accessory-umb,
+  .accessories-card:focus-within .accessory-umb {
+    top: -72% !important;
+    left: -4% !important;
+    right: auto !important;
+    transform: rotate(0deg) !important;
+  }
   .accessories-card:hover .accessory-caddy,
   .accessories-card:focus-within .accessory-caddy {
-    bottom: 160% !important;
+    bottom: 208% !important;
     right: -90% !important;
     transform: rotate(0deg) !important;
   }
@@ -885,6 +1004,37 @@ body:not(.dark-theme) .video-title {
   .club-card img {
     max-width: 200px;
   }
+  .club-card .driver-illustration {
+    max-width: 200px;
+    transform: translateY(95px) rotate(90deg);
+  }
+  .club-card[data-type="putters"] img {
+    transform: translateY(62px) rotate(4deg);
+  }
+  .club-card[data-type="irons"] img {
+    max-width: 220px;
+    transform: translateY(60px) rotate(4deg);
+  }
+  .club-card:hover .driver-illustration,
+  .club-card:focus-within .driver-illustration,
+  .club-card:nth-child(1):hover .driver-illustration,
+  .club-card:nth-child(1):focus-within .driver-illustration {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(95px) rotate(90deg);
+    animation: none;
+  }
+  .club-card[data-type="putters"]:hover img,
+  .club-card[data-type="putters"]:focus-within img {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(62px) rotate(4deg);
+    animation: none;
+  }
+  .club-card[data-type="irons"]:hover img,
+  .club-card[data-type="irons"]:focus-within img {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(60px) rotate(4deg);
+    animation: none;
+  }
   .club-visual::after {
     width: 320px;
     height: 320px;
@@ -913,6 +1063,180 @@ body:not(.dark-theme) .video-title {
     clip-path: inset(0 0 14% 0);
     transform: translateY(var(--hover-drop));
     animation: club-hover-drop 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@media (max-width: 900px) {
+  body.products-page .accessories-card {
+    margin-top: 0;
+  }
+
+  .js body.products-page .accessories-card {
+    opacity: 1;
+    transform: none;
+  }
+
+  body.products-page .accessories-card .club-visual {
+    min-height: clamp(260px, 72vw, 340px);
+    padding: 1rem 0 0;
+    overflow: visible;
+  }
+
+  body.products-page .accessories-card .accessory-cluster,
+  body.products-page .accessories-card:hover .accessory-cluster,
+  body.products-page .accessories-card:focus-within .accessory-cluster {
+    width: min(300px, 88vw);
+    height: min(230px, 68vw);
+    transform: translate(0, 0) !important;
+  }
+
+  body.products-page .accessories-card .accessory-img {
+    width: clamp(76px, 23vw, 120px);
+  }
+
+  body.products-page .accessories-card .accessory-hat,
+  body.products-page .accessories-card:hover .accessory-hat,
+  body.products-page .accessories-card:focus-within .accessory-hat {
+    top: -8% !important;
+    left: -6% !important;
+    transform: rotate(-6deg) !important;
+    width: clamp(100px, 30vw, 135px);
+  }
+
+  body.products-page .accessories-card .accessory-grip,
+  body.products-page .accessories-card:hover .accessory-grip,
+  body.products-page .accessories-card:focus-within .accessory-grip {
+    top: auto !important;
+    bottom: 8% !important;
+    left: -10% !important;
+    right: auto !important;
+    transform: rotate(14deg) !important;
+    width: clamp(62px, 18vw, 88px);
+  }
+
+  body.products-page .accessories-card .accessory-umb,
+  body.products-page .accessories-card:hover .accessory-umb,
+  body.products-page .accessories-card:focus-within .accessory-umb {
+    top: -28% !important;
+    left: 32% !important;
+    right: auto !important;
+    transform: rotate(-2deg) !important;
+    width: clamp(145px, 45vw, 190px);
+  }
+
+  body.products-page .accessories-card .accessory-boston,
+  body.products-page .accessories-card:hover .accessory-boston,
+  body.products-page .accessories-card:focus-within .accessory-boston {
+    top: 34% !important;
+    left: auto !important;
+    right: -10% !important;
+    transform: rotate(-8deg) !important;
+    width: clamp(84px, 27vw, 120px);
+  }
+
+  body.products-page .accessories-card .accessory-caddy,
+  body.products-page .accessories-card:hover .accessory-caddy,
+  body.products-page .accessories-card:focus-within .accessory-caddy {
+    top: 54% !important;
+    bottom: auto !important;
+    right: 24% !important;
+    transform: rotate(4deg) !important;
+    width: clamp(88px, 28vw, 124px);
+  }
+
+  body.products-page .accessories-card .club-label,
+  body.products-page .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 50% !important;
+    top: 44%;
+    font-size: clamp(2.6rem, 16vw, 4.25rem);
+    letter-spacing: 0.12rem;
+    transform: translate(-50%, -50%) scale(0.78, 2.35);
+  }
+
+  body.products-page .accessories-card .club-info {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  body.products-page .accessories-card .club-visual {
+    display: block;
+    position: relative;
+    height: clamp(340px, 112vw, 440px);
+    min-height: clamp(340px, 112vw, 440px);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body.products-page .accessories-card .accessory-cluster,
+  body.products-page .accessories-card:hover .accessory-cluster,
+  body.products-page .accessories-card:focus-within .accessory-cluster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none !important;
+  }
+
+  body.products-page .accessories-card .accessory-hat,
+  body.products-page .accessories-card:hover .accessory-hat,
+  body.products-page .accessories-card:focus-within .accessory-hat {
+    top: 6% !important;
+    left: 5% !important;
+    width: clamp(108px, 34vw, 150px);
+    transform: rotate(-6deg) !important;
+  }
+
+  body.products-page .accessories-card .accessory-grip,
+  body.products-page .accessories-card:hover .accessory-grip,
+  body.products-page .accessories-card:focus-within .accessory-grip {
+    top: 47% !important;
+    bottom: auto !important;
+    left: 1% !important;
+    width: clamp(70px, 22vw, 98px);
+    transform: rotate(14deg) !important;
+  }
+
+  body.products-page .accessories-card .accessory-umb,
+  body.products-page .accessories-card:hover .accessory-umb,
+  body.products-page .accessories-card:focus-within .accessory-umb {
+    top: 4% !important;
+    left: 42% !important;
+    width: clamp(150px, 50vw, 220px);
+    transform: rotate(-2deg) !important;
+  }
+
+  body.products-page .accessories-card .accessory-boston,
+  body.products-page .accessories-card:hover .accessory-boston,
+  body.products-page .accessories-card:focus-within .accessory-boston {
+    top: 49% !important;
+    left: auto !important;
+    right: -3% !important;
+    width: clamp(98px, 31vw, 135px);
+    transform: rotate(-8deg) !important;
+  }
+
+  body.products-page .accessories-card .accessory-caddy,
+  body.products-page .accessories-card:hover .accessory-caddy,
+  body.products-page .accessories-card:focus-within .accessory-caddy {
+    top: 58% !important;
+    bottom: auto !important;
+    right: 29% !important;
+    width: clamp(92px, 30vw, 130px);
+    transform: rotate(4deg) !important;
+  }
+
+  body.products-page .accessories-card .club-label,
+  body.products-page .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 50% !important;
+    top: 42%;
+    font-size: clamp(2.6rem, 16vw, 4.2rem);
+    letter-spacing: 0.1rem;
+    transform: translate(-50%, -50%) scale(0.76, 2.25);
+  }
+
+  body.products-page .accessories-card .club-info {
+    display: none !important;
   }
 }
 
@@ -1060,12 +1384,22 @@ h1, h2 {
 
 .js .animate {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(62px);
 }
+
 
 .js .animate.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js body.products-page .club-card,
+  .js body.products-page .products-note {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
 }
 
 /* Carousel Styles */
