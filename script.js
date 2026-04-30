@@ -490,6 +490,14 @@ function initTheme() {
 }
 
 function initAnimations() {
+  if (!document.body.classList.contains('site-content-ready')) return;
+
+  const animatedElements = document.querySelectorAll('.animate:not(nav)');
+  if (!('IntersectionObserver' in window)) {
+    animatedElements.forEach(el => el.classList.add('show'));
+    return;
+  }
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -499,7 +507,51 @@ function initAnimations() {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.animate:not(nav)').forEach(el => observer.observe(el));
+  animatedElements.forEach(el => observer.observe(el));
+}
+
+function waitForLoaderExit(loader) {
+  if (!loader) {
+    return Promise.resolve();
+  }
+
+  const parseTransitionTime = value => {
+    const trimmed = value.trim();
+    const amount = parseFloat(trimmed) || 0;
+    return trimmed.endsWith('ms') ? amount / 1000 : amount;
+  };
+  const styles = window.getComputedStyle(loader);
+  const durations = styles.transitionDuration.split(',').map(parseTransitionTime);
+  const delays = styles.transitionDelay.split(',').map(parseTransitionTime);
+  const maxDuration = Math.max(
+    ...durations.map((duration, index) => {
+      const delay = delays[index] !== undefined ? delays[index] : delays[0] || 0;
+      return duration + delay;
+    }),
+    0
+  );
+
+  if (maxDuration === 0) {
+    return Promise.resolve();
+  }
+
+  return new Promise(resolve => {
+    let resolved = false;
+    const done = () => {
+      if (resolved) return;
+      resolved = true;
+      loader.removeEventListener('transitionend', onTransitionEnd);
+      clearTimeout(timer);
+      resolve();
+    };
+    const onTransitionEnd = event => {
+      if (event.target === loader && event.propertyName === 'opacity') {
+        done();
+      }
+    };
+    const timer = setTimeout(done, (maxDuration * 1000) + 80);
+    loader.addEventListener('transitionend', onTransitionEnd);
+  });
 }
 
 function initProductsIntroAnimation() {
@@ -856,9 +908,9 @@ const productData = [
     descKey: 'product_rescue_desc',
     priceKey: 'product_rescue_price',
     detailsKey: 'product_rescue_details',
-    image: 'products/IMG_0259.png',
+    image: 'products/IMG_2505.PNG',
     images: [
-      'products/IMG_0259.png'
+      'products/IMG_2505.PNG'
     ],
     category: 'clubs',
     type: 'rescue'
@@ -1082,7 +1134,7 @@ function toggleCategoryHero(type) {
     drivers: { textKey: 'club_drivers', src: 'products/unnamed.png', altKey: 'hero_alt_drivers', fallbackText: 'DRIVERS', fallbackAlt: 'Kentack driver hero' },
     irons: { textKey: 'club_irons', src: 'products/IMG_0260.png', altKey: 'hero_alt_irons', fallbackText: 'IRONS', fallbackAlt: 'Kentack irons hero' },
     putters: { textKey: 'club_putters', src: 'products/IMG_0261.png', altKey: 'hero_alt_putters', fallbackText: 'PUTTERS', fallbackAlt: 'Kentack putter hero' },
-    rescue: { textKey: 'club_rescue', src: 'products/IMG_0259.png', altKey: 'hero_alt_rescue', fallbackText: 'RESCUE', fallbackAlt: 'Kentack rescue hero' },
+    rescue: { textKey: 'club_rescue', src: 'products/IMG_2505.PNG', altKey: 'hero_alt_rescue', fallbackText: 'RESCUE', fallbackAlt: 'Kentack rescue hero' },
     accessories: { textKey: 'club_accessories', src: 'ACCESSORY/hat.png', altKey: 'hero_alt_accessories', fallbackText: 'ACCESSORIES', fallbackAlt: 'Kentack accessories hero' }
   };
 
@@ -1205,11 +1257,239 @@ function initDemoVideo() {
   updateSubtitleColor();
 }
 
+const SITE_LOADER_MAX_MS = 15000;
+const IMAGE_PRELOAD_TIMEOUT_MS = 9000;
+const IMAGE_PRELOAD_CONCURRENCY = 6;
+const productPreviewAssets = [
+  'products/DRI.PNG',
+  'products/IMG_0260.png',
+  'products/IMG_0261.png',
+  'products/IMG_2505.PNG',
+  'ACCESSORY/hat.png',
+  'ACCESSORY/grip.png',
+  'ACCESSORY/umb.PNG',
+  'ACCESSORY/boston.png',
+  'ACCESSORY/caddy.png'
+];
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function updateLoader(loader, progress, status) {
+  if (!loader) return;
+  loader.style.setProperty('--loader-progress', `${Math.max(0, Math.min(100, progress))}%`);
+  const statusEl = loader.querySelector('.loader-status');
+  if (statusEl && status) {
+    statusEl.textContent = status;
+  }
+}
+
+function resolveAssetUrl(value, baseUrl = document.baseURI) {
+  if (!value) return '';
+  const trimmed = String(value).trim();
+  if (!trimmed || trimmed.startsWith('#')) return '';
+  if (/^(data|blob|mailto|tel|javascript):/i.test(trimmed)) return '';
+  try {
+    return new URL(trimmed, baseUrl).href;
+  } catch (e) {
+    return '';
+  }
+}
+
+function parseSrcset(srcset, baseUrl) {
+  if (!srcset) return [];
+  return srcset
+    .split(',')
+    .map(candidate => candidate.trim().split(/\s+/)[0])
+    .map(src => resolveAssetUrl(src, baseUrl))
+    .filter(Boolean);
+}
+
+function collectImageUrlsFrom(root, baseUrl = document.baseURI) {
+  const urls = [];
+  root.querySelectorAll('img').forEach(img => {
+    urls.push(resolveAssetUrl(img.getAttribute('src') || img.currentSrc || img.src, baseUrl));
+    urls.push(...parseSrcset(img.getAttribute('srcset'), baseUrl));
+  });
+  root.querySelectorAll('source[srcset]').forEach(source => {
+    urls.push(...parseSrcset(source.getAttribute('srcset'), baseUrl));
+  });
+  root.querySelectorAll('video[poster]').forEach(video => {
+    urls.push(resolveAssetUrl(video.getAttribute('poster'), baseUrl));
+  });
+  return urls.filter(Boolean);
+}
+
+function collectProductAssetUrls() {
+  const urls = productPreviewAssets.map(src => resolveAssetUrl(src));
+  if (Array.isArray(productData)) {
+    productData.forEach(product => {
+      urls.push(resolveAssetUrl(product.image));
+      if (Array.isArray(product.images)) {
+        product.images.forEach(src => urls.push(resolveAssetUrl(src)));
+      }
+    });
+  }
+  return urls.filter(Boolean);
+}
+
+function getProductsPageUrl() {
+  return resolveAssetUrl('products.html');
+}
+
+async function fetchProductsDocument() {
+  const productsUrl = getProductsPageUrl();
+  if (!productsUrl) return null;
+  const currentPath = window.location.pathname.replace(/\/+$/, '');
+  if (currentPath.endsWith('/products.html') || currentPath.endsWith('/products')) {
+    return document;
+  }
+  if (window.location.protocol === 'file:') {
+    return null;
+  }
+  const response = await fetch(productsUrl, { cache: 'force-cache' });
+  if (!response.ok) {
+    throw new Error(`Unable to preload products.html: ${response.status}`);
+  }
+  const html = await response.text();
+  return new DOMParser().parseFromString(html, 'text/html');
+}
+
+function preloadImage(url) {
+  return new Promise(resolve => {
+    const image = new Image();
+    let settled = false;
+    const finish = ok => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      resolve({ ok, url });
+    };
+    const timer = setTimeout(() => finish(false), IMAGE_PRELOAD_TIMEOUT_MS);
+    image.onload = () => finish(true);
+    image.onerror = () => finish(false);
+    image.src = url;
+    if (image.complete) {
+      finish(image.naturalWidth > 0);
+    }
+  });
+}
+
+function preloadImages(urls, loader, startProgress, endProgress, status) {
+  const uniqueUrls = Array.from(new Set(urls.filter(Boolean)));
+  if (!uniqueUrls.length) {
+    updateLoader(loader, endProgress, status);
+    return Promise.resolve([]);
+  }
+
+  let active = 0;
+  let completed = 0;
+  let index = 0;
+  const failures = [];
+
+  updateLoader(loader, startProgress, status);
+
+  return new Promise(resolve => {
+    const runNext = () => {
+      if (completed === uniqueUrls.length) {
+        updateLoader(loader, endProgress, status);
+        resolve(failures);
+        return;
+      }
+
+      while (active < IMAGE_PRELOAD_CONCURRENCY && index < uniqueUrls.length) {
+        const url = uniqueUrls[index];
+        index += 1;
+        active += 1;
+        preloadImage(url).then(result => {
+          active -= 1;
+          completed += 1;
+          if (!result.ok) failures.push(result.url);
+          const progress = startProgress + ((endProgress - startProgress) * completed / uniqueUrls.length);
+          updateLoader(loader, progress, status);
+          runNext();
+        });
+      }
+    };
+
+    runNext();
+  });
+}
+
+function waitForWindowLoaded() {
+  if (document.readyState === 'complete') {
+    return Promise.resolve();
+  }
+  return new Promise(resolve => {
+    window.addEventListener('load', resolve, { once: true });
+  });
+}
+
+function waitForFontsReady() {
+  if (!document.fonts || !document.fonts.ready) {
+    return Promise.resolve();
+  }
+  return document.fonts.ready.catch(() => {});
+}
+
+async function runSitePreload(loader) {
+  updateLoader(loader, 18, 'Loading page');
+  const fontsReadyPromise = waitForFontsReady();
+  const pageImageUrls = collectImageUrlsFrom(document);
+  const pageImagesReadyPromise = preloadImages(pageImageUrls, loader, 28, 92, 'Loading images');
+  await waitForWindowLoaded();
+  updateLoader(loader, 92, 'Finishing page');
+  await pageImagesReadyPromise;
+  await fontsReadyPromise;
+  updateLoader(loader, 100, 'Ready');
+}
+
+async function warmProductsAssetsInBackground() {
+  let productImageUrls = collectProductAssetUrls();
+  try {
+    const productsDocument = await fetchProductsDocument();
+    if (productsDocument) {
+      productImageUrls = productImageUrls.concat(collectImageUrlsFrom(productsDocument, getProductsPageUrl()));
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+
+  const productFailures = await preloadImages(productImageUrls, null, 0, 100, '');
+  if (productFailures.length) {
+    console.warn('Some product assets could not be preloaded:', productFailures);
+  }
+}
+
+async function initSiteLoader() {
+  const loader = document.getElementById('site-loader');
+  if (!loader) {
+    document.body.classList.add('site-loaded');
+    await wait(0);
+    document.body.classList.add('site-content-ready');
+    return;
+  }
+
+  const preload = runSitePreload(loader).catch(error => {
+    console.warn('Site preload skipped:', error);
+  });
+  const timeout = wait(SITE_LOADER_MAX_MS).then(() => {
+    console.warn('Site preload timed out; releasing loader.');
+  });
+
+  await Promise.race([preload, timeout]);
+  updateLoader(loader, 100, 'Ready');
+  document.body.classList.add('site-loaded');
+  loader.setAttribute('aria-hidden', 'true');
+  await waitForLoaderExit(loader);
+  document.body.classList.add('site-content-ready');
+  warmProductsAssetsInBackground();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
-  initAnimations();
-  initProductsIntroAnimation();
   initDeviceDetection();
   initMobileMenu();
   initNavScroll();
@@ -1221,4 +1501,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPutterModalTrigger();
   restoreProductsScroll();
   initDemoVideo();
+  initSiteLoader().then(() => {
+    initAnimations();
+    initProductsIntroAnimation();
+  });
 });

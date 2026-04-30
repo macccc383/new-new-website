@@ -12,6 +12,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="site-loader" role="status" aria-live="polite" aria-label="Loading website">
+    <div class="loader-mark">KENTACK</div>
+    <div class="loader-track" aria-hidden="true">
+      <span class="loader-progress"></span>
+    </div>
+    <p class="loader-status">Preparing collection</p>
+  </div>
   <button id="menu-toggle" aria-label="Menu">
     <span></span>
     <span></span>
@@ -41,7 +48,7 @@
   <div id="nav-overlay"></div>
 
   <main>
-    <section class="carousel">
+    <section class="carousel animate">
       <div class="image-wrapper">
         <div class="image-item"><img src="images/carousel1.jpg" alt="Showcase image 1" loading="lazy"></div>
         <div class="image-item center-item">

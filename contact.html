@@ -23,6 +23,13 @@
   </style>
 </head>
 <body>
+  <div id="site-loader" role="status" aria-live="polite" aria-label="Loading website">
+    <div class="loader-mark">KENTACK</div>
+    <div class="loader-track" aria-hidden="true">
+      <span class="loader-progress"></span>
+    </div>
+    <p class="loader-status">Preparing collection</p>
+  </div>
   <button id="menu-toggle" aria-label="Menu">
     <span></span>
     <span></span>
@@ -51,7 +58,7 @@
   </nav>
   <div id="nav-overlay"></div>
 
-  <main>
+  <main class="animate">
     <div id="map"></div>
   </main>
 
