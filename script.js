@@ -168,6 +168,12 @@ Each emblem and engraving reflects authentic artistry, proudly marked “Made in
     prod_card_rescue_tagline: 'High-launch, turf-cutting versatility.',
     prod_card_rescue_blurb: 'Shallow-faced profile with a neutral lie and responsive face for confident shots from any lie.',
     products_note_text: 'Looking for a bespoke shaft pairing or a private fitting? Reach out through the <a href="contact.html">contact page</a> and we will tailor the build to your swing.',
+    footer_col_clubs: 'Clubs',
+    footer_col_collection: 'Collection',
+    footer_col_explore: 'Explore',
+    footer_col_contact: 'Contact',
+    footer_rights: '© 2026 KENTACK. All Rights Reserved.',
+    footer_origin: 'Crafted in Japan',
   },
   vi: {
     nav_home: 'Trang chủ',
@@ -282,6 +288,12 @@ Giới hạn chỉ 150 cây được đánh số trên toàn thế giới, KH888
     prod_card_rescue_tagline: 'Đa dụng, dễ bứt khỏi cỏ.',
     prod_card_rescue_blurb: 'Mặt nông, lie trung tính và mặt đáp ứng giúp tự tin đánh từ mọi vị trí.',
     products_note_text: 'Cần ghép shaft riêng hoặc fitting kín? Liên hệ qua <a href="contact.html">trang liên hệ</a> để chúng tôi lắp phù hợp với swing của bạn.',
+    footer_col_clubs: 'Gậy Golf',
+    footer_col_collection: 'Bộ Sưu Tập',
+    footer_col_explore: 'Khám Phá',
+    footer_col_contact: 'Liên Hệ',
+    footer_rights: '© 2026 KENTACK. Bảo lưu mọi quyền.',
+    footer_origin: 'Chế tác tại Nhật Bản',
   },
   ja: {
     nav_home: 'ホーム',
@@ -394,7 +406,13 @@ The classic 460cc profile and neutral face angle offer confident address and eff
     prod_card_rescue_alt: 'ケンタック レスキューのイラスト',
     prod_card_rescue_tagline: '高弾道で芝を切る多用途クラブ。',
     prod_card_rescue_blurb: '浅めのフェースとニュートラルなライで、どこからでも安心のショット。',
-    products_note_text: 'シャフトの組み合わせやプライベートフィッティングは<a href="contact.html">お問い合わせページ</a>からご相談ください。'
+    products_note_text: 'シャフトの組み合わせやプライベートフィッティングは<a href="contact.html">お問い合わせページ</a>からご相談ください。',
+    footer_col_clubs: 'クラブ',
+    footer_col_collection: 'コレクション',
+    footer_col_explore: 'ナビゲーション',
+    footer_col_contact: 'お問い合わせ',
+    footer_rights: '© 2026 KENTACK. All Rights Reserved.',
+    footer_origin: 'Made in Japan'
   }
 };
 
@@ -606,11 +624,12 @@ function initCarousel() {
       requestAnimationFrame(() => {
         prevImg.classList.add('slide-out-left');
         nextImg.classList.add('slide-in-right');
+        currentImg = nextImg;
+        updateOverlayColor();
       });
       prevImg.addEventListener('transitionend', () => prevImg.remove(), { once: true });
       nextImg.addEventListener('transitionend', () => {
         nextImg.classList.remove('next', 'slide-in-right');
-        currentImg = nextImg;
         updateOverlayColor();
       }, { once: true });
     }
@@ -677,10 +696,18 @@ function initCarousel() {
 }
 
 function updateOverlayColor() {
-  const img = document.querySelector('.center-item img');
+  const img = document.querySelector('.center-item img') || document.querySelector('.image-wrapper img');
   if (!img) return;
+
+  const src = img.getAttribute('src') || img.src || '';
+  if (document.body.classList.contains('device-phone') && src.includes('carousel3.jpg')) {
+    document.documentElement.style.setProperty('--overlay-color', '#ffffff');
+    return;
+  }
+
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
+  if (!img.naturalWidth || !img.naturalHeight) return;
   canvas.width = img.naturalWidth;
   canvas.height = img.naturalHeight;
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
