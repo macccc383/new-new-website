@@ -1146,6 +1146,22 @@ function initCategoryCardFilters() {
   });
 }
 
+function initRandomAccessory() {
+  const accessoryImg = document.getElementById('accessory-feature-img');
+  if (!accessoryImg) return;
+  const accessories = [
+    { src: 'ACCESSORY/hat.png', alt: 'Kentack hat accessory' },
+    { src: 'ACCESSORY/grip.png', alt: 'Kentack grip accessory' },
+    { src: 'ACCESSORY/umb.PNG', alt: 'Kentack umbrella accessory' },
+    { src: 'ACCESSORY/boston.png', alt: 'Kentack Boston bag accessory' },
+    { src: 'ACCESSORY/caddy.png', alt: 'Kentack caddy bag accessory' }
+  ];
+  const randomIndex = Math.floor(Math.random() * accessories.length);
+  const chosen = accessories[randomIndex];
+  accessoryImg.src = chosen.src;
+  accessoryImg.alt = chosen.alt;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initTheme();
@@ -1153,6 +1169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDeviceDetection();
   initMobileMenu();
   initNavScroll();
+  initRandomAccessory();
   initProducts();
   initIntroScroll();
   initProductModal();

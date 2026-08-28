@@ -377,6 +377,13 @@ main {
 
 .accessory-visual {
   padding-top: clamp(2.5rem, 5vw, 4rem);
+.club-card[data-type="accessories"] .club-visual {
+  min-height: clamp(300px, 28vw, 460px);
+  overflow: visible;
+}
+
+.accessory-visual {
+  padding-top: clamp(2.5rem, 5vw, 4rem);
 }
 
 .accessory-cluster {
@@ -399,29 +406,47 @@ main {
 
 .accessory-hat { top: -40%; left: -20%; transform: rotate(-6deg); transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease; }
 .accessory-grip { bottom: 40%; left: -16%; transform: rotate(14deg); width: clamp(80px, 18vw, 140px); transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease; }
+.accessory-umb { top: -230%; left: 100%; transform: rotate(-2deg); width: clamp(110px, 20vw, 180px); z-index: 2; transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease; }
 .accessory-boston { top: -190%; right: -150%; transform: rotate(-8deg); transition: transform 0.6s ease, top 0.6s ease, right 0.6s ease; }
-.accessory-grip { bottom: 40%; left: -16%; transform: rotate(14deg); width: clamp(80px, 18vw, 140px); }
-.accessory-caddy { bottom: 165%; right: -80%; transform: rotate(4deg); width: clamp(160px, 28vw, 240px); transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease; }
+.accessory-caddy { bottom: 214%; right: -80%; transform: rotate(4deg); width: clamp(160px, 28vw, 240px); transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease; }
 
-.accessories-card .club-label {
-  left: 92%;
-  top: 55%;
-  max-width: 100%;
-  transform: translate(-50%, -50%) scaleY(2.1);
+.accessory-featured-img {
+  display: none;
 }
 
-.accessories-card .club-visual::after {
-  left: 105%;
-  top: 75%;
-}
+@media (min-width: 901px) {
+  .accessories-card .club-label {
+    left: 100%;
+    top: 55%;
+    max-width: 100%;
+    transform: translate(-50%, -50%) scaleY(2.4);
+  }
 
-.accessories-card .club-info {
-  align-items: center;
-  text-align: center;
-  transform: translateX(75%);
-  margin-top: 11rem;
-}
+  .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 100% !important;
+  }
 
+  html[lang="en"] .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 92% !important;
+  }
+
+  html[lang="vi"] .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 98% !important;
+  }
+
+  .accessories-card .club-visual::after {
+    left: 105%;
+    top: 75%;
+  }
+
+  .accessories-card .club-info {
+    display: none;
+    align-items: center;
+    text-align: center;
+    transform: translateX(75%);
+    margin-top: 11rem;
+  }
+}
 
 .club-card:hover img,
 .club-card:focus-within img {
@@ -464,6 +489,14 @@ main {
   transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease;
 }
 
+.accessories-card:hover .accessory-umb,
+.accessories-card:focus-within .accessory-umb {
+  transform: translate(12%, -48%) rotate(-4deg);
+  top: -262%;
+  left: 98%;
+  transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease;
+}
+
 .accessories-card:hover .accessory-boston,
 .accessories-card:focus-within .accessory-boston {
   transform: translate(40%, -40%) rotate(-8deg);
@@ -475,123 +508,9 @@ main {
 .accessories-card:hover .accessory-caddy,
 .accessories-card:focus-within .accessory-caddy {
   transform: translate(40%, 40%) rotate(4deg);
-  bottom: 180%;
+  bottom: 228%;
   right: -120%;
   transition: transform 0.6s ease, bottom 0.6s ease, right 0.6s ease;
-}
-
-@media (max-width: 900px) {
-  .accessories-card .club-visual {
-    min-height: clamp(180px, 52vw, 300px);
-  }
-  .accessory-cluster {
-    transform: translate(-15%, 0);
-    width: min(220px, 68%);
-    height: min(200px, 55vw);
-  }
-  .accessory-img {
-    width: clamp(80px, 18vw, 140px);
-  }
-  .accessory-boston {
-    width: clamp(40px, 11vw, 100px);
-  }
-  .accessories-card .club-label {
-    left: 45%;
-    top: 72%;
-    font-size: clamp(2.4rem, 11vw, 3.6rem);
-    letter-spacing: 0.2rem;
-    transform: translate(-50%, -50%) scaleY(2.6);
-  }
-  .accessories-card .club-visual::after {
-    left: 45%;
-    top: 72%;
-  }
-  .accessories-card .club-info {
-    transform: translateX(0);
-    margin-top: 4rem;
-  }
-  .accessory-hat {
-    top: 22%;
-    left: -60%;
-    transform: rotate(-6deg);
-  }
-  .accessory-grip {
-    bottom: -55%;
-    left: -16%;
-    transform: rotate(14deg);
-  }
-  .accessory-boston {
-    top: -152%;
-    left: 20%;
-    right: auto;
-    transform: rotate(-8deg);
-  }
-  .accessory-caddy {
-    bottom: 160%;
-    right: -90%;
-    transform: rotate(4deg);
-  }
-
-  /* Disable accessories hover animation on mobile (keep base placement) */
-  .accessories-card:hover,
-  .accessories-card:focus-within {
-    transform: none !important;
-    --hover-drop: 0 !important;
-  }
-  .accessories-card:hover .club-visual,
-  .accessories-card:focus-within .club-visual {
-    transform: none !important;
-  }
-  .accessories-card:hover .club-visual::after,
-  .accessories-card:focus-within .club-visual::after {
-    transform: translate(-50%, -50%) scale(0) !important;
-    opacity: 0 !important;
-  }
-  .accessories-card:hover .accessory-cluster,
-  .accessories-card:focus-within .accessory-cluster {
-    transform: translate(-15%, 0) !important;
-  }
-  .accessories-card:hover .accessory-img,
-  .accessories-card:focus-within .accessory-img,
-  .accessories-card:hover img,
-  .accessories-card:focus-within img {
-    clip-path: inset(0 0 0 0) !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-  }
-  .accessories-card:hover .accessory-hat,
-  .accessories-card:focus-within .accessory-hat {
-    top: 22% !important;
-    left: -60% !important;
-    transform: rotate(0deg) !important;
-  }
-  .accessories-card:hover .accessory-grip,
-  .accessories-card:focus-within .accessory-grip {
-    bottom: -55% !important;
-    left: -16% !important;
-    right: auto !important;
-    top: auto !important;
-    transform: translate(0, 0) rotate(0deg) !important;
-  }
-  .accessories-card:hover .accessory-boston,
-  .accessories-card:focus-within .accessory-boston {
-    top: -152% !important;
-    left: 20% !important;
-    right: auto !important;
-    transform: rotate(0deg) !important;
-  }
-  .accessories-card:hover .accessory-caddy,
-  .accessories-card:focus-within .accessory-caddy {
-    bottom: 160% !important;
-    right: -90% !important;
-    transform: rotate(0deg) !important;
-  }
-  .accessories-card,
-  .accessories-card * {
-    transition: none !important;
-    animation: none !important;
-  }
 }
 
 /* Light mode: force white text to render black */
@@ -833,9 +752,46 @@ body:not(.dark-theme) *::after {
     top: 42%;
   }
   .club-label {
+    left: 50% !important;
+    top: 35%;
     font-size: clamp(3.6rem, 14vw, 7.4rem);
-    transform: translate(-50%, -60%) scale(0.9, 3.2);
+    transform: translate(-50%, -50%) scaleY(2.1) !important;
     letter-spacing: clamp(0.22rem, 0.75vw, 0.35rem);
+    text-align: center;
+  }
+  .accessories-card .accessory-cluster {
+    display: none !important;
+  }
+  .accessories-card .accessory-featured-img,
+  .accessories-card:hover .accessory-featured-img,
+  .accessories-card:focus-within .accessory-featured-img {
+    display: block !important;
+    max-width: 175px;
+    max-height: 165px;
+    transform: translateY(82px);
+    animation: none !important;
+  }
+  .accessories-card .club-info {
+    transform: none;
+    margin-top: 0;
+  }
+  .accessories-card .club-visual::after {
+    left: 50%;
+    top: 42%;
+  }
+  html .accessories-card .club-label,
+  html .accessories-card .club-label[data-i18n="club_accessories"],
+  html[lang] .accessories-card .club-label[data-i18n="club_accessories"],
+  .accessories-card .club-label,
+  .accessories-card .club-label[data-i18n="club_accessories"] {
+    left: 50% !important;
+    top: 35% !important;
+    font-size: clamp(2.5rem, 10.2vw, 4.4rem) !important;
+    letter-spacing: clamp(0.05rem, 0.2vw, 0.12rem) !important;
+    transform: translate(-50%, -50%) scale(1, 2.2) !important;
+    max-width: 96vw;
+    width: max-content;
+    text-align: center !important;
   }
   .club-card:hover img,
   .club-card:focus-within img {
@@ -860,8 +816,7 @@ body:not(.dark-theme) *::after {
 }
 
 .price {
-  font-weight: 700;
-  color: var(--accent-color);
+  display: none !important;
 }
 
 .story p {
@@ -1350,8 +1305,7 @@ body.device-desktop .product-grid.grid-5 {
 }
 
 .modal-price {
-  font-weight: bold;
-  color: var(--price-color);
+  display: none !important;
 }
 
 .kh888-highlight {
