@@ -3,26 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Vietnam Map</title>
+  <title>Kentack - Contact</title>
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    #map {
-      height: 100vh;
-      width: 100%;
-      background: #000;
-    }
-  </style>
 </head>
-<body>
+<body class="contact-page">
+  <div class="contact-bg" aria-hidden="true"></div>
+
   <div id="site-loader" role="status" aria-live="polite" aria-label="Loading website">
     <div class="loader-mark">KENTACK</div>
     <div class="loader-track" aria-hidden="true">
@@ -58,158 +48,202 @@
   </nav>
   <div id="nav-overlay"></div>
 
-  <main class="animate">
-    <div id="map"></div>
+  <main class="contact-main animate">
+        <!-- Locations Header with Analog Clock -->
+    <section class="locations-header">
+      <div class="locations-title-group">
+        <h1 class="locations-title" data-i18n="contact_locations_title">Locations</h1>
+        <p class="locations-subtitle" data-i18n="contact_locations_city">Hanoi, Vietnam</p>
+      </div>
+
+      <div class="analog-clock-wrapper">
+        <div class="analog-clock" id="kentack-clock" aria-label="Analog Clock">
+          <svg viewBox="0 0 120 120">
+            <!-- Dial -->
+            <circle class="clock-dial" cx="60" cy="60" r="56" />
+
+            <!-- Numbers 12, 3, 6, 9 -->
+            <text class="clock-num" x="60" y="20">12</text>
+            <text class="clock-num" x="101" y="60">3</text>
+            <text class="clock-num" x="60" y="101">6</text>
+            <text class="clock-num" x="19" y="60">9</text>
+
+            <!-- Hour Ticks for 1, 2, 4, 5, 7, 8, 10, 11 -->
+            <line class="clock-tick" x1="60" y1="8" x2="60" y2="15" transform="rotate(30 60 60)" />
+            <line class="clock-tick" x1="60" y1="8" x2="60" y2="15" transform="rotate(60 60 60)" />
+            <line class="clock-tick" x1="60" y1="8" x2="60" y2="15" transform="rotate(120 60 60)" />
+            <line class="clock-tick" x1="60" y1="8" x2="60" y2="15" transform="rotate(150 60 60)" />
+            <line class="clock-tick" x1="60" y1="8" x2="60" y2="15" transform="rotate(210 60 60)" />
+            <line class="clock-tick" x1="60" y1="8" x2="60" y2="15" transform="rotate(240 60 60)" />
+            <line class="clock-tick" x1="60" y1="8" x2="60" y2="15" transform="rotate(300 60 60)" />
+            <line class="clock-tick" x1="60" y1="8" x2="60" y2="15" transform="rotate(330 60 60)" />
+
+            <!-- Hands rotated cleanly via SVG transform groups -->
+            <g id="clock-hour-g" transform="rotate(0 60 60)">
+              <line class="clock-hand-hour" x1="60" y1="60" x2="60" y2="34" />
+            </g>
+            <g id="clock-min-g" transform="rotate(0 60 60)">
+              <line class="clock-hand-min" x1="60" y1="60" x2="60" y2="20" />
+            </g>
+            <g id="clock-sec-g" transform="rotate(0 60 60)">
+              <line class="clock-hand-sec" x1="60" y1="70" x2="60" y2="14" />
+            </g>
+
+            <!-- Center Pivot -->
+            <circle class="clock-center-dot" cx="60" cy="60" r="3.5" />
+            <circle cx="60" cy="60" r="1.2" fill="#000" />
+          </svg>
+        </div>
+        <p class="clock-timezone-label">Hanoi, Vietnam ICT (UTC+7)</p>
+      </div>
+    </section>
+
+    <!-- Locations Grid -->
+    <section class="locations-grid">
+      <!-- Card 1: Kentack Phuong Dong -->
+      <article class="location-card location-card-clickable" onclick="window.location.href='kentack-phuong-dong.html'" title="Click to view Kentack Phuong Dong showroom">
+        <div class="location-card-header">
+          <div class="location-info">
+            <h2 class="location-name">Kentack Phuong Dong</h2>
+            <a href="tel:0903177753" class="location-hotline" onclick="event.stopPropagation()"><span data-i18n="contact_hotline_label">Hotline:</span> <span class="hotline-num">0903177753</span></a>
+          </div>
+          <div class="location-schedule" aria-label="Business Hours">
+            <span class="open-tag">OPEN</span> MON-SUN 8:00-20:00
+          </div>
+        </div>
+        <div class="location-gallery-wrapper">
+          <div class="location-gallery" id="gallery-phuongdong">
+            <div class="gallery-item" title="Kentack Phuong Dong showroom">
+              <img src="contact/Kentack Phuong Dong/IMG_3765.JPG" alt="Kentack Phuong Dong showroom 1" loading="lazy">
+            </div>
+            <div class="gallery-item" title="Kentack Phuong Dong showroom">
+              <img src="contact/Kentack Phuong Dong/IMG_3771.JPG" alt="Kentack Phuong Dong showroom 2" loading="lazy">
+            </div>
+            <div class="gallery-item" title="Kentack Phuong Dong showroom">
+              <img src="contact/Kentack Phuong Dong/IMG_3767.JPG" alt="Kentack Phuong Dong showroom 3" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Kentack Ciputra -->
+      <article class="location-card">
+        <div class="location-card-header">
+          <div class="location-info">
+            <h2 class="location-name">Kentack Ciputra</h2>
+            <a href="tel:0903177753" class="location-hotline"><span data-i18n="contact_hotline_label">Hotline:</span> <span class="hotline-num">0903177753</span></a>
+          </div>
+          <div class="location-schedule" aria-label="Business Hours">
+            <span class="open-tag">OPEN</span> MON-SUN 8:00-20:00
+          </div>
+        </div>
+        <div class="location-gallery-wrapper">
+          <div class="location-gallery" id="gallery-ciputra">
+            <div class="gallery-item placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <span data-i18n="contact_photos_coming">Photos Coming Soon</span>
+            </div>
+            <div class="gallery-item placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span data-i18n="contact_opening_soon">Opening Soon</span>
+            </div>
+            <div class="gallery-item placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+              </svg>
+              <span data-i18n="contact_coming_soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Socials Section -->
+    <section class="socials-section">
+      <h2 class="socials-title" data-i18n="contact_socials_title">or with our socials</h2>
+      <div class="socials-grid">
+        <!-- Zalo -->
+        <a href="https://zalo.me/0903177753" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Zalo">
+          <img src="zalo.png" alt="Zalo" class="social-icon-img">
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+          <img src="TikTok.png" alt="TikTok" class="social-icon-img">
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+          <img src="facebook.png" alt="Facebook" class="social-icon-img">
+        </a>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo">KENTACK</a>
-          <p class="footer-tagline" data-i18n="crafted_limited_timeless">Crafted. Limited. Timeless.</p>
-          <p class="footer-distributor" data-i18n="distributor_line">The official distributor of KENTACK in Vietnam.</p>
-        </div>
-        <div class="footer-nav-columns">
-          <div class="footer-col">
-            <h4 data-i18n="footer_col_clubs">Clubs</h4>
-            <ul>
-              <li><a href="category.html?type=drivers" data-i18n="club_drivers">Drivers</a></li>
-              <li><a href="category.html?type=irons" data-i18n="club_irons">Irons</a></li>
-              <li><a href="category.html?type=putters" data-i18n="club_putters">Putters</a></li>
-              <li><a href="category.html?type=rescue" data-i18n="club_rescue">Rescue</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 data-i18n="footer_col_collection">Collection</h4>
-            <ul>
-              <li><a href="products.html?product=kh888">KH888 Driver</a></li>
-              <li><a href="products.html?product=kh555">KH555 Driver</a></li>
-              <li><a href="products.html?product=kh460">KH460 Driver</a></li>
-              <li><a href="products.html?product=kh888_putter">KH888 Putter</a></li>
-              <li><a href="category.html?type=accessories" data-i18n="club_accessories">Accessories</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 data-i18n="footer_col_explore">Explore</h4>
-            <ul>
-              <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-              <li><a href="products.html" data-i18n="nav_products">Products</a></li>
-              <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 data-i18n="footer_col_contact">Contact</h4>
-            <ul>
-              <li><a href="tel:0899033692">0899033692</a></li>
-              <li><a href="contact.html" data-i18n="contact_location_title">Hanoi, Vietnam</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="copyright" data-i18n="footer_rights">&copy; 2026 KENTACK. All Rights Reserved.</p>
-        <p class="origin" data-i18n="footer_origin">Crafted in Japan</p>
-      </div>
-    </div>
-  </footer>
+  <!-- Lightbox Modal -->
+  <div id="gallery-modal" class="gallery-modal" onclick="closeLightbox(event)">
+    <button class="gallery-modal-close" onclick="closeLightbox(event)" aria-label="Close image">&times;</button>
+    <img id="gallery-modal-img" class="gallery-modal-img" src="" alt="Showroom photo enlarged">
+  </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="script.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const points = [
-          {
-            coords: [21.025793392445078, 105.7584890522287],
-            label: 'Phuong Dong Golf',
-            url: 'https://maps.app.goo.gl/T1nwq6GEUX5nTA3SA?g_st=ipc'
-          },
-          {
-            coords: [21.044462699017213, 105.88413346662968],
-            label: 'Dao Sen Golf',
-            url: 'https://maps.app.goo.gl/nC3MFsNDQJjk2cNF6?g_st=ipc'
-          }
-        ];
+  <script src="script.js"></script>
+  <script>
+    function openLightbox(item) {
+      const img = item.querySelector('img');
+      if (!img) return;
+      const modal = document.getElementById('gallery-modal');
+      const modalImg = document.getElementById('gallery-modal-img');
+      modalImg.src = img.src;
+      modal.classList.add('open');
+    }
 
-        const markerBounds = L.latLngBounds(points.map(p => p.coords));
-        const map = L.map('map', { maxBoundsViscosity: 1.0, zoomControl: false }).fitBounds(markerBounds);
+    
+    function initAnalogClock() {
+      const secGroup = document.getElementById('clock-sec-g');
+      const minGroup = document.getElementById('clock-min-g');
+      const hrGroup = document.getElementById('clock-hour-g');
+      if (!secGroup || !minGroup || !hrGroup) return;
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attribution">CARTO</a>',
-          subdomains: 'abcd',
-          maxZoom: 19
-        }).addTo(map);
+      function updateClock() {
+        const now = new Date();
+        let hanoiDate;
+        try {
+          const hanoiString = now.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' });
+          hanoiDate = new Date(hanoiString);
+        } catch (e) {
+          hanoiDate = now;
+        }
 
-        const defaultStyle = {
-          radius: 8,
-          color: '#ff0000',
-          fillColor: '#ff0000',
-          fillOpacity: 0.8
-        };
+        const sec = hanoiDate.getSeconds();
+        const min = hanoiDate.getMinutes();
+        const hr = hanoiDate.getHours() % 12;
 
-        const highlightStyle = {
-          radius: 12,
-          color: '#ffd700',
-          fillColor: '#ffd700',
-          fillOpacity: 1
-        };
+        const secDeg = (sec / 60) * 360;
+        const minDeg = ((min + sec / 60) / 60) * 360;
+        const hrDeg = ((hr + min / 60 + sec / 3600) / 12) * 360;
 
-        let activeMarker = null;
+        secGroup.setAttribute('transform', `rotate(${secDeg} 60 60)`);
+        minGroup.setAttribute('transform', `rotate(${minDeg} 60 60)`);
+        hrGroup.setAttribute('transform', `rotate(${hrDeg} 60 60)`);
+      }
 
-        points.forEach(p => {
-          const popupContent = `
-            <div class="map-popup">
-              <strong>${p.label}</strong><br>
-              <a href="${p.url}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-            </div>
-          `.trim();
+      updateClock();
+      setInterval(updateClock, 1000);
+    }
+    initAnalogClock();
 
-          const marker = L.circleMarker(p.coords, defaultStyle)
-            .addTo(map)
-            .bindPopup(popupContent, {
-              autoClose: true,
-              closeOnClick: true,
-              offset: L.point(0, -10)
-            });
-
-          marker.on('click', () => {
-            if (activeMarker && activeMarker !== marker) {
-              activeMarker.setStyle(defaultStyle);
-              activeMarker.closePopup();
-            }
-            marker.setStyle(highlightStyle);
-            marker.openPopup();
-            map.flyTo(marker.getLatLng(), 13);
-            activeMarker = marker;
-          });
-        });
-
-        map.on('click', () => {
-          if (activeMarker) {
-            activeMarker.setStyle(defaultStyle);
-            activeMarker.closePopup();
-            activeMarker = null;
-          }
-        });
-
-        map.fitBounds(markerBounds, { padding: [50, 50] });
-
-        fetch('vietnam.geojson')
-          .then(response => response.json())
-          .then(data => {
-            const vietnamLayer = L.geoJSON(data, {
-              style: {
-                color: '#ffd700',
-                weight: 1,
-                fillOpacity: 0
-              },
-              interactive: false
-            }).addTo(map);
-
-            map.setMaxBounds(vietnamLayer.getBounds());
-          })
-          .catch(err => console.error('Failed to load Vietnam map data', err));
-      });
-    </script>
-  </body>
+    function closeLightbox(e) {
+      if (e.target.id === 'gallery-modal-img') return;
+      const modal = document.getElementById('gallery-modal');
+      modal.classList.remove('open');
+    }
+  </script>
+</body>
 </html>

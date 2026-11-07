@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kentack - Phuong Dong Showroom</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+</head>
+<body class="contact-page">
+  <div class="contact-bg" aria-hidden="true"></div>
+
+  <div id="site-loader" role="status" aria-live="polite" aria-label="Loading website">
+    <div class="loader-mark">KENTACK</div>
+    <div class="loader-track" aria-hidden="true">
+      <span class="loader-progress"></span>
+    </div>
+    <p class="loader-status">Preparing collection</p>
+  </div>
+
+  <button id="menu-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav>
+    <a class="logo" href="index.html">KENTACK</a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="products.html" data-i18n="nav_products">Products</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="controls">
+      <div class="language-dropdown">
+        <button id="language-toggle" aria-label="Language">
+          <img src="global.png" alt="Change language">
+        </button>
+        <select id="language-select" class="hidden">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle Theme" data-sun-icon="sun.png" data-moon-icon="moon.png">🌙</button>
+    </div>
+  </nav>
+  <div id="nav-overlay"></div>
+
+  <main class="phuongdong-main animate show">
+    <!-- Header with Back Button, Title with Gold Underline, and Google Maps Pin -->
+    <header class="phuongdong-header">
+      <div class="phuongdong-title-group">
+        <a href="contact.html" class="back-to-contact" aria-label="Back to Locations">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span data-i18n="phuongdong_back">Back to Locations</span>
+        </a>
+        <div class="phuongdong-title-wrapper">
+          <h1 class="phuongdong-title">KENTACK PHUONG DONG</h1>
+          <span class="phuongdong-title-line" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="phuongdong-actions">
+        <a href="https://maps.app.goo.gl/ohDafiAU3E2ojwfu7" target="_blank" rel="noopener noreferrer" class="google-maps-link" aria-label="Open Kentack Phuong Dong in Google Maps" title="Open Kentack Phuong Dong on Google Maps">
+          <!-- Official Google Maps Pin SVG -->
+          <svg class="google-maps-icon" viewBox="0 0 92.3 132.3" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#1a73e8" d="M60.2 2.2C55.8.8 51 0 46.1 0 32 0 19.3 6.4 10.8 16.5l21.8 18.3L60.2 2.2z"/>
+            <path fill="#ea4335" d="M10.8 16.5C4.1 24.5 0 34.9 0 46.1c0 8.7 1.7 15.7 4.6 22l28-33.3-21.8-18.3z"/>
+            <path fill="#4285f4" d="M46.2 28.5c9.8 0 17.7 7.9 17.7 17.7 0 4.3-1.6 8.3-4.2 11.4 0 0 13.9-16.6 27.5-32.7-5.6-10.8-15.3-19-27-22.7L32.6 34.8c3.3-3.8 8.1-6.3 13.6-6.3"/>
+            <path fill="#fbbc04" d="M46.2 63.8c-9.8 0-17.7-7.9-17.7-17.7 0-4.3 1.5-8.3 4.1-11.3l-28 33.3c4.8 10.6 12.8 19.2 21 29.9l34.1-40.5c-3.3 3.9-8.1 6.3-13.5 6.3"/>
+            <path fill="#34a853" d="M59.1 109.2c15.4-24.1 33.3-35 33.3-63 0-7.7-1.9-14.9-5.2-21.3L25.6 98c2.6 3.4 5.3 7.3 7.9 11.3 9.4 14.5 6.8 23.1 12.8 23.1s3.4-8.7 12.8-23.2"/>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- 4-Column Bento Gallery Layout matching user sketch -->
+    <div class="phuongdong-bento">
+      <!-- Column 1: 1 Tall Full-Height Image (Storefront Entrance) -->
+      <div class="bento-col bento-col-single col-1">
+        <div class="bento-item" onclick="openPhuongDongLightbox(0)" title="View photo: Showroom Entrance">
+          <img src="contact/Kentack Phuong Dong/IMG_3768.JPG" alt="Kentack Phuong Dong Storefront Entrance" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-zoom-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Enlarge
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: 2 Stacked Images (Clubs Table Top, Red Carpet Bottom) -->
+      <div class="bento-col bento-col-split col-2">
+        <div class="bento-item" onclick="openPhuongDongLightbox(1)" title="View photo: Clubs & Accessories">
+          <img src="contact/Kentack Phuong Dong/IMG_3765.JPG" alt="Kentack Phuong Dong Clubs Table" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-zoom-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Enlarge
+            </span>
+          </div>
+        </div>
+        <div class="bento-item" onclick="openPhuongDongLightbox(2)" title="View photo: Premium Clubs Display">
+          <img src="contact/Kentack Phuong Dong/IMG_3766.JPG" alt="Kentack Phuong Dong Red Carpet Club Display" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-zoom-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Enlarge
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3: 1 Tall Full-Height Image (Bonsai Tree Landscape) -->
+      <div class="bento-col bento-col-single col-3">
+        <div class="bento-item" onclick="openPhuongDongLightbox(3)" title="View photo: Golf Course Bonsai View">
+          <img src="contact/Kentack Phuong Dong/IMG_3770.JPG" alt="Kentack Phuong Dong Bonsai Tree" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-zoom-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Enlarge
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 4: 2 Stacked Images (Driving Range Top, Bags Window Bottom) -->
+      <div class="bento-col bento-col-split col-4">
+        <div class="bento-item bento-item-top" onclick="openPhuongDongLightbox(4)" title="View photo: Putting Green & Driving Range">
+          <img src="contact/Kentack Phuong Dong/IMG_3771.JPG" alt="Kentack Phuong Dong Driving Range View" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-zoom-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Enlarge
+            </span>
+          </div>
+        </div>
+        <div class="bento-item bento-item-bottom" onclick="openPhuongDongLightbox(5)" title="View photo: Golf Bags & Apparel">
+          <img src="contact/Kentack Phuong Dong/IMG_3767.JPG" alt="Kentack Phuong Dong Golf Bags" loading="lazy">
+          <div class="bento-overlay">
+            <span class="bento-zoom-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Enlarge
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Complete Lightbox Gallery with Next / Prev browsing of all showroom photos -->
+  <div id="phuongdong-modal" class="gallery-modal" onclick="closePhuongDongLightbox(event)">
+    <button class="gallery-modal-close" onclick="closePhuongDongLightbox(event)" aria-label="Close image">&times;</button>
+    <button class="lightbox-arrow lightbox-prev" onclick="prevLightbox(event)" aria-label="Previous image">&#10094;</button>
+    <button class="lightbox-arrow lightbox-next" onclick="nextLightbox(event)" aria-label="Next image">&#10095;</button>
+    <div class="lightbox-image-wrapper">
+      <img id="phuongdong-modal-img" class="gallery-modal-img" src="" alt="Showroom photo enlarged">
+      <div id="lightbox-counter" class="lightbox-counter">1 / 7</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const phuongDongPhotos = [
+      "contact/Kentack Phuong Dong/IMG_3768.JPG",
+      "contact/Kentack Phuong Dong/IMG_3765.JPG",
+      "contact/Kentack Phuong Dong/IMG_3766.JPG",
+      "contact/Kentack Phuong Dong/IMG_3770.JPG",
+      "contact/Kentack Phuong Dong/IMG_3771.JPG",
+      "contact/Kentack Phuong Dong/IMG_3767.JPG",
+      "contact/Kentack Phuong Dong/IMG_3769.JPG"
+    ];
+
+    let currentPhotoIdx = 0;
+
+    function openPhuongDongLightbox(idx) {
+      currentPhotoIdx = idx;
+      updateLightboxDisplay();
+      document.getElementById('phuongdong-modal').classList.add('open');
+    }
+
+    function updateLightboxDisplay() {
+      const modalImg = document.getElementById('phuongdong-modal-img');
+      const counter = document.getElementById('lightbox-counter');
+      modalImg.src = phuongDongPhotos[currentPhotoIdx];
+      counter.textContent = `${currentPhotoIdx + 1} / ${phuongDongPhotos.length}`;
+    }
+
+    function prevLightbox(e) {
+      if (e) e.stopPropagation();
+      currentPhotoIdx = (currentPhotoIdx - 1 + phuongDongPhotos.length) % phuongDongPhotos.length;
+      updateLightboxDisplay();
+    }
+
+    function nextLightbox(e) {
+      if (e) e.stopPropagation();
+      currentPhotoIdx = (currentPhotoIdx + 1) % phuongDongPhotos.length;
+      updateLightboxDisplay();
+    }
+
+    function closePhuongDongLightbox(e) {
+      if (e && e.target.id === 'phuongdong-modal-img') return;
+      if (e && e.target.classList.contains('lightbox-arrow')) return;
+      document.getElementById('phuongdong-modal').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('phuongdong-modal');
+      if (!modal || !modal.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') prevLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
+      if (e.key === 'Escape') closePhuongDongLightbox();
+    });
+  </script>
+</body>
+</html>
